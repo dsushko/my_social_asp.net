@@ -1,0 +1,30 @@
+﻿.sticky {
+    position: sticky;
+    top: 0;
+    width: 100%
+}
+.header {
+    padding: 10px 16px;
+    background: #555;
+    color: #f1f1f1;
+}
+
+.content {
+    padding: 16px;
+}
+.sticky + .content {
+    padding-top: 102px;
+}
+
+header, nav {
+    color: #fff; /* Цвет текста */
+    padding: 10px; /* Поля */
+}
+header {
+    background: #009d4b; /* Цвет фона */
+}
+nav {
+    background: #3989c9; /* Цвет фона */
+    position: sticky; /* Липкое позиционирование */
+    top: 0; /* Положение сверху */
+}

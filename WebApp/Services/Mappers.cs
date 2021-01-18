@@ -1,0 +1,50 @@
+using network2.Models;
+using WebApp.ViewModels;
+
+namespace WebApp.Services
+{
+    public static class Mappers
+    {
+        public static User BuildUser(UserModel um)
+        {
+            User u = new User
+            {
+                Nickname = um.Nickname,
+                Name = um.Name,
+                Surname = um.Surname,
+                AvatarPath = um.AvatarPath,
+                Bday = um.Bday,
+                Id = um.Id
+            };
+            return u;
+        }
+
+        public static Post BuildPost(PostModel pm)
+        {
+            Post p = new Post()
+            {
+                Date = pm.Date,
+                Id = pm.Id,
+                OwnerId = pm.OwnerId,
+                Rating = pm.Rating,
+                Text = pm.Text,
+                SharesQuantity = pm.SharesQuantity,
+                CommentQuantity = pm.CommentQuantity
+            };
+            return p;
+        }
+        public static Comment BuildComment(CommentModel cm)
+        {
+            Comment c = new Comment()
+            {
+                OwnerId = cm.OwnerId,
+                Rating =  cm.Rating,
+                ReplyCommentId = cm.ReplyCommentId,
+                Text = cm.Text,
+                Time = cm.Time,
+                Id = cm.Id,
+            };
+            return c;
+        }
+    }
+}

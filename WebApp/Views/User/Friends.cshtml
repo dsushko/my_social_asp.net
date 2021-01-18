@@ -1,0 +1,198 @@
+@{
+    Layout = "_Layout_Profile";
+}
+<style>
+.card {
+           border-width: 0;
+           width: 100px;
+           text-align: center;
+           font-size: 10px;
+           margin: 15px 15px 15px 15px;
+       }
+</style>
+
+<div id="test" class="shadow-lg" style="display: flex; flex-direction: column; background: white; border-radius: 3px; min-height: 500px;">
+    <div>
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" id="friends">Friends</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="input-requests">Input requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="output-requests">Output requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="subscribers">Subscribers</a>
+            </li>
+        </ul>
+    </div>
+    <div id="results" style="position: relative; display: flex; flex-wrap: wrap; flex-direction: row; width: 100%;">
+        
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    let SetTabsNumbersQuantity = function() {
+        $.ajax({
+            url:'@Url.Action("GetUserModelById")',
+            type: 'GET',
+            async: false,
+            data: {
+                id: @Model.Id
+            }
+            }).done(function(model) {
+                document.getElementById("friends").innerText = "Friends (" + model.friends.length + ")";
+                document.getElementById("subscribers").innerText = "Subscribers (" + model.subscribers.length + ")";
+                document.getElementById("input-requests").innerText = "Input requests (" + model.inputRequests.length + ")";
+                document.getElementById("output-requests").innerText = "Output requests (" + model.outputRequests.length + ")";
+            });
+        
+    };
+    
+    var ReturnUserHTMLCard = function(element) {
+             ddl = " ";
+             ddl += '<div class="card">\n';
+             ddl += '<img src="';
+             ddl +=  element.avatarPath + '"';
+             ddl += ' class="mr-3" style="width:100px; height:100px; object-fit: cover; border-radius:50%">\n';
+             ddl += '<div class="media-body">\n';
+             ddl += '<a style="font-size: 20px" href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + element.id + '">' + element.nickname + '</a>\n';    
+             ddl += '<div style="margin: 24px 0;">';
+             ddl += '</div>';
+             ddl += '</div>\n';
+             ddl += '</div>\n';
+             console.log(ddl);
+             return ddl;          
+        }
+
+    $(document).on('click', '#friends', function() {
+         
+                $("#friends").removeClass("active");
+                $("#subscribers").removeClass("active");
+                $("#input-requests").removeClass("active");
+                $("#output-requests").removeClass("active");
+                
+                $("#friends").addClass("active");
+        
+        document.getElementById("results").innerHTML = " ";
+        $.ajax({
+                    url:'@Url.Action("GetFriendsByUserId", "User")',
+                    type:'GET',
+                    data: {
+                    id: @Model.Id
+                    }
+                    })
+                    .done(function (data){
+                         let users = ' ';
+                         $.each(data, function(index, element){
+                         users+=ReturnUserHTMLCard(element);
+                    });               
+                        document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;     
+                        SetTabsNumbersQuantity();
+                    });
+        
+    });
+
+    $(document).on('click', '#input-requests', function() {
+                                $("#friends").removeClass("active");
+                                $("#subscribers").removeClass("active");
+                                $("#input-requests").removeClass("active");
+                                $("#output-requests").removeClass("active");
+                                
+                                $("#input-requests").addClass("active");
+                                
+        
+        document.getElementById("results").innerHTML = " ";
+        $.ajax({
+                            url:'@Url.Action("GetInputRequestsByUserId", "User")',
+                            type:'GET',
+                            data: {
+                            id: @Model.Id
+                            }
+                            })
+                            .done(function (data){
+                                 let users = ' ';
+                                 $.each(data, function(index, element){
+                                 users+=ReturnUserHTMLCard(element);
+                            });               
+                                document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;
+                                SetTabsNumbersQuantity();
+                            });
+        
+    });
+    $(document).on('click', '#output-requests', function() {
+                                $("#friends").removeClass("active");
+                                $("#subscribers").removeClass("active");
+                                $("#input-requests").removeClass("active");
+                                $("#output-requests").removeClass("active");
+                                
+                                $("#output-requests").addClass("active");
+        document.getElementById("results").innerHTML = " ";
+        $.ajax({
+                            url:'@Url.Action("GetOutputRequestsByUserId", "User")',
+                            type:'GET',
+                            data: {
+                            id: @Model.Id
+                            }
+                            })
+                            .done(function (data){
+                                 let users = ' ';
+                                 $.each(data, function(index, element){
+                                 users+=ReturnUserHTMLCard(element);
+                            });               
+                                document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;  
+                                SetTabsNumbersQuantity();
+                            });
+        });
+    $(document).on('click', '#subscribers', function() {
+        
+                       $("#friends").removeClass("active");
+                       $("#subscribers").removeClass("active");
+                       $("#input-requests").removeClass("active");
+                       $("#output-requests").removeClass("active");
+                       
+                       $("#subscribers").addClass("active");
+        
+          document.getElementById("results").innerHTML = " ";
+          $.ajax({
+                              url:'@Url.Action("GetSubscribersByUserId", "User")',
+                              type:'GET',
+                              data: {
+                              id: @Model.Id
+                              }
+                              })
+                              .done(function (data){
+                                   let users = ' ';
+                                   $.each(data, function(index, element){
+                                   users+=ReturnUserHTMLCard(element);
+                              });               
+                                  document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users; 
+                                  SetTabsNumbersQuantity();
+                              });
+        });
+    $(document).ready(function() {
+      SetTabsNumbersQuantity();
+      document.getElementById("results").innerHTML = " ";
+              $.ajax({
+                          url:'@Url.Action("GetFriendsByUserId", "User")',
+                          type:'GET',
+                          data: {
+                          id: @Model.Id
+                          }
+                          })
+                          .done(function (data){
+                               let users = ' ';
+                               $.each(data, function(index, element){
+                               users+=ReturnUserHTMLCard(element);
+                          });               
+                              document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;   
+                              
+                          });
+    })
+
+</script>

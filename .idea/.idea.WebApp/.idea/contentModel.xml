@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\project2\WebApplication" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="WebApp" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="FileController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="PostController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ApplicationContext.cs" t="Include" />
+          <e p="CommentModel.cs" t="Include" />
+          <e p="ErrorViewModel.cs" t="Include" />
+          <e p="LoginModel.cs" t="Include" />
+          <e p="PhotoModel.cs" t="Include" />
+          <e p="PostModel.cs" t="Include" />
+          <e p="RegisterModel.cs" t="Include" />
+          <e p="SongModel.cs" t="Include" />
+          <e p="UserModel.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="WebApp.AssemblyInfo.cs" t="Include" />
+              <e p="WebApp.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="Mappers.cs" t="Include" />
+          <e p="PostService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="Comment.cs" t="Include" />
+          <e p="Post.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Account" t="Include">
+            <e p="Login.cshtml" t="Include" />
+            <e p="Register.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Profile.cshtml" t="Include" />
+          <e p="Shared" t="Include">
+            <e p="_Layout_Profile.cshtml" t="Include" />
+            <e p="_Layout_Start.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="User" t="Include">
+            <e p="Friends.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+            <e p="Music.cshtml" t="Include" />
+            <e p="Photos.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="WebApp.csproj" t="IncludeRecursive" />
+        <e p="wwwroot" t="Include">
+          <e p="avatar-default.png" t="Include" />
+          <e p="css" t="Include">
+            <e p="login.css" t="Include" />
+            <e p="profile.css" t="Include" />
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="Files" t="Include">
+            <e p="SongPics" t="Include">
+              <e p="bohemian_rhapsody_22. Queen - The Show Must Go On (1).jpg" t="Include" />
+              <e p="bohemian_rhapsody_22. Queen - The Show Must Go On.jpg" t="Include" />
+              <e p="Luchshaya_alternativa_-_My_Chemical_Romance-Famous_Last_Words_(GET.MP3NOTA.INFO).jpg" t="Include" />
+              <e p="uploadedFile.jpg" t="Include" />
+            </e>
+            <e p="Songs" t="Include">
+              <e p="1.mp3" t="Include" />
+              <e p="2.mp3" t="Include" />
+              <e p="3 (1).mp3" t="Include" />
+              <e p="bohemian_rhapsody_22. Queen - The Show Must Go On (1).mp3" t="Include" />
+              <e p="bohemian_rhapsody_22. Queen - The Show Must Go On.mp3" t="Include" />
+              <e p="Luchshaya_alternativa_-_My_Chemical_Romance-Famous_Last_Words_(GET.MP3NOTA.INFO).mp3" t="Include" />
+              <e p="My Chemical Romance - All The Angels (Live Demo).mp3" t="Include" />
+              <e p="red_hot_chili_peppers_-_dark_necessities_(music-sea.com).mp3" t="Include" />
+            </e>
+          </e>
+          <e p="header.png" t="Include" />
+          <e p="img" t="Include">
+            <e p="avatar-default.png" t="Include" />
+            <e p="header.jpg" t="Include" />
+            <e p="play-pause.png" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="audioplayer" t="Include">
+              <e p="desktop.ini" t="Include" />
+              <e p="mediaelement-and-player.min.js" t="Include" />
+              <e p="mediaelement-flash-audio-ogg.swf" t="Include" />
+              <e p="mediaelement-flash-audio.swf" t="Include" />
+            </e>
+            <e p="mediaelement" t="Include">
+              <e p="background.png" t="Include" />
+              <e p="bigplay.fw.png" t="Include" />
+              <e p="bigplay.png" t="Include" />
+              <e p="bigplay.svg" t="Include" />
+              <e p="controls-ted.png" t="Include" />
+              <e p="controls-wmp-bg.png" t="Include" />
+              <e p="controls-wmp.png" t="Include" />
+              <e p="controls.fw.png" t="Include" />
+              <e p="controls.png" t="Include" />
+              <e p="controls.svg" t="Include" />
+              <e p="flashmediaelement-cdn.swf" t="Include" />
+              <e p="flashmediaelement-debug.swf" t="Include" />
+              <e p="flashmediaelement.swf" t="Include" />
+              <e p="jumpforward.png" t="Include" />
+              <e p="lang" t="Include">
+                <e p="me-i18n-locale-cs.js" t="Include" />
+                <e p="me-i18n-locale-de.js" t="Include" />
+                <e p="me-i18n-locale-en.js" t="Include" />
+                <e p="me-i18n-locale-es.js" t="Include" />
+                <e p="me-i18n-locale-fr.js" t="Include" />
+                <e p="me-i18n-locale-hu.js" t="Include" />
+                <e p="me-i18n-locale-it.js" t="Include" />
+                <e p="me-i18n-locale-ja.js" t="Include" />
+                <e p="me-i18n-locale-ko.js" t="Include" />
+                <e p="me-i18n-locale-nl.js" t="Include" />
+                <e p="me-i18n-locale-pl.js" t="Include" />
+                <e p="me-i18n-locale-pt-br.js" t="Include" />
+                <e p="me-i18n-locale-pt.js" t="Include" />
+                <e p="me-i18n-locale-ro.js" t="Include" />
+                <e p="me-i18n-locale-ru.js" t="Include" />
+                <e p="me-i18n-locale-sk.js" t="Include" />
+                <e p="me-i18n-locale-zh-cn.js" t="Include" />
+                <e p="me-i18n-locale-zh.js" t="Include" />
+              </e>
+              <e p="loading.gif" t="Include" />
+              <e p="mediaelement-and-player.js" t="Include" />
+              <e p="mediaelement-and-player.min.js" t="Include" />
+              <e p="mediaelement.js" t="Include" />
+              <e p="mediaelement.min.js" t="Include" />
+              <e p="mediaelementplayer.css" t="Include" />
+              <e p="mediaelementplayer.js" t="Include" />
+              <e p="mediaelementplayer.min.css" t="Include" />
+              <e p="mediaelementplayer.min.js" t="Include" />
+              <e p="mejs-skins.css" t="Include" />
+              <e p="silverlightmediaelement.xap" t="Include" />
+              <e p="skipback.png" t="Include" />
+            </e>
+            <e p="site.js" t="Include" />
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-grid.css" t="Include" />
+                  <e p="bootstrap-grid.css.map" t="Include" />
+                  <e p="bootstrap-grid.min.css" t="Include" />
+                  <e p="bootstrap-grid.min.css.map" t="Include" />
+                  <e p="bootstrap-reboot.css" t="Include" />
+                  <e p="bootstrap-reboot.css.map" t="Include" />
+                  <e p="bootstrap-reboot.min.css" t="Include" />
+                  <e p="bootstrap-reboot.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.bundle.js" t="Include" />
+                  <e p="bootstrap.bundle.js.map" t="Include" />
+                  <e p="bootstrap.bundle.min.js" t="Include" />
+                  <e p="bootstrap.bundle.min.js.map" t="Include" />
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.js.map" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="bootstrap.min.js.map" t="Include" />
+                </e>
+              </e>
+              <e p="LICENSE" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+              <e p="LICENSE.md" t="Include" />
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+          <e p="login-background.jpg" t="Include" />
+          <e p="login-background1.jpg" t="Include" />
+          <e p="login-background2.jpg" t="Include" />
+          <e p="login-background3.jpg" t="Include" />
+          <e p="login-background4.jpg" t="Include" />
+          <e p="lya.jpg" t="Include" />
+          <e p="profile_header.jpg" t="Include" />
+          <e p="profile_header1.jpg" t="Include" />
+          <e p="Без названия.jfif" t="Include" />
+        </e>
+        <e p="Новый текстовый документ.txt" t="Include" />
+      </e>
+      <e p="WebApp.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.css" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdnjs.cloudflare.com_ajax_libs_popper.js_1.14.7_umd_popper.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_code.jquery.com_jquery-3.3.1.slim.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_kit.fontawesome.com_a076d05399.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_css_bootstrap.css" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_js_bootstrap.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_WebApp.872225827.00" t="ExcludeRecursive" />
+  </component>
+</project>

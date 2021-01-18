@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ef1f378-b6fa-48b7-988d-8a638513269e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/262/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/Subscriber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BBB3B884-123D-47EA-9CD1-5BED540D02AE/68/42434ab0/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/Photos.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/PostController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Friends.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/News.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Feed.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81710659-14D5-43A7-93C6-737B18C62BC7/5A/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/233E8C8F-0E85-4B63-AE7F-9B374A12D146/d9/d831f672/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7B190B13-A310-4BD3-8749-56379F74DEFF/41/OrderedEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/MessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/MessageService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/1B/ViewResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/82/ViewExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8634E439-6C47-4EAD-9230-0E607606F644/09/83242d26/Expression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/12/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/194/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/Mappers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/PostService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/DialogService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3DBE483-6645-4FDB-B51D-FEEB0B5C4997/A/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ViewModels/LoginModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/LikePost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ViewModels/RegisterModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/PostModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/UserModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18E1594A-9B50-45D0-899C-1EF7114FC7E0/1F/ValidationMessageTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/Subscriptions.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E7F94DA-1173-4EA2-8F7B-8CF1E4F4E91A/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/14E/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/DialogController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/UserPosts.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Dialog/Dialog.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/MessageModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C7A54E4F-35FF-4103-9018-CB9C447A7673/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/Search.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9DD1842A-7835-4E0B-8277-88485B22F3A8/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Home/Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D12A3B22-45B0-40DF-96D6-9FAABE3A0C70/13/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/User/Subscribers.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Shared/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/11C/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Models/Post.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BBB3B884-123D-47EA-9CD1-5BED540D02AE/d1/68ccee03/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7B190B13-A310-4BD3-8749-56379F74DEFF/19/First.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Views/Profile.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Home/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Views/Home/Profile.cshtml" />
+        <option value="$PROJECT_DIR$/Models/FriendsContext.cs" />
+        <option value="$PROJECT_DIR$/Models/UsersPosts.cs" />
+        <option value="$PROJECT_DIR$/Models/LikesPosts.cs" />
+        <option value="$PROJECT_DIR$/Models/Friends.cs" />
+        <option value="$PROJECT_DIR$/Models/UsersPost.cs" />
+        <option value="$PROJECT_DIR$/Models/LikesPost.cs" />
+        <option value="$PROJECT_DIR$/Controllers/PostController.cs" />
+        <option value="$PROJECT_DIR$/Models/UserPost.cs" />
+        <option value="$PROJECT_DIR$/Models/Friend.cs" />
+        <option value="$PROJECT_DIR$/Models/Subscriber.cs" />
+        <option value="$PROJECT_DIR$/Controllers/DialogController.cs" />
+        <option value="$PROJECT_DIR$/Models/LikePost.cs" />
+        <option value="$PROJECT_DIR$/Models/Post.cs" />
+        <option value="$PROJECT_DIR$/Models/PostModel.cs" />
+        <option value="$PROJECT_DIR$/Models/User.cs" />
+        <option value="$PROJECT_DIR$/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/wwwroot/css/homestyle.css" />
+        <option value="$PROJECT_DIR$/wwwroot/css/search.css" />
+        <option value="$PROJECT_DIR$/Views/User/Search.html" />
+        <option value="$PROJECT_DIR$/Views/Account/Login.cshtml" />
+        <option value="$PROJECT_DIR$/Models/SearchRequest.cs" />
+        <option value="$PROJECT_DIR$/Services/PostService.cs" />
+        <option value="$PROJECT_DIR$/wwwroot/js/likesSubsPosts.js" />
+        <option value="$PROJECT_DIR$/Models/PhotoModel.cs" />
+        <option value="$PROJECT_DIR$/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/Models/UserModel.cs" />
+        <option value="$PROJECT_DIR$/Views/Dialog/Dialog.cshtml" />
+        <option value="$PROJECT_DIR$/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/Views/User/Index.cshtml" />
+        <option value="$PROJECT_DIR$/Views/User/News.cshtml" />
+        <option value="$PROJECT_DIR$/Views/User/Photos.cshtml" />
+        <option value="$PROJECT_DIR$/Views/User/Search.cshtml" />
+        <option value="$PROJECT_DIR$/Views/User/Subscribers.cshtml" />
+        <option value="$PROJECT_DIR$/Views/User/Subscriptions.cshtml" />
+        <option value="$PROJECT_DIR$/Services/UserService.cs" />
+        <option value="$PROJECT_DIR$/Services/Mappers.cs" />
+        <option value="$PROJECT_DIR$/Services/DialogService.cs" />
+        <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
+        <option value="$PROJECT_DIR$/Startup.cs" />
+        <option value="$PROJECT_DIR$/Models/ApplicationContext.cs" />
+        <option value="$PROJECT_DIR$/appsettings.json" />
+        <option value="$PROJECT_DIR$/appsettings.Development.json" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bLe2xrMdQRdo65L1XjkUW7iXV8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApp">
+    <configuration name="WebApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebApp.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="WebApp" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApp: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebApp.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ef1f378-b6fa-48b7-988d-8a638513269e" name="Default Changelist" comment="" />
+      <created>1588415597652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588415597652</updated>
+      <workItem from="1588415598888" duration="5509000" />
+      <workItem from="1588444406394" duration="3310000" />
+      <workItem from="1588664222297" duration="1219000" />
+      <workItem from="1588671178093" duration="1058000" />
+      <workItem from="1588695556179" duration="7455000" />
+      <workItem from="1588710981241" duration="1305000" />
+      <workItem from="1588747486044" duration="4096000" />
+      <workItem from="1588782315366" duration="2312000" />
+      <workItem from="1588866305374" duration="18115000" />
+      <workItem from="1588946884660" duration="14236000" />
+      <workItem from="1588973394595" duration="8931000" />
+      <workItem from="1589021607756" duration="8551000" />
+      <workItem from="1589031552561" duration="4967000" />
+      <workItem from="1589287320547" duration="6972000" />
+      <workItem from="1589733217848" duration="9389000" />
+      <workItem from="1589785315821" duration="6953000" />
+      <workItem from="1589803431762" duration="111000" />
+      <workItem from="1589891278384" duration="14174000" />
+      <workItem from="1589961026381" duration="1974000" />
+      <workItem from="1589970617266" duration="8047000" />
+      <workItem from="1589979873392" duration="840000" />
+      <workItem from="1589980993115" duration="1462000" />
+      <workItem from="1590008177958" duration="1568000" />
+      <workItem from="1590042964028" duration="3745000" />
+      <workItem from="1590062611823" duration="8256000" />
+      <workItem from="1590074056212" duration="1705000" />
+      <workItem from="1590154310965" duration="196000" />
+      <workItem from="1590230101569" duration="12282000" />
+      <workItem from="1590245633322" duration="2718000" />
+      <workItem from="1590250253919" duration="5916000" />
+      <workItem from="1590259995342" duration="8836000" />
+      <workItem from="1590313023300" duration="6847000" />
+      <workItem from="1590747032932" duration="2308000" />
+      <workItem from="1590749695264" duration="383000" />
+      <workItem from="1590761382215" duration="8658000" />
+      <workItem from="1590780502962" duration="279000" />
+      <workItem from="1590781785573" duration="316000" />
+      <workItem from="1590782125446" duration="241000" />
+      <workItem from="1590953802203" duration="1602000" />
+      <workItem from="1591104446228" duration="4283000" />
+      <workItem from="1592410788834" duration="1936000" />
+      <workItem from="1592562604678" duration="3370000" />
+      <workItem from="1592657071139" duration="4391000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Notifications" timestamp="1588886455046">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1588886455046" />
+    <state width="1493" height="104" key="GridCell.Tab.0.bottom" timestamp="1592661167882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="104" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592661167882" />
+    <state width="1493" height="104" key="GridCell.Tab.0.center" timestamp="1592661167882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="104" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592661167882" />
+    <state width="1493" height="104" key="GridCell.Tab.0.left" timestamp="1592661167882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="104" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592661167882" />
+    <state width="1493" height="104" key="GridCell.Tab.0.right" timestamp="1592661167882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="104" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592661167882" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.3.bottom" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.3.center" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.3.left" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.3.right" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.4.bottom" timestamp="1590771648498">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590771648498" />
+    <state width="1493" height="261" key="GridCell.Tab.4.center" timestamp="1590771648498">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1590771648498" />
+    <state width="1493" height="261" key="GridCell.Tab.4.left" timestamp="1590771648497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1590771648497" />
+    <state width="1493" height="261" key="GridCell.Tab.4.right" timestamp="1590771648498">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1590771648498" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589976752753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589976752753" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="WebApp.Models.Subscriber" fieldName="sender" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

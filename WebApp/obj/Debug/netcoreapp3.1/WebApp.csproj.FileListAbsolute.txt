@@ -1,0 +1,365 @@
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.exe
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.deps.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.dev.json
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.pdb
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.input.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.output.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.Manifest.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.xml
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\source\repos\WebApp\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Lenovo\source\repos\WebApp\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.exe
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.deps.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.dev.json
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.pdb
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\project\vlad\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csprojAssemblyReference.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.Manifest.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.xml
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfoInputs.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfo.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.input.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.output.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cache
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CopyComplete
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.dll
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Feed.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Friends.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\UserPosts.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscribers.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscriptions.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Search.cshtml.g.cs
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Photos.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.exe
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.deps.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.dev.json
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.pdb
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.pdb
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csprojAssemblyReference.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfoInputs.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfo.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.input.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.output.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\UserPosts.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Feed.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Friends.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Photos.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Search.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscribers.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscriptions.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.Views.pdb
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CopyComplete
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.Manifest.cache
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.xml
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.dll
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\News.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.exe
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.deps.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.dev.json
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.pdb
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.pdb
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csprojAssemblyReference.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfoInputs.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfo.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.input.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.output.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\UserPosts.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Feed.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Friends.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Profile.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\News.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Photos.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Search.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscribers.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Subscriptions.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.Views.pdb
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CopyComplete
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.Manifest.cache
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.xml
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.dll
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
+C:\project\vlad\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Dialog\Dialog.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Services\Subscribers.cshtml.g.cs
+D:\Рабочий стол\WebAppFinal\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Dialog\Dialog.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Services\Subscribers.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Dialog\Dialog.cshtml.g.cs
+D:\Рабочий стол\WebApp\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\News.cshtml.g.cs
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\appsettings.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.exe
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.deps.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.runtimeconfig.dev.json
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.pdb
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csprojAssemblyReference.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.Manifest.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\staticwebassets\WebApp.StaticWebAssets.xml
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorAssemblyInfo.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfoInputs.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.AssemblyInfo.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.input.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.TagHelpers.output.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_Start.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cache
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorTargetAssemblyInfo.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.Views.pdb
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.csproj.CopyComplete
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.dll
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\WebApp.pdb
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_Profile.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Friends.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Music.cshtml.g.cs
+C:\project2\WebApplication\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Photos.cshtml.g.cs
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Id3.Net.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\TagLibSharp.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\project2\WebApplication\WebApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

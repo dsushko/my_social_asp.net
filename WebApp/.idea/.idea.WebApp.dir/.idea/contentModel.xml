@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\project\vlad\WebApplication\WebApp" t="IncludeRecursive">
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="AccountController.cs" t="Include" />
+        <e p="DialogController.cs" t="Include" />
+        <e p="HomeController.cs" t="Include" />
+        <e p="PostController.cs" t="Include" />
+        <e p="UserController.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="ApplicationContext.cs" t="Include" />
+        <e p="Dialog.cs" t="Include" />
+        <e p="DialogModel.cs" t="Include" />
+        <e p="ErrorViewModel.cs" t="Include" />
+        <e p="LikePost.cs" t="Include" />
+        <e p="Message.cs" t="Include" />
+        <e p="MessageDialog.cs" t="Include" />
+        <e p="MessageModel.cs" t="Include" />
+        <e p="PhotoModel.cs" t="Include" />
+        <e p="Post.cs" t="Include" />
+        <e p="PostModel.cs" t="Include" />
+        <e p="SearchRequest.cs" t="Include" />
+        <e p="Subscriber.cs" t="Include" />
+        <e p="User.cs" t="Include" />
+        <e p="UserDialog.cs" t="Include" />
+        <e p="UserModel.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="WebApp.AssemblyInfo.cs" t="Include" />
+            <e p="WebApp.RazorAssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="Services" t="Include">
+        <e p="DialogService.cs" t="Include" />
+        <e p="Mappers.cs" t="Include" />
+        <e p="MessageService.cs" t="Include" />
+        <e p="PostService.cs" t="Include" />
+        <e p="UserService.cs" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+      <e p="ViewModels" t="Include">
+        <e p="LoginModel.cs" t="Include" />
+        <e p="RegisterModel.cs" t="Include" />
+      </e>
+      <e p="Views" t="Include">
+        <e p="_ViewImports.cshtml" t="Include" />
+        <e p="_ViewStart.cshtml" t="Include" />
+        <e p="Account" t="Include">
+          <e p="Login.cshtml" t="Include" />
+          <e p="Register.cshtml" t="Include" />
+          <e p="UserPosts.cshtml" t="Include" />
+        </e>
+        <e p="Dialog" t="Include">
+          <e p="Dialog.cshtml" t="Include" />
+        </e>
+        <e p="Home" t="Include">
+          <e p="Feed.cshtml" t="Include" />
+          <e p="Friends.cshtml" t="Include" />
+          <e p="Privacy.cshtml" t="Include" />
+          <e p="Profile.cshtml" t="Include" />
+        </e>
+        <e p="Profile.cshtml" t="Include" />
+        <e p="Shared" t="Include">
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+        </e>
+        <e p="User" t="Include">
+          <e p="Index.cshtml" t="Include" />
+          <e p="News.cshtml" t="Include" />
+          <e p="Photos.cshtml" t="Include" />
+          <e p="Search.cshtml" t="Include" />
+          <e p="Subscribers.cshtml" t="Include" />
+          <e p="Subscriptions.cshtml" t="Include" />
+        </e>
+      </e>
+      <e p="WebApp.csproj" t="IncludeRecursive" />
+      <e p="wwwroot" t="Include">
+        <e p="css" t="Include">
+          <e p="dialog.css" t="Include" />
+          <e p="homestyle.css" t="Include" />
+          <e p="loginerrorstyle.css" t="Include" />
+          <e p="photos.css" t="Include" />
+          <e p="profile.css" t="Include" />
+          <e p="search.css" t="Include" />
+          <e p="site.css" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="Files" t="Include">
+          <e p="0.89654800_1524035070_16-20180430.jpg" t="Include" />
+          <e p="1529014066_28adb6a8908558ba55eac1d63b412a03.jpg" t="Include" />
+          <e p="20200426_173239.jpg" t="Include" />
+          <e p="20200504_090938.jpg" t="Include" />
+          <e p="300px-Майк_Вазовски_с_лицом_Салли_шаблон.jpg" t="Include" />
+          <e p="3d-businessman-relaxing-in-a-deck-chair-drawing_csp43048944.jpg" t="Include" />
+          <e p="_MG_1552.JPG" t="Include" />
+          <e p="a459b62513d10b63130982df85e69e03--anime-manga-kawaii.jpg" t="Include" />
+          <e p="af9f6cadb99e78ab2d2fb971b98fdac9.jpg" t="Include" />
+          <e p="big-data.jpg" t="Include" />
+          <e p="c6361ff0b657.jpg" t="Include" />
+          <e p="chikibamboni-3-768x610.jpg" t="Include" />
+          <e p="climate_change.jpg" t="Include" />
+          <e p="cropped-fmt_96_28_vlcsnap-2017-03-28-14h03m02s463.jpg" t="Include" />
+          <e p="photo_2020-04-10_20-58-04.jpg" t="Include" />
+          <e p="Screenshot_1.png" t="Include" />
+          <e p="Screenshot_20.png" t="Include" />
+          <e p="Screenshot_4.png" t="Include" />
+          <e p="Screenshot_6.png" t="Include" />
+          <e p="Screenshot_60.png" t="Include" />
+        </e>
+        <e p="img" t="Include">
+          <e p="avatar-default.png" t="Include" />
+          <e p="chat-bg.jpg" t="Include" />
+          <e p="header.jpg" t="Include" />
+          <e p="register-image.png" t="Include" />
+          <e p="social-network.png" t="Include" />
+        </e>
+        <e p="js" t="Include">
+          <e p="site.js" t="Include" />
+        </e>
+        <e p="lib" t="Include">
+          <e p="bootstrap" t="Include">
+            <e p="dist" t="Include">
+              <e p="css" t="Include">
+                <e p="bootstrap-grid.css" t="Include" />
+                <e p="bootstrap-grid.css.map" t="Include" />
+                <e p="bootstrap-grid.min.css" t="Include" />
+                <e p="bootstrap-grid.min.css.map" t="Include" />
+                <e p="bootstrap-reboot.css" t="Include" />
+                <e p="bootstrap-reboot.css.map" t="Include" />
+                <e p="bootstrap-reboot.min.css" t="Include" />
+                <e p="bootstrap-reboot.min.css.map" t="Include" />
+                <e p="bootstrap.css" t="Include" />
+                <e p="bootstrap.css.map" t="Include" />
+                <e p="bootstrap.min.css" t="Include" />
+                <e p="bootstrap.min.css.map" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="bootstrap.bundle.js" t="Include" />
+                <e p="bootstrap.bundle.js.map" t="Include" />
+                <e p="bootstrap.bundle.min.js" t="Include" />
+                <e p="bootstrap.bundle.min.js.map" t="Include" />
+                <e p="bootstrap.js" t="Include" />
+                <e p="bootstrap.js.map" t="Include" />
+                <e p="bootstrap.min.js" t="Include" />
+                <e p="bootstrap.min.js.map" t="Include" />
+              </e>
+            </e>
+            <e p="LICENSE" t="Include" />
+          </e>
+          <e p="jquery" t="Include">
+            <e p="dist" t="Include">
+              <e p="jquery.js" t="Include" />
+              <e p="jquery.min.js" t="Include" />
+              <e p="jquery.min.map" t="Include" />
+            </e>
+            <e p="LICENSE.txt" t="Include" />
+          </e>
+          <e p="jquery-validation" t="Include">
+            <e p="dist" t="Include">
+              <e p="additional-methods.js" t="Include" />
+              <e p="additional-methods.min.js" t="Include" />
+              <e p="jquery.validate.js" t="Include" />
+              <e p="jquery.validate.min.js" t="Include" />
+            </e>
+            <e p="LICENSE.md" t="Include" />
+          </e>
+          <e p="jquery-validation-unobtrusive" t="Include">
+            <e p="jquery.validate.unobtrusive.js" t="Include" />
+            <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+            <e p="LICENSE.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Новый текстовый документ.txt" t="Include" />
+    </e>
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+  </component>
+</project>

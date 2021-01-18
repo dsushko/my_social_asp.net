@@ -1,0 +1,151 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Builders
+@model WebApp.ViewModels.User 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - network2 </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css"  />
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="~/js/mediaelement/mediaelement-and-player.min.js"></script>
+</head>
+
+
+
+<body>
+
+<div>
+    <div id="header" style="height: 45px; background: #4e555b; display: flex; position: sticky; top: 0; z-index: 5; align-items: center;  justify-content: flex-end;">
+        <form style="margin-right: 55%">
+                <a href="@Url.RouteUrl(new { controller = "User", action = "IndexByName", name = @User.Identity.Name })" class="btn-primary">HOME</a>        
+        </form>
+        <div class="dropdown" style="margin-right: 10%; ">
+            <a style="" class="dropdown-toggle text-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="@Url.Content(@Model.AvatarPath)" width="30px" height="30px" style="border-radius: 50%">
+                @User.Identity.Name
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <input class="dropdown-item" type="submit" value="Logout"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tabs" class="shadow">
+        <div style="display:flex; justify-content:center; width: 100%; height: 400px; background: url(@Url.Content("~/profile_header1.jpg"));">
+            <div style="align-self: flex-end; display: flex; flex-direction: row; width: 220px; height: 220px;">
+                <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%;">
+                 @{
+                            if (@Model.Nickname != User.Identity.Name)
+                            {
+                                <button id="send-friend-request"></button>
+                            }
+                        }
+            </div>
+        </div>
+       
+        
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center" style="height: 100px;">
+                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Index" asp-controller="User" asp-route-id="@Model.Id">Profile</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music</a></div>
+                <div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 1%;">
+                    <div>
+                        <h1>@Model.Nickname</h1></div>
+                    <div>@Model.Name @Model.Surname</div>
+                </div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Photos" asp-controller="User" asp-route-id="@Model.Id">Photos</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Friends" asp-controller="User" asp-route-id="@Model.Id">Friends</a></div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-around; position: relative; width: 100%;">
+        <div class="shadow-lg" style="margin: 1%; width: 22%; height: 500px; background: #fff;
+                                                                    border-radius: 5px;
+                                                                    display: flex;">
+            слева
+        </div>
+        <div id="content" style="margin: 1%; width: 50%;">
+            @RenderBody()
+            <div style="">
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow-lg" style="margin: 1%; width: 22%; height: 500px; background: #fff;
+                                                                    border-radius: 5px;
+                                                                    display: flex;">
+            справа
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@{
+    if (@Model.Nickname != User.Identity.Name)
+    {
+
+<script type="text/javascript">
+
+    $(document).on('click', '#send-friend-request', function() {
+                                   $.ajax({
+                                     url:'@Url.Action("FriendRequestButtonResponse", "User")',
+                                     type:'POST',
+                                     async: false,
+                                     data: {
+                                         id: @Model.Id
+                                     }
+                                   }
+                  );
+     let button = document.getElementById("send-friend-request");
+     button.innerText= FriendStatus();                              
+                                   
+     });
+    
+    let FriendStatus = function(){
+        let res = "";
+        $.ajax({
+                url: '@Url.Action("CheckFriendStatus", "User")',
+                type: 'GET',
+                async: false,
+                data: {
+                   id: @Model.Id,
+                }
+              }).done(function(result) {
+                  res = result;
+                                                                                                                                         
+              });
+                         if(res === "friends"){
+                             return "В друзьях"
+                         } else
+                         if(res === "subscriber"){
+                             return "Ваш подщипчик"
+                         } else
+                         if(res === "output"){
+                             return "Заяука отправлена"
+                         } else
+                         if(res === "input"){
+                             return "Принять заявку"
+                         } else
+                         if(res === "none"){
+                             return "Отправить заявку"
+                         }  
+    };
+    
+    $(document).ready(function() {
+         let button = document.getElementById("send-friend-request");
+         button.innerHTML = FriendStatus();
+    })
+    
+</script>
+    }
+}

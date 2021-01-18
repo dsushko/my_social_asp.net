@@ -1,0 +1,29 @@
+﻿@model LoginModel
+@{
+    Layout = "_Layout_Start";
+}
+<ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a id="login-p" class="nav-link active">Login</a>
+            </li>
+            <li class="nav-item">
+                <a id="register-p" class="nav-link" asp-action="Register" asp-controller="Account">Register</a>
+            </li>
+        </ul>
+<div id="form-lr" style="margin: 3%; display: flex; flex-direction: column; justify-content: center;text-align: center;">
+    <div><h3>Log in</h3></div>
+    <form asp-action="Login" asp-controller="Account" style="text-align: start"> 
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input asp-for="Nickname" type="text" class="form-control" id="login" placeholder="Login">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div>
+            <button  type="submit" class="btn btn-primary mb-2">Login</button>
+            <a style="margin-left: 5%;" href="#">Forgot password?</a>
+        </div>
+    </form>
+</div>
