@@ -11,71 +11,79 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/F3/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/262/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/FileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A3E1617D-5570-4133-A1FB-D5F9A8E16147/2/AuthenticationHttpContextExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Services/Mappers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Services/PostService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/81710659-14D5-43A7-93C6-737B18C62BC7/5A/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/1B/ViewResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD2CB23-D71A-41A0-9BF8-B605C5F38AE9/5/FeatureReferences.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/82/ViewExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/12/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/194/ObjectMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/81710659-14D5-43A7-93C6-737B18C62BC7/99/f93c9593/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/CommentModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Comment.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Services/PostService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Post.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/PostModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Services/Mappers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/LoginModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/SongModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/CommentModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/LoginModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/PostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/PhotoModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/RegisterModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/UserModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/NotificationModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2E7F94DA-1173-4EA2-8F7B-8CF1E4F4E91A/4/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18E1594A-9B50-45D0-899C-1EF7114FC7E0/20/ValidationSummaryTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ABD2CB23-D71A-41A0-9BF8-B605C5F38AE9/D/IFormFile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Controllers/FileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/14E/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C7A54E4F-35FF-4103-9018-CB9C447A7673/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/UserModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9DD1842A-7835-4E0B-8277-88485B22F3A8/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/RegisterModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/ApplicationContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Models/ErrorViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D12A3B22-45B0-40DF-96D6-9FAABE3A0C70/13/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/11C/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FACC05D4-AF62-4B25-A050-44976758218B/7/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/24/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApp/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Views/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C7A54E4F-35FF-4103-9018-CB9C447A7673/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/30/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/2AC/MethodBase.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/3DC/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9DD1842A-7835-4E0B-8277-88485B22F3A8/3/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/33/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BBB3B884-123D-47EA-9CD1-5BED540D02AE/0/IIdentity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Notification.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D12A3B22-45B0-40DF-96D6-9FAABE3A0C70/13/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/11C/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Comment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FACC05D4-AF62-4B25-A050-44976758218B/7/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Post.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/FE/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/24/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebApp/Views/Account/UserPosts.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Models/UserPost.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Models/Subscriber.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/Friend.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/LikePost.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/User.cs" />
@@ -93,36 +101,40 @@
         <option value="$PROJECT_DIR$/WebApp/Views/Account/Login.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Models/LoginModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/User.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/wwwroot/css/profile.css" />
         <option value="$PROJECT_DIR$/WebApp/Views/Profile.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/_ViewStart.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" />
         <option value="$PROJECT_DIR$/WebApp/Services/UserService.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/OutResuests.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/Subscribers.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/InRequests.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/PostModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Comment.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/CommentModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Services/Mappers.cs" />
         <option value="$PROJECT_DIR$/WebApp/Services/PostService.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Models/ApplicationContext.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/PhotoModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Models/UserModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/HomeController.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/wwwroot/js/mediaelement/mediaelement-and-player.js" />
         <option value="$PROJECT_DIR$/WebApp/wwwroot/js/audioplayer/mediaelement-and-player.min.js" />
         <option value="$PROJECT_DIR$/WebApp/Models/SongModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/FileController.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/FileController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Models/ApplicationContext.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Models/UserModel.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/UserController1.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Models/NotificationModel.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/ViewModels/Notification.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Services/Mappers.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" />
       </list>
     </option>
   </component>
@@ -245,6 +257,13 @@
       <workItem from="1610962402131" duration="15819000" />
       <workItem from="1610980164228" duration="4113000" />
       <workItem from="1610995181368" duration="4289000" />
+      <workItem from="1611001740352" duration="1380000" />
+      <workItem from="1611055751191" duration="1358000" />
+      <workItem from="1611057195040" duration="3768000" />
+      <workItem from="1611344678817" duration="13686000" />
+      <workItem from="1611484527890" duration="9826000" />
+      <workItem from="1611602684205" duration="813000" />
+      <workItem from="1611834629522" duration="5733000" />
     </task>
     <servers />
   </component>
@@ -267,112 +286,103 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="113" key="GridCell.Tab.0.bottom" timestamp="1610998739549">
+    <state width="1493" height="113" key="GridCell.Tab.0.bottom" timestamp="1611840737459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="113" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610998739549" />
-    <state width="1493" height="113" key="GridCell.Tab.0.center" timestamp="1610998739549">
+    <state width="1493" height="113" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611840737459" />
+    <state width="1493" height="113" key="GridCell.Tab.0.center" timestamp="1611840737459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="113" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610998739549" />
-    <state width="1493" height="113" key="GridCell.Tab.0.left" timestamp="1610998739549">
+    <state width="1493" height="113" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611840737459" />
+    <state width="1493" height="113" key="GridCell.Tab.0.left" timestamp="1611840737459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="113" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610998739549" />
-    <state width="1493" height="113" key="GridCell.Tab.0.right" timestamp="1610998739549">
+    <state width="1493" height="113" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611840737459" />
+    <state width="1493" height="113" key="GridCell.Tab.0.right" timestamp="1611840737459">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="113" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610998739549" />
-    <state width="1493" height="247" key="GridCell.Tab.1.bottom" timestamp="1610980123830">
+    <state width="1493" height="113" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611840737459" />
+    <state width="1493" height="139" key="GridCell.Tab.1.bottom" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.1.center" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.1.center" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.1.left" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.1.left" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.1.right" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.1.right" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.2.bottom" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.2.bottom" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.2.center" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.2.center" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.2.left" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.2.left" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.2.right" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.2.right" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.3.bottom" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.3.bottom" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.3.center" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.3.center" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.3.left" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.3.left" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.3.right" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.3.right" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.4.bottom" timestamp="1610980123831">
+    <state width="1493" height="139" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.4.bottom" timestamp="1611498558404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610980123831" />
-    <state width="1493" height="247" key="GridCell.Tab.4.center" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.4.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611498558404" />
+    <state width="1493" height="139" key="GridCell.Tab.4.center" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.4.left" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.4.center/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.4.left" timestamp="1611498558403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
-    <state width="1493" height="247" key="GridCell.Tab.4.right" timestamp="1610980123830">
+    <state width="1493" height="139" key="GridCell.Tab.4.left/0.0.1536.824@0.0.1536.824" timestamp="1611498558403" />
+    <state width="1493" height="139" key="GridCell.Tab.4.right" timestamp="1611498558404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="247" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1610980123830" />
+    <state width="1493" height="139" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1611498558404" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611357884648">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611357884648" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs</url>
-          <line>124</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" initialLine="98">
-            <startOffsets>
-              <option value="4926" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4927" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs</url>
           <line>35</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" initialLine="35">
             <startOffsets>
-              <option value="1176" />
+              <option value="1174" />
             </startOffsets>
             <endOffsets>
-              <option value="1177" />
+              <option value="1175" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
@@ -382,10 +392,10 @@
           <line>60</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="58">
             <startOffsets>
-              <option value="2119" />
+              <option value="2112" />
             </startOffsets>
             <endOffsets>
-              <option value="2120" />
+              <option value="2113" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />
@@ -395,39 +405,39 @@
           <line>87</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="83">
             <startOffsets>
-              <option value="3349" />
+              <option value="3342" />
             </startOffsets>
             <endOffsets>
-              <option value="3350" />
+              <option value="3343" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/FileController.cs</url>
-          <line>81</line>
+          <line>82</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/FileController.cs" initialLine="81">
             <startOffsets>
-              <option value="2589" />
+              <option value="2757" />
             </startOffsets>
             <endOffsets>
-              <option value="2590" />
+              <option value="2758" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>54</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="54">
+          <url>file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs</url>
+          <line>70</line>
+          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" initialLine="70">
             <startOffsets>
-              <option value="1866" />
+              <option value="2444" />
             </startOffsets>
             <endOffsets>
-              <option value="1867" />
+              <option value="2445" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

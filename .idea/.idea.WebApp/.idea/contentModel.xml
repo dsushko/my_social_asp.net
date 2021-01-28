@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\project2\WebApplication" t="IncludeFlat">
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.css" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdnjs.cloudflare.com_ajax_libs_popper.js_1.14.7_umd_popper.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_code.jquery.com_jquery-3.3.1.slim.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_kit.fontawesome.com_a076d05399.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_css_bootstrap.css" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_js_bootstrap.js" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ъуъ\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_WebApp.-721009540.00" t="ExcludeRecursive" />
+    <e p="C:\webapplic2\WebApp2" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WebApp" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
@@ -19,6 +28,7 @@
           <e p="CommentModel.cs" t="Include" />
           <e p="ErrorViewModel.cs" t="Include" />
           <e p="LoginModel.cs" t="Include" />
+          <e p="NotificationModel.cs" t="Include" />
           <e p="PhotoModel.cs" t="Include" />
           <e p="PostModel.cs" t="Include" />
           <e p="RegisterModel.cs" t="Include" />
@@ -39,12 +49,14 @@
         </e>
         <e p="Services" t="Include">
           <e p="Mappers.cs" t="Include" />
+          <e p="NotificationTemplates.cs" t="Include" />
           <e p="PostService.cs" t="Include" />
           <e p="UserService.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="ViewModels" t="Include">
           <e p="Comment.cs" t="Include" />
+          <e p="Notification.cs" t="Include" />
           <e p="Post.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
@@ -82,9 +94,20 @@
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="Files" t="Include">
+            <e p="Photos" t="Include">
+              <e p="2 gr.jpg" t="Include" />
+              <e p="254906.jpg" t="Include" />
+              <e p="38433159_2140321522856181_2576940979864993792_n.jpg" t="Include" />
+              <e p="c25c94fe96_1000.jpg" t="Include" />
+              <e p="IMG_20200528_123625.jpg" t="Include" />
+              <e p="IMG_20201109_150845.jpg" t="Include" />
+              <e p="IMG_3582.CR2" t="Include" />
+              <e p="swift-language-reference-mind-map.jpg" t="Include" />
+            </e>
             <e p="SongPics" t="Include">
               <e p="bohemian_rhapsody_22. Queen - The Show Must Go On (1).jpg" t="Include" />
               <e p="bohemian_rhapsody_22. Queen - The Show Must Go On.jpg" t="Include" />
+              <e p="fraud.jpg" t="Include" />
               <e p="Luchshaya_alternativa_-_My_Chemical_Romance-Famous_Last_Words_(GET.MP3NOTA.INFO).jpg" t="Include" />
               <e p="uploadedFile.jpg" t="Include" />
             </e>
@@ -94,8 +117,12 @@
               <e p="3 (1).mp3" t="Include" />
               <e p="bohemian_rhapsody_22. Queen - The Show Must Go On (1).mp3" t="Include" />
               <e p="bohemian_rhapsody_22. Queen - The Show Must Go On.mp3" t="Include" />
+              <e p="brainstorm_-_veter_(zvukoff.ru).mp3" t="Include" />
+              <e p="fraud.mp3" t="Include" />
+              <e p="Linkin Park - Numb.mp3" t="Include" />
               <e p="Luchshaya_alternativa_-_My_Chemical_Romance-Famous_Last_Words_(GET.MP3NOTA.INFO).mp3" t="Include" />
               <e p="My Chemical Romance - All The Angels (Live Demo).mp3" t="Include" />
+              <e p="My Chemical Romance - Famous Last Words.mp3" t="Include" />
               <e p="red_hot_chili_peppers_-_dark_necessities_(music-sea.com).mp3" t="Include" />
             </e>
           </e>
@@ -229,14 +256,5 @@
       </e>
       <e p="WebApp.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.css" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdn.plyr.io_3.5.6_plyr.js" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_cdnjs.cloudflare.com_ajax_libs_popper.js_1.14.7_umd_popper.js" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_code.jquery.com_jquery-3.3.1.slim.js" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_kit.fontawesome.com_a076d05399.js" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_css_bootstrap.css" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\config\javascript\extLibs\http_stackpath.bootstrapcdn.com_bootstrap_4.3.1_js_bootstrap.js" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ъуъ\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_WebApp.872225827.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -16,7 +16,7 @@ using WebApp.ViewModels;
 using System.Drawing;
 using System.Net.Mime;
 
-namespace network2.Controllers
+namespace WebApp.Controllers
 {
     public class FileController : Controller
     {
@@ -52,15 +52,15 @@ namespace network2.Controllers
         }
 
         [HttpPost]
-        public void AddPhoto(IFormFile uploadedFile)
+        public async Task<IActionResult> AddPhoto(IFormFile uploadedFile)
         {
             if (uploadedFile != null)
             {
-                string path = "~/Files/Photos/" + uploadedFile.FileName;
+                string path = "/Files/Photos/" + uploadedFile.FileName;
 
                 using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
                 {
-                    uploadedFile.CopyToAsync(fileStream);
+                    await uploadedFile.CopyToAsync(fileStream);
                 }
 
                 PhotoModel model = new PhotoModel
@@ -68,6 +68,7 @@ namespace network2.Controllers
                 _db.PhotoModels.Add(model);
                 _db.SaveChanges();
             }
+            return RedirectToAction("Photos", "User", new { Id = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id } );
         }
 
         [HttpGet]
@@ -120,6 +121,7 @@ namespace network2.Controllers
             return RedirectToAction("Music", "User", new { Id = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id } );
         }
 
+        
         static private bool FileIsMusical(string name)
         {
             int length = name.Length;

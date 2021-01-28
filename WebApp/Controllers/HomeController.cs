@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using network2.Models;
 
-namespace network2.Controllers
+namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace network2.Models
 {
@@ -17,5 +18,6 @@ namespace network2.Models
         public List<int> OutputRequests { get; set; }
         public List<int> Friends { get; set; }
         public List<int> Songs { get; set; }
+        public List<int> Notifications { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using network2.Models;
 
 
-namespace network2.Controllers
+namespace WebApp.Controllers
 {
     public class AccountController : Controller
     {

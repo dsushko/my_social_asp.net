@@ -1,3 +1,62 @@
 @{
     Layout = "_Layout_Profile";
 }
+
+
+@{
+    if (User.Identity.Name == Model.Nickname)
+    {
+        <div id="add-button">
+            <button style="width: 40px; height: 40px; border-radius: 50%">+</button>
+            Add Photo
+        </div>
+        <form id="add-form" asp-action="AddPhoto"  asp-controller="File" method="post"  enctype="multipart/form-data" style="display: none">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="uploadedFile" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <button id="add-photo" type="submit" class="btn btn-primary small">Add Photo</button>
+            </div>
+        </form>
+    }
+}
+
+<div class="container ml-7 mt-3 mb-2">
+    <div style="display: flex; flex-wrap: wrap">
+        <div id="photos"></div>
+
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+         $(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+        
+         $(document).on('click', '#add-button', function() {
+           $("#add-button").css('display', 'none');
+           $("#add-form").css('display', 'block');
+         });
+         
+$(document).ready(function() {
+                $.ajax({
+                      type:'GET',
+                      url:'@Url.Action("GetPhotosByUserId", "User")',
+                      data:{
+                          id: @Model.Id
+                      }      
+                    }).done(function(data) {
+                    let ddl = ' ';
+                    $.each(data, function(index, element){
+                          ddl+= '<div style="margin: 5px;">\n';
+                          ddl+= '<a target="_blank" href="' + element.path + '">';
+                          ddl+= ' <img src="' + element.path + '" style=" width: 225px; height: 225px; object-fit: cover; border: 0px solid black;">';
+                          ddl+= ' </a>\n';
+                          ddl+= '</div>\n';
+                    });
+                    $(ddl).insertAfter('#photos'); 
+                })
+         })
+    </script>

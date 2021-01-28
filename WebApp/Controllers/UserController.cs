@@ -9,7 +9,7 @@ using network2.Models;
 using WebApp.Services;
 using WebApp.ViewModels;
 
-namespace network2.Controllers
+namespace WebApp.Controllers
 {
     public class UserController : Controller
     {
@@ -98,6 +98,8 @@ namespace network2.Controllers
                 .Add(me.Id);
             _db.UserModels.FirstOrDefault(um => um.Id == id).Subscribers
                 .Add(me.Id);
+            _db.NotificationModels.Add(
+                NotificationTemplates.FriendRequestIsSent(me, _db.UserModels.FirstOrDefault(um => um.Id == id)));
             _db.SaveChanges();
         }
         public void WithdrawFriendRequest(int id)
@@ -138,7 +140,6 @@ namespace network2.Controllers
             _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Remove(id);
             _db.SaveChanges();
         }
-
         [HttpGet]
         public string CheckFriendStatus(int id)
         {
@@ -162,8 +163,6 @@ namespace network2.Controllers
             return "none";
 
         }
-
-
         [HttpGet]
         public List<User> GetFriendsByUserId(int id)
         {
@@ -225,6 +224,32 @@ namespace network2.Controllers
             }
          
             return new List<User>();
+        }
+        [HttpGet]
+        public List<PhotoModel> GetPhotosByUserId(int id)
+        {
+            return _db.PhotoModels.Where(u => u.OwnerId == id).ToList();
+        }
+        [HttpGet]
+        public List<Notification> GetNotificationsByReceiverNickname(string name)
+        {
+            int id = _db.UserModels.FirstOrDefault(um => um.Nickname == name).Id;
+            
+            List<NotificationModel> appropModels = new List<NotificationModel>();
+            appropModels =  _db.NotificationModels.Where(nm => nm.ReceivingPersonId == id).ToList();
+            
+            List<Notification> result = new List<Notification>();
+            result = _db.NotificationModels.Where(nm => nm.ReceivingPersonId == id).
+                Select(Mappers.BuildNotification).ToList();
+            
+            foreach (var nm in appropModels)
+            {
+                result.Find(n => n.Id == nm.Id).SenderUser
+                    = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.SenderId));
+                result.Find(n => n.Id == nm.Id).TargetUser
+                    = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
+            }
+            return result;
         }
     }
 }

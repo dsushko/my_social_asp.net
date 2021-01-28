@@ -13,7 +13,7 @@ namespace network2.Models
         public DbSet<CommentModel> CommentModels { get; set; }
         public DbSet<PhotoModel> PhotoModels { get; set; }
         public DbSet<SongModel> SongModels { get; set; }
-        
+        public DbSet<NotificationModel> NotificationModels { get; set; }
         
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)

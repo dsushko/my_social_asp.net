@@ -46,5 +46,22 @@ namespace WebApp.Services
             };
             return c;
         }
+
+        public static Notification BuildNotification(NotificationModel nm)
+        {
+            Notification n = new Notification()
+            {
+                PicturePath = nm.PicturePath,
+                Id = nm.Id,
+                ReceivingPersonId = nm.ReceivingPersonId,
+                SenderType = nm.SenderType, 
+                SenderUser = new User(),
+                TargetType = nm.TargetType,
+                TargetUser = new User(),
+                Text = nm.Text,
+                Time = nm.Time
+            };
+            return n;
+        }
     }
 }

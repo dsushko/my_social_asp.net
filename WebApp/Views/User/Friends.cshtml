@@ -17,13 +17,18 @@
             <li class="nav-item">
                 <a class="nav-link active" id="friends">Friends</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="input-requests">Input requests</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="output-requests">Output requests</a>
-            </li>
-            <li class="nav-item">
+            @{
+                if (User.Identity.Name == Model.Nickname)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" id="input-requests">Input requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="output-requests">Output requests</a>
+                    </li>
+                }
+            }
+                <li class="nav-item">
                 <a class="nav-link" id="subscribers">Subscribers</a>
             </li>
         </ul>

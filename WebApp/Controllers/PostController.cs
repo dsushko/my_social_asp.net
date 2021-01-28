@@ -8,7 +8,7 @@ using network2.Models;
 using WebApp.Services;
 using WebApp.ViewModels;
 
-namespace network2.Controllers
+namespace WebApp.Controllers
 {
     public class PostController : Controller
     {
@@ -54,7 +54,7 @@ namespace network2.Controllers
         public void DeletePost(int Id)
         {
             _appContext.PostModels.Remove(_appContext.PostModels.FirstOrDefault(pm => pm.Id == Id));
-            _appContext.SaveChangesAsync();
+            _appContext.SaveChanges();
         }
         [HttpPost]
         public Comment SaveAndReturnComment(string text, int postId)

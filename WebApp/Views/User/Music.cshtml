@@ -142,13 +142,14 @@
 
 </style>
 
-<div id="add-button">
-    <button style="width: 40px; height: 40px; border-radius: 50%">+</button>
-    Add Song
-</div>
+
 @{
     if (User.Identity.Name == Model.Nickname)
     {
+     <div id="add-button">
+      <button style="width: 40px; height: 40px; border-radius: 50%">+</button>
+      Add Song
+     </div>
         <form id="add-form" asp-action="AddSong"  asp-controller="File" method="post"  enctype="multipart/form-data" style="display: none">
             <div class="custom-file">
                 <input type="file" class="custom-file-input" name="uploadedFile" id="customFile">
@@ -160,41 +161,37 @@
 }
 
 <div id="songs">
-        <div class="audio-player" style="margin: 3px;">
-            <h1> name </h1>
-            <img class="cover" src="@Url.Content("~/Files/SongPics/uploadedFile.jpg")" width="75px" height="75px" alt="">
-            <audio id="audio-player" type="audio/mp3" src="@Url.Content("~/Files/Songs/1.mp3")" controls="controls"> </audio>
-         </div>
+
 </div>
 
 
 <script>
+
+
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+
+let player;
 
 $(document).on('click', '#add-button', function() {
   $("#add-button").css('display', 'none');
   $("#add-form").css('display', 'block');
 });
 
+
 let MakeSongHTML = function(songModel){
     let ddl = ' ';
     ddl += '<div class="audio-player" style="margin: 3px;">' +
            '       <h1> ' + songModel.artist + " - " + songModel.name +' </h1>' +
            '       <img class="cover" src="' + songModel.picturePath +'" width="75px" height="75px" alt="">' +
-           '       <audio id="audio-player" type="audio/mp3" src="' + songModel.path + '"> </audio>' + 
+           '       <audio id="audio-player' + songModel.id +'" type="audio/mp3" src="' + songModel.path + '"> </audio>' + 
            '   </div>';
     return ddl;
 };
-$('#audio-player').mediaelementplayer({
-               	pluginPath: "~/js/mediaelement/mediaelement-and-player.js",
-                alwaysShowControls: true,
-                features: ['playpause','volume','progress'],
-                audioVolume: 'horizontal',
-                audioWidth: 400,
-                audioHeight: 120,
-                		
-   });
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+$(document).ready( function(){ 
   $.ajax({
              url:'@Url.Action("GetSongsByUserId", "File")',
              type: 'GET',
@@ -208,22 +205,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
                   ddl+=MakeSongHTML(model);        
              });
              $(ddl).insertAfter('#songs');
-             
-             $('#audio-player').mediaelementplayer({
-             		pluginPath: "~/js/mediaelement/mediaelement-and-player.js",
-                     alwaysShowControls: true,
+
+             $.each(data, function(index, model) {
+                 $('#audio-player'+ model.id).mediaelementplayer({
+             		       pluginPath: "~/js/mediaelement/mediaelement-and-player.js",
+                      alwaysShowControls: true,
                       features: ['playpause','volume','progress'],
                       audioVolume: 'horizontal',
                       audioWidth: 400,
-                      audioHeight: 120,
-             		
-             	});
-           
-              
+                      audioHeight: 120,  		
+             	    });   
+              });
        })
-});
-
-
-
+})
 
 </script>

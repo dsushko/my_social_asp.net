@@ -6,26 +6,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - network2 </title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css"  />
     <link rel="stylesheet" href="~/css/login.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="~/js/mediaelement/mediaelement-and-player.min.js"></script>
 </head>
 
+<style>
+#show-post-big:hover {
+  cursor: pointer;
+}
 
+</style>
 
 <body>
 
 <div>
     <div id="header" style="height: 45px; background: #4e555b; display: flex; position: sticky; top: 0; z-index: 5; align-items: center;  justify-content: flex-end;">
-        <form style="margin-right: 55%">
-                <a href="@Url.RouteUrl(new { controller = "User", action = "IndexByName", name = @User.Identity.Name })" class="btn-primary">HOME</a>        
+        <form style="margin-right: 25%">
+            <a href="@Url.RouteUrl(new { controller = "User", action = "IndexByName", name = @User.Identity.Name })" class="btn-primary">HOME</a>        
         </form>
+        <div  style="margin-right: 25%">
+            <div class="dropdown">
+                <button id="show-notifications" class="btn btn-secondary dropdown-toggle"
+                        type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    Notifications
+                </button>
+                <div class="dropdown-menu" aria-labelledby="notifications" style="width: 500px;">
+                    <div id="ntfs"></div>
+                  
+                </div>
+            </div>
+        </div>
         <div class="dropdown" style="margin-right: 10%; ">
             <a style="" class="dropdown-toggle text-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="@Url.Content(@Model.AvatarPath)" width="30px" height="30px" style="border-radius: 50%">
@@ -43,12 +61,12 @@
         <div style="display:flex; justify-content:center; width: 100%; height: 400px; background: url(@Url.Content("~/profile_header1.jpg"));">
             <div style="align-self: flex-end; display: flex; flex-direction: row; width: 220px; height: 220px;">
                 <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%;">
-                 @{
-                            if (@Model.Nickname != User.Identity.Name)
-                            {
-                                <button id="send-friend-request"></button>
-                            }
-                        }
+                @{
+                    if (@Model.Nickname != User.Identity.Name)
+                    {
+                        <button id="send-friend-request"></button>
+                    }
+                }
             </div>
         </div>
        
@@ -67,11 +85,11 @@
             </div>
         </div>
     </div>
-    <div style="display: flex; justify-content: space-around; position: relative; width: 100%;">
-        <div class="shadow-lg" style="margin: 1%; width: 22%; height: 500px; background: #fff;
+    <div style="background: #e7e9e6; display: flex; justify-content: space-around; position: relative; width: 100%;">
+        <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
                                                                     border-radius: 5px;
                                                                     display: flex;">
-            слева
+            
         </div>
         <div id="content" style="margin: 1%; width: 50%;">
             @RenderBody()
@@ -80,16 +98,103 @@
                 </div>
             </div>
         </div>
-        <div class="shadow-lg" style="margin: 1%; width: 22%; height: 500px; background: #fff;
+        <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
                                                                     border-radius: 5px;
                                                                     display: flex;">
-            справа
+            
         </div>
     </div>
 </div>
+
+<div class="modal" id="post-big" tabindex="-1" role="dialog" aria-labelledby="post-big-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="post-big-label">Modal title</h5>
+        <button id="post-big-close" type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    
+    $(document).on('click', '#show-notifications', function() {
+            $.ajax({
+                 url:'@Url.Action("GetNotificationsByReceiverNickname", "User")',
+                 type:'GET',
+                 async: false,
+                 data: {
+                     name: '@User.Identity.Name'
+                 }
+            }).done(function(notifications) {
+                $.each(notifications, function(index, element){
+                    let ntfcs = " ";
+                      ntfcs += ReturnNotificationHTMLCard(element);
+                      $(ntfcs).insertAfter("#ntfs");
+                }); 
+            })                               
+         });
+    
+    $(document).ready(function() {
+            let url = new URL(window.location.href);
+            let postToShow = url.searchParams.get('wall');
+            if(postToShow != null){
+                $("#post-big").modal('show');
+            }
+    });
+     
+    $(document).on('click', '#post-big-close', function(){
+            let url = new URL(window.location.href);
+            url.searchParams.delete('wall');
+            history.pushState(null, null, url.toString());
+            $("#post-big").modal('hide')
+    });
+    
+    $(document).on('click', '#show-post-big', function() {
+            let url = new URL(window.location.href);
+            url.searchParams.append('wall', $(this).data("id"));
+            history.pushState(null, null, url.toString());
+            $("#post-big").modal('show');
+    });
+    
+    let ReturnNotificationHTMLCard = function(data) {
+             let ddl = ' '; 
+             ddl+='<div id="notification-'+ data.id +'"style="display: flex; width: 100%; border-radius: 2px; margin: 0.5%;">\n';
+             ddl+=           '            <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '" style="margin-left: 5px;">' +
+                             '<img src="' + data.picturePath + '" width="40px" height="40px" style=" border-radius: 50% ">' +
+                             '</a>\n';
+             ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
+             ddl+=           '        <div id="notification-text-'+ data.id +'" class="comment-text">\n';
+             ddl+=           '   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
+             ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
+             ddl+=            ConvertTimeToNotificationFormat(data.time);
+             ddl+=           '           </div>';
+             ddl+=           '        </div>\n';
+             ddl+=           '     </div>\n';
+             ddl+=           '  </div>';        
+             return ddl;
+         };
+    
+     let ConvertTimeToNotificationFormat = function(time){
+                     let t = ' ';
+                     for(let i = 11; i < 16; i++){
+                     t += time[i];
+                     }
+                     return t;
+            };
+ 
+</script>
 @{
     if (@Model.Nickname != User.Identity.Name)
     {
@@ -107,10 +212,9 @@
                                    }
                   );
      let button = document.getElementById("send-friend-request");
-     button.innerText= FriendStatus();                              
-                                   
+     button.innerText= FriendStatus();                                                                
      });
-    
+   
     let FriendStatus = function(){
         let res = "";
         $.ajax({
