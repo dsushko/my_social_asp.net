@@ -125,6 +125,25 @@
   </div>
 </div>
 
+<div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="photo-big-label">Modal title</h5>
+        <button id="photo-big-close" type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
 <script>
@@ -147,10 +166,23 @@
          });
     
     $(document).ready(function() {
-            let url = new URL(window.location.href);
-            let postToShow = url.searchParams.get('wall');
-            if(postToShow != null){
+            let url = new URL(window.location.href);      
+            let isSomePostId = url.searchParams.has('wall');
+            let isSomePhotoId = url.searchParams.has('photo');
+            if(isSomePostId === true){
+                let idOfPostToShow = url.searchParams.get('wall');
                 $("#post-big").modal('show');
+            }
+            if(isSomePhotoId === true){
+                let idOfPhotoToShow = url.searchParams.get('photo');
+                $.ajax({
+                url: @Url.Action("GetPhotoById", "File"),
+                
+                }).done(function() {
+                    
+                   $("#photo-big").modal('show');
+                })
+               
             }
     });
      
@@ -167,6 +199,20 @@
             history.pushState(null, null, url.toString());
             $("#post-big").modal('show');
     });
+    
+    $(document).on('click', '#photo-big-close', function(){
+                let url = new URL(window.location.href);
+                url.searchParams.delete('photo');
+                history.pushState(null, null, url.toString());
+                $("#photo-big").modal('hide')
+        });
+        
+    $(document).on('click', '#show-photo-big', function() {
+                let url = new URL(window.location.href);
+                url.searchParams.append('photo', $(this).data("id"));
+                history.pushState(null, null, url.toString());
+                $("#photo-big").modal('show');
+        });
     
     let ReturnNotificationHTMLCard = function(data) {
              let ddl = ' '; 

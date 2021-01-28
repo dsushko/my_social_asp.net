@@ -28,15 +28,15 @@
 </div>
 
 <script>
-         $(".custom-file-input").on("change", function() {
+  $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
         
-         $(document).on('click', '#add-button', function() {
-           $("#add-button").css('display', 'none');
-           $("#add-form").css('display', 'block');
-         });
+ $(document).on('click', '#add-button', function() {
+     $("#add-button").css('display', 'none');
+     $("#add-form").css('display', 'block');
+ });
          
 $(document).ready(function() {
                 $.ajax({
