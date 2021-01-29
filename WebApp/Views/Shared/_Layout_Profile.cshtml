@@ -126,27 +126,59 @@
 </div>
 
 <div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="photo-big-label">Modal title</h5>
-        <button id="photo-big-close" type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+  <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
+          <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+              <div class="modal-body" style="padding: 0;">
+                  <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+                  
+                  </div>
+              </div>
+              <div id="modal-photo-info" style="width: 300px; background: white; height: inherit">
+                  <div id="modal-photo-owner-data">
+
+                  </div>
+                  <div id="modal-photo-comments">
+                      
+                  </div>
+              </div>
+             
+          </div>
+           <div>
+           <button id="photo-big-close" type="button" class="close" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+           </button>
+           </div>
   </div>
 </div>
 
 </body>
 </html>
 <script>
+        
+    $(document).ready(function() {
+            let url = new URL(window.location.href);      
+            let isSomePostId = url.searchParams.has('wall');
+            let isSomePhotoId = url.searchParams.has('photo');
+            if(isSomePostId === true){
+                let idOfPostToShow = url.searchParams.get('wall');
+                $("#post-big").modal('show');
+            }
+            if(isSomePhotoId === true){
+                let idOfPhotoToShow = url.searchParams.get('photo');
+                $.ajax({
+                                url: '@Url.Action("GetPhotoById", "File")',
+                                type: 'GET',
+                                data: {
+                                    id: parseInt(idOfPhotoToShow.toString()),
+                                }
+                                }).done(function(photo) {
+                                    document.getElementById("modal-photoplace").
+                                    innerHTML = '<img src="' + photo.path + '" style="max-height: 700px;">';
+                                   $("#photo-big").modal('show');
+                                });
+               
+            }
+    });
     
     $(document).on('click', '#show-notifications', function() {
             $.ajax({
@@ -164,27 +196,6 @@
                 }); 
             })                               
          });
-    
-    $(document).ready(function() {
-            let url = new URL(window.location.href);      
-            let isSomePostId = url.searchParams.has('wall');
-            let isSomePhotoId = url.searchParams.has('photo');
-            if(isSomePostId === true){
-                let idOfPostToShow = url.searchParams.get('wall');
-                $("#post-big").modal('show');
-            }
-            if(isSomePhotoId === true){
-                let idOfPhotoToShow = url.searchParams.get('photo');
-                $.ajax({
-                url: @Url.Action("GetPhotoById", "File"),
-                
-                }).done(function() {
-                    
-                   $("#photo-big").modal('show');
-                })
-               
-            }
-    });
      
     $(document).on('click', '#post-big-close', function(){
             let url = new URL(window.location.href);
@@ -211,6 +222,18 @@
                 let url = new URL(window.location.href);
                 url.searchParams.append('photo', $(this).data("id"));
                 history.pushState(null, null, url.toString());
+                let idOfPhotoToShow = url.searchParams.get('photo');
+                                $.ajax({
+                                                url: '@Url.Action("GetPhotoById", "File")',
+                                                type: 'GET',
+                                                data: {
+                                                    id: parseInt(idOfPhotoToShow.toString()),
+                                                }
+                                                }).done(function(photo) {
+                                                    document.getElementById("modal-photoplace").
+                                                    innerHTML = '<img src="' + photo.path + '" style="max-height: 700px;">';
+                                                   $("#photo-big").modal('show');
+                                                });
                 $("#photo-big").modal('show');
         });
     
@@ -232,7 +255,7 @@
              return ddl;
          };
     
-     let ConvertTimeToNotificationFormat = function(time){
+    let ConvertTimeToNotificationFormat = function(time){
                      let t = ' ';
                      for(let i = 11; i < 16; i++){
                      t += time[i];

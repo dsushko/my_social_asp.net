@@ -49,9 +49,7 @@ $(document).ready(function() {
                     let ddl = ' ';
                     $.each(data, function(index, element){
                           ddl+= '<div style="margin: 5px;">\n';
-                          ddl+= '<a target="_blank" href="' + element.path + '">';
-                          ddl+= ' <img src="' + element.path + '" style=" width: 225px; height: 225px; object-fit: cover; border: 0px solid black;">';
-                          ddl+= ' </a>\n';
+                          ddl+= ' <img id="show-photo-big" data-id="' + element.id + '" src="' + element.path + '" style=" cursor: pointer; width: 225px; height: 225px; object-fit: cover; border: 0px solid black;">';
                           ddl+= '</div>\n';
                     });
                     $(ddl).insertAfter('#photos'); 
