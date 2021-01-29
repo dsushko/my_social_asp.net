@@ -57,6 +57,7 @@
         <e p="ViewModels" t="Include">
           <e p="Comment.cs" t="Include" />
           <e p="Notification.cs" t="Include" />
+          <e p="Photo.cs" t="Include" />
           <e p="Post.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>

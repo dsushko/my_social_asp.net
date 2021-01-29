@@ -60,7 +60,7 @@
     };
     
     var ReturnUserHTMLCard = function(element) {
-             ddl = " ";
+             let ddl = " ";
              ddl += '<div class="card">\n';
              ddl += '<img src="';
              ddl +=  element.avatarPath + '"';
@@ -180,24 +180,24 @@
                                   SetTabsNumbersQuantity();
                               });
         });
-    $(document).ready(function() {
-      SetTabsNumbersQuantity();
+    $(document).ready(function() {     
       document.getElementById("results").innerHTML = " ";
-              $.ajax({
-                          url:'@Url.Action("GetFriendsByUserId", "User")',
-                          type:'GET',
-                          data: {
-                          id: @Model.Id
-                          }
-                          })
-                          .done(function (data){
-                               let users = ' ';
-                               $.each(data, function(index, element){
-                               users+=ReturnUserHTMLCard(element);
-                          });               
-                              document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;   
-                              
-                          });
+             $.ajax({
+                                 url:'@Url.Action("GetFriendsByUserId", "User")',
+                                 type:'GET',
+                                 data: {
+                                 id: @Model.Id
+                                 }
+                                 })
+                                 .done(function (data){
+                                      let users = ' ';
+                                      $.each(data, function(index, element){
+                                      users+=ReturnUserHTMLCard(element);
+                                 });               
+                                     document.getElementById("results").innerHTML = document.getElementById("results").innerHTML + users;     
+                                     SetTabsNumbersQuantity();
+                                 });
+             SetTabsNumbersQuantity();
     })
 
 </script>

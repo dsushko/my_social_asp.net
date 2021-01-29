@@ -203,34 +203,7 @@ flex-direction: row;
  $(document).on('click', '#delete-post', function() {
    DeletePost($(this).data("id"));
  });
- 
-    let ConvertTimeToPostFormat = function(time){
-             let t = ' ';
-             for(let i = 11; i < 16; i++){
-             t += time[i];
-             }
-             t+=' ';
-             t+=time[8];
-             t+=time[9];
-             t+='.';
-             t+=time[5];
-             t+=time[6];
-             t+='.';
-             t+=time[0];
-             t+=time[1];
-             t+=time[2];
-             t+=time[3];
-             return t;
-    };
-    
-    let ConvertTimeToCommentFormat = function(time){
-                 let t = ' ';
-                 for(let i = 11; i < 16; i++){
-                 t += time[i];
-                 }
-                 return t;
-        };
-    
+
     let DeletePost = function(id) {
         $.ajax({
         url:'@Url.Action("DeletePost", "Post")',
@@ -241,7 +214,7 @@ flex-direction: row;
         }).done(function() {
            document.getElementById("post-" + id).innerHTML = "";
         })
-    }
+    };
     
     let IsLikedByUser = function(postId){ 
      let result = false;
@@ -278,7 +251,7 @@ flex-direction: row;
         ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
         ddl+=           '                </div>\n';
         ddl+=           '                <div style="color: #b9b9b9">\n';
-        ddl+=           '<a id="show-post-big" onclick="function(){}" data-id= "' + data.id + '" style="color: grey;">' +    ConvertTimeToPostFormat(data.date) + '<\a>';
+        ddl+=           '<a id="show-post-big" data-id= "' + data.id + '" style="color: grey;">' +    ConvertTimeToPostFormat(data.date) + '<\a>';
         ddl+=           '                </div>\n';
         ddl+=           '            </div>\n';
         ddl+=           '            <div id="post-options-'+ data.id +'" class="dropdown" style="margin-left: auto; color: #b6b6b6">\n';
@@ -332,26 +305,5 @@ flex-direction: row;
         
         return ddl;
     };
- 
-    let CommentMakeHTML = function(data) {
-         let ddl = ' '; 
-         ddl+='<div id="comment'+ data.id +'"style="width: 100%; border-radius: 2px; margin: 0.5%;">\n';
-         ddl+=           '        <div id="comment-header-'+ data.id +'" class="comment-header" style=" border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">\n';
-         ddl+=           '            <img src="' + data.owner.avatarPath + '" width="40px" height="40px" style="border-radius: 50% ">\n';
-         ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
-         ddl+=           '                <div style="color: #20257c; font-size: 15px;">\n';
-         ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
-         ddl+=           '                </div>\n';
-         ddl+=           '        <div id="comment-text-'+ data.id +'" class="comment-text">\n';
-         ddl+=            data.text;
-         ddl+=           '        </div>\n';
-         ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
-         ddl+=            ConvertTimeToCommentFormat(data.time) + ' | Answer';
-         ddl+=           '           </div>';
-         ddl+=           '        </div>\n';
-         ddl+=           '     </div>\n';
-         ddl+=           '  </div>';        
-         return ddl;
-     };
-    
+   
 </script>

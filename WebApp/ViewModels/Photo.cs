@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace network2.Models
+namespace WebApp.ViewModels
 {
-    public class PhotoModel
+    public class Photo
     {
         public int Id{ get; set; }
         public string Path { get; set; }
         public int OwnerId { get; set; }
+        public User Owner { get; set; }
         public DateTime Time { get; set; }
         public int Rating { get; set; }
         public List<int> LikeUsers { get; set; }
