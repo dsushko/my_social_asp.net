@@ -126,9 +126,11 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        public PhotoModel GetPhotoById(int id)
+        public Photo GetPhotoById(int id)
         {
-            return _db.PhotoModels.FirstOrDefault(pm => pm.Id == id);
+            Photo photo = Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == id));
+            photo.Owner = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == photo.OwnerId));
+            return photo;
         }
         
         static private bool FileIsMusical(string name)
