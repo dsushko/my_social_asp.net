@@ -150,18 +150,13 @@
                   <div id="modal-photo-comments">
                       
                   </div>
-                  <div style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
-                      <div style="display:flex; flex-direction: row; width:100%; align-items: flex-start;">
-                          <textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="comment-'+ data.id +'" name="text"></textarea>
-                          <button class="btn btn-primary" data-id="' + data.id + '" style="margin-bottom: 0;" id="post-comment">
-                              Submit
-                          </button>
-                      </div>
+                  <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
+                      
                   </div>
               </div>
           </div>
            <div>
-                <button id="photo-big-close" type="button" class="close" aria-label="Close">
+                <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
            </div>
@@ -172,7 +167,7 @@
 </html>
 <script>
         
-    $(document).ready(function() {
+    $(document).ready( function() {
             let url = new URL(window.location.href);      
             let isSomePostId = url.searchParams.has('wall');
             let isSomePhotoId = url.searchParams.has('photo');
@@ -181,7 +176,7 @@
                 $("#post-big").modal('show');
             }
             if(isSomePhotoId === true){
-                PreparePhotoModal(url);        
+                 PreparePhotoModal(url);        
                 $("#photo-big").modal('show');
             }
     });
@@ -231,7 +226,45 @@
                 PreparePhotoModal(url);
                 $("#photo-big").modal('show');
         });
+      
+    $(document).on('click', '.like', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Photo")',
+               type:'POST',
+               data: {   
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("modal-photo-like-count");
+             v.innerHTML = String(parseInt(v.innerHTML) + 1);
+             $(this).css('color', 'red');
+             $(this).removeClass("like");
+             $(this).addClass("unlike");
+             
+     });
+ 
+    $(document).on('click', '.unlike', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Photo")',
+               type:'POST',
+               data: {
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("modal-photo-like-count");
+             v.innerHTML = String(parseInt(v.innerHTML) - 1);
+             $(this).css('color', 'gray');
+             $(this).removeClass("unlike");
+             $(this).addClass("like");
+        });
     
+    let ClearPhotoModal = function(){
+        document.getElementById("modal-photo-comments").innerHTML = "";
+        document.getElementById("modal-photo-reactions").innerHTML = "";
+        document.getElementById("modal-photoplace").innerHTML = "";
+        document.getElementById("modal-photo-owner-data").innerHTML = "";
+    };
+        
     let PreparePhotoModal = function(url){
       
                 let idOfPhotoToShow = url.searchParams.get('photo');
@@ -261,27 +294,71 @@
                        document.getElementById("modal-photo-owner-data").innerHTML = ddl;
                        
                        ddl= ' ';
-                       ddl+=           '        <div id="big-photo-reactions-'+ photo.id +'" style="margin: 5%;">\n';
-                       ddl+=           '            <i class="fas fa-heart reaction-button '+ /*ReturnLikeUnlike(IsLikedByUser(data.id)) +*/'" data-id="' + photo.id  + '" id="l'+ photo.id +'"></i> <a id="like'+ photo.id +'">'+ photo.rating +'</a>\n';
+                       ddl+=           '        <div id="modal-photo-reactions-'+ photo.id +'" style="margin: 5%;">\n';
+                       ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPhotoLikedByUser(photo.id)) + '" data-id="' + photo.id  + '" id="modal-photo-like"></i> <a id="modal-photo-like-count">'+ photo.rating +'</a>\n';
                        ddl+=           '            <i style="margin: 3%;" class="fas fa-reply reaction-button" data-id="' + photo.id  + '" id="share"></i> ';
                        ddl+=           '        </div>\n';
                        document.getElementById("modal-photo-reactions").innerHTML = ddl;
-                       
+                       if(IsPhotoLikedByUser(photo.id)){
+                            $('#modal-photo-like').css('color', 'red');
+                            $('#modal-photo-like').removeClass("like-post");
+                            $('#modal-photo-like').addClass("unlike-post");
+                       }
                        ddl=' ';
                        $.ajax({
-                         url:'@Url.Action("GetCommentsByPostId", "Post")',
+                         url:'@Url.Action("GetCommentsByPhotoId", "Photo")',
                          type: 'GET',
                          data: {
-                             postId: photo.id,
+                             id: photo.id,
                          }
                        }).done(function(comments) {
                             $.each(comments, function(index, comment){
                                  ddl += CommentMakeHTML(comment);
                             });
                             document.getElementById("modal-photo-comments").innerHTML = ddl; 
+                            ddl = " ";
+                            ddl+= '<div style="display:flex; flex-direction: row; width:100%; align-items: flex-start;">';
+                            ddl+= '<textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="modal-photo-comment-text" name="text"></textarea>';
+                            ddl+= '<button class="btn btn-primary" data-id="' + photo.id + '" id="modal-photo-send-comment-button" style="margin-bottom: 0;">';
+                            ddl+=    'Submit';
+                            ddl+= '</button>';
+                            ddl+= '</div>';
+                            document.getElementById("modal-photo-write-comment").innerHTML = ddl;
                        });
+                       
                     });  
     };
+    
+    $(document).on('click', '#modal-photo-send-comment-button', function(){
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("SaveAndReturnComment", "Photo")',
+            data: {
+                photoId: $(this).data("id"),
+                text: $("#modal-photo-comment-text").val(),
+            }
+        }).done(function(comment) {         
+            let ddl = ' ';
+            ddl+=CommentMakeHTML(comment);
+            document.getElementById("modal-photo-comments").innerHTML += ddl;
+        })
+    })
+    
+    let IsPhotoLikedByUser = function(postId){ 
+         let result = false;
+         $.ajax({
+            url:'@Url.Action("IsLikedByUser", "Photo")',
+            type: 'GET',
+            async: false,
+                data:{
+                    id: postId
+            }
+         }).done(function(answer) {
+             result = answer;
+         });
+                
+        return result;
+     };
     
     let CommentMakeHTML = function(data) {
          let ddl = ' '; 
@@ -356,6 +433,14 @@
              t+=time[3];
              return t;
     };
+    
+   let ReturnCSSLikeUnlike = function(bool){
+         if(bool === true){
+             return "unlike";
+         }
+         return "like";
+     };
+   
 </script>
 @{
     if (@Model.Nickname != User.Identity.Name)

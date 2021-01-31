@@ -59,21 +59,27 @@ namespace WebApp.Controllers
         [HttpPost]
         public Comment SaveAndReturnComment(string text, int postId)
         {
-            
+            DateTime now = DateTime.Now;
             CommentModel commentModel = new CommentModel
             {
                 Text = text, 
-                Time = DateTime.Now, 
+                Time = now, 
                 OwnerId = _appContext.UserModels.FirstOrDefault( um => um.Nickname == User.Identity.Name).Id, 
                 PostId = postId,
                 Rating = 0,
             };
-            _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments.Add(commentModel.Id);
             _appContext.CommentModels.Add(commentModel);
+            _appContext.SaveChanges();
+            _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments
+                .Add(_appContext.CommentModels
+                    .FirstOrDefault(cm => cm.Text == text 
+                                          && cm.OwnerId ==_appContext.UserModels.FirstOrDefault( um => um.Nickname == User.Identity.Name).Id &&
+                                          cm.PostId == postId && cm.Time == now).Id);
+            
             _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).CommentQuantity 
                 = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments.Count;
-
             _appContext.SaveChanges();
+           
             Comment comment = new Comment()
             {
                 Text = text, 
@@ -100,13 +106,13 @@ namespace WebApp.Controllers
         [HttpGet]
         public List<Comment> GetCommentsByPostId(int postId)
         {
-            return _postService.BuildCommentWithUser(_appContext.CommentModels.Where(cm => cm.PostId == postId).OrderByDescending(cm => cm.Time).ToList());
+            PostModel thisPhoto = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId);
+            return _postService.BuildCommentWithUser(_appContext.CommentModels.Where(cm => thisPhoto.Comments.Contains(cm.Id)).OrderByDescending(cm => cm.Time).ToList());
         }
         [HttpPost]
         public void LikeButtonResponse(int postId)
         {
             UserModel user = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            PostModel post = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId);
             if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers.Contains(user.Id))
             {
                 _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers

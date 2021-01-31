@@ -20,6 +20,7 @@
           <e p="AccountController.cs" t="Include" />
           <e p="FileController.cs" t="Include" />
           <e p="HomeController.cs" t="Include" />
+          <e p="PhotoController.cs" t="Include" />
           <e p="PostController.cs" t="Include" />
           <e p="UserController.cs" t="Include" />
         </e>
@@ -50,6 +51,7 @@
         <e p="Services" t="Include">
           <e p="Mappers.cs" t="Include" />
           <e p="NotificationTemplates.cs" t="Include" />
+          <e p="PhotoService.cs" t="Include" />
           <e p="PostService.cs" t="Include" />
           <e p="UserService.cs" t="Include" />
         </e>
@@ -96,13 +98,16 @@
           <e p="favicon.ico" t="Include" />
           <e p="Files" t="Include">
             <e p="Photos" t="Include">
+              <e p="1572287293186356628.png" t="Include" />
               <e p="2 gr.jpg" t="Include" />
               <e p="254906.jpg" t="Include" />
               <e p="38433159_2140321522856181_2576940979864993792_n.jpg" t="Include" />
               <e p="c25c94fe96_1000.jpg" t="Include" />
+              <e p="IMG_20200528_123607.jpg" t="Include" />
               <e p="IMG_20200528_123625.jpg" t="Include" />
               <e p="IMG_20201109_150845.jpg" t="Include" />
               <e p="IMG_3582.CR2" t="Include" />
+              <e p="picture_94b281cb37eb9d159b5_64764_p0.png" t="Include" />
               <e p="swift-language-reference-mind-map.jpg" t="Include" />
             </e>
             <e p="SongPics" t="Include">
