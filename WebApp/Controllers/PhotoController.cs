@@ -89,5 +89,12 @@ namespace WebApp.Controllers
             return comment;
             }
 
+        [HttpPost]
+        public void ChangeAvatarByPhotoId(int photoId)
+        {
+            _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).AvatarPath =
+                _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).Path;
+            _appContext.SaveChanges();
+        }
     }
 }

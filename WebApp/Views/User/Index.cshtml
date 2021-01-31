@@ -89,7 +89,7 @@ flex-direction: row;
 
 <script type="text/javascript">
 
- $(document).ready(function() {
+    $(document).ready(function() {
    $.ajax({
            url:'@Url.Action("GetPostsByUserId", "Post")',
            type: 'GET',
@@ -124,7 +124,7 @@ flex-direction: row;
      })
  });
  
- $(document).on('click', '.like-post', function() {
+    $(document).on('click', '.like-post', function() {
              $.ajax({
                url:'@Url.Action("LikeButtonResponse", "Post")',
                type:'POST',
@@ -140,7 +140,7 @@ flex-direction: row;
              
      });
  
- $(document).on('click', '.unlike-post', function() {
+    $(document).on('click', '.unlike-post', function() {
              $.ajax({
                url:'@Url.Action("LikeButtonResponse", "Post")',
                type:'POST',
@@ -155,7 +155,7 @@ flex-direction: row;
              $(this).addClass("like-post");
         });
     
- $(document).on('click', '#postdata', function() {
+    $(document).on('click', '#postdata', function() {
                 $.ajax({
                   url:'@Url.Action("SaveAndReturnPost", "Post")',
                   type:'POST',
@@ -170,7 +170,7 @@ flex-direction: row;
                     });
            });
     
- $(document).on('click', '#post-comment', function() {
+    $(document).on('click', '#post-comment', function() {
      let postId = 0;
      let button = $(this);
      postId = button.data("id");
@@ -192,7 +192,7 @@ flex-direction: row;
                     });
                });
         
- $(document).on('click', '#delete-post', function() {
+    $(document).on('click', '#delete-post', function() {
    DeletePost($(this).data("id"));
  });
 

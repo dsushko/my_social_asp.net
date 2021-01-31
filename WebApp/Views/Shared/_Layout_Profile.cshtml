@@ -137,6 +137,9 @@
                   <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
                   
                   </div>
+                  <div id="modal-photo-actions">
+                      
+                  </div>
               </div>
               <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
                   <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
@@ -179,7 +182,7 @@
                  PreparePhotoModal(url);        
                 $("#photo-big").modal('show');
             }
-    });
+    });    
     
     $(document).on('click', '#show-notifications', function() {
             $.ajax({
@@ -258,11 +261,39 @@
              $(this).addClass("like");
         });
     
+    $(document).on('click', '#modal-photo-send-comment-button', function(){
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("SaveAndReturnComment", "Photo")',
+                data: {
+                    photoId: $(this).data("id"),
+                    text: $("#modal-photo-comment-text").val(),
+                }
+            }).done(function(comment) {         
+                let ddl = ' ';
+                ddl+=CommentMakeHTML(comment);
+                document.getElementById("modal-photo-comments").innerHTML += ddl;
+            })
+        });
+    
+    $(document).on('click', '#modal-photo-change-avatar', function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ChangeAvatarByPhotoId", "Photo")',
+                    data: {
+                        photoId: $(this).data("id"),
+                    }
+                }).done(function(comment) {         
+                    location.reload();
+                })
+            });
+    
     let ClearPhotoModal = function(){
         document.getElementById("modal-photo-comments").innerHTML = "";
         document.getElementById("modal-photo-reactions").innerHTML = "";
         document.getElementById("modal-photoplace").innerHTML = "";
         document.getElementById("modal-photo-owner-data").innerHTML = "";
+        document.getElementById("modal-photo-write-comment").innerHTML = "";
     };
         
     let PreparePhotoModal = function(url){
@@ -275,8 +306,10 @@
                        id: parseInt(idOfPhotoToShow.toString()),
                        }
                     }).done(function(photo) {
-                       document.getElementById("modal-photoplace").
-                       innerHTML = '<img src="' + photo.path + '" style="max-height: 700px;">';
+                       document.getElementById("modal-photoplace")
+                       .innerHTML = '<img src="' + photo.path + '" style="max-height: 700px;">';
+                       document.getElementById("modal-photo-actions")
+                       .innerHTML = '<a data-id="' + photo.id + '" id="modal-photo-change-avatar" style="cursor: pointer; color: #dddddd">Make this an avatar photo</a>';
                        let ddl = ' ';
                        ddl+= '   <div style="display: flex; margin: 15px;">';
                        ddl+= '<a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + photo.owner.id + '">'; 
@@ -328,22 +361,7 @@
                        
                     });  
     };
-    
-    $(document).on('click', '#modal-photo-send-comment-button', function(){
-        $.ajax({
-            type: 'GET',
-            url: '@Url.Action("SaveAndReturnComment", "Photo")',
-            data: {
-                photoId: $(this).data("id"),
-                text: $("#modal-photo-comment-text").val(),
-            }
-        }).done(function(comment) {         
-            let ddl = ' ';
-            ddl+=CommentMakeHTML(comment);
-            document.getElementById("modal-photo-comments").innerHTML += ddl;
-        })
-    })
-    
+        
     let IsPhotoLikedByUser = function(postId){ 
          let result = false;
          $.ajax({
@@ -434,7 +452,7 @@
              return t;
     };
     
-   let ReturnCSSLikeUnlike = function(bool){
+    let ReturnCSSLikeUnlike = function(bool){
          if(bool === true){
              return "unlike";
          }
