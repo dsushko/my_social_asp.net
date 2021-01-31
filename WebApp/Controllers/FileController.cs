@@ -63,8 +63,12 @@ namespace WebApp.Controllers
                     await uploadedFile.CopyToAsync(fileStream);
                 }
 
-                PhotoModel model = new PhotoModel
-                    {OwnerId = _userService.GetUserByName(User.Identity.Name).Id, Path = path};
+                PhotoModel model = new PhotoModel {
+                        OwnerId = _userService.GetUserByName(User.Identity.Name).Id,
+                        Path = path,
+                        Comments = new List<int>(),
+                        LikeUsers = new List<int>()
+                };
                 _db.PhotoModels.Add(model);
                 _db.SaveChanges();
             }
@@ -121,6 +125,13 @@ namespace WebApp.Controllers
             return RedirectToAction("Music", "User", new { Id = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id } );
         }
 
+        [HttpGet]
+        public Photo GetPhotoById(int id)
+        {
+            Photo photo = Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == id));
+            photo.Owner = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == photo.OwnerId));
+            return photo;
+        }
         
         static private bool FileIsMusical(string name)
         {
@@ -142,5 +153,7 @@ namespace WebApp.Controllers
                 return true;
             return false;
         }
+        
+        
     }
 }

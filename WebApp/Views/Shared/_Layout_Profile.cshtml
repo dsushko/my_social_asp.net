@@ -77,8 +77,13 @@
                 <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music</a></div>
                 <div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 1%;">
                     <div>
-                        <h1>@Model.Nickname</h1></div>
-                    <div>@Model.Name @Model.Surname</div>
+                        <h1>
+                            @Model.Nickname
+                        </h1>
+                        </div>
+                    <div>
+                        @Model.Name @Model.Surname
+                    </div>
                 </div>
                 <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Photos" asp-controller="User" asp-route-id="@Model.Id">Photos</a></div>
                 <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Friends" asp-controller="User" asp-route-id="@Model.Id">Friends</a></div>
@@ -125,9 +130,59 @@
   </div>
 </div>
 
+<div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
+  <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
+          <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+              <div class="modal-body" style="padding: 0;">
+                  <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+                  
+                  </div>
+                  <div id="modal-photo-actions">
+                      
+                  </div>
+              </div>
+              <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
+                  <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
+                      <div id="modal-photo-owner-data">
+                          
+                      </div>
+                      <div id="modal-photo-reactions">
+                          
+                      </div>
+                  </div>
+                  <div id="modal-photo-comments">
+                      
+                  </div>
+                  <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
+                      
+                  </div>
+              </div>
+          </div>
+           <div>
+                <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+           </div>
+  </div>
+</div>
+
 </body>
 </html>
 <script>
+        
+    $(document).ready( function() {
+            let url = new URL(window.location.href);      
+            let isSomePostId = url.searchParams.has('wall');
+            let isSomePhotoId = url.searchParams.has('photo');
+            if(isSomePostId === true){
+                let idOfPostToShow = url.searchParams.get('wall');
+                $("#post-big").modal('show');
+            }
+            if(isSomePhotoId === true){
+                 PreparePhotoModal(url);        
+                $("#photo-big").modal('show');
+            }
+    });    
     
     $(document).on('click', '#show-notifications', function() {
             $.ajax({
@@ -145,14 +200,6 @@
                 }); 
             })                               
          });
-    
-    $(document).ready(function() {
-            let url = new URL(window.location.href);
-            let postToShow = url.searchParams.get('wall');
-            if(postToShow != null){
-                $("#post-big").modal('show');
-            }
-    });
      
     $(document).on('click', '#post-big-close', function(){
             let url = new URL(window.location.href);
@@ -167,6 +214,198 @@
             history.pushState(null, null, url.toString());
             $("#post-big").modal('show');
     });
+    
+    $(document).on('click', '#photo-big-close', function(){
+                let url = new URL(window.location.href);
+                url.searchParams.delete('photo');
+                history.pushState(null, null, url.toString());
+                $("#photo-big").modal('hide')
+        });
+        
+    $(document).on('click', '#show-photo-big', function() {
+                let url = new URL(window.location.href);
+                url.searchParams.append('photo', $(this).data("id"));
+                history.pushState(null, null, url.toString());
+                PreparePhotoModal(url);
+                $("#photo-big").modal('show');
+        });
+      
+    $(document).on('click', '.like', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Photo")',
+               type:'POST',
+               data: {   
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("modal-photo-like-count");
+             v.innerHTML = String(parseInt(v.innerHTML) + 1);
+             $(this).css('color', 'red');
+             $(this).removeClass("like");
+             $(this).addClass("unlike");
+             
+     });
+ 
+    $(document).on('click', '.unlike', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Photo")',
+               type:'POST',
+               data: {
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("modal-photo-like-count");
+             v.innerHTML = String(parseInt(v.innerHTML) - 1);
+             $(this).css('color', 'gray');
+             $(this).removeClass("unlike");
+             $(this).addClass("like");
+        });
+    
+    $(document).on('click', '#modal-photo-send-comment-button', function(){
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("SaveAndReturnComment", "Photo")',
+                data: {
+                    photoId: $(this).data("id"),
+                    text: $("#modal-photo-comment-text").val(),
+                }
+            }).done(function(comment) {         
+                let ddl = ' ';
+                ddl+=CommentMakeHTML(comment);
+                document.getElementById("modal-photo-comments").innerHTML += ddl;
+            })
+        });
+    
+    $(document).on('click', '#modal-photo-change-avatar', function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ChangeAvatarByPhotoId", "Photo")',
+                    data: {
+                        photoId: $(this).data("id"),
+                    }
+                }).done(function(comment) {         
+                    location.reload();
+                })
+            });
+    
+    let ClearPhotoModal = function(){
+        document.getElementById("modal-photo-comments").innerHTML = "";
+        document.getElementById("modal-photo-reactions").innerHTML = "";
+        document.getElementById("modal-photoplace").innerHTML = "";
+        document.getElementById("modal-photo-owner-data").innerHTML = "";
+        document.getElementById("modal-photo-write-comment").innerHTML = "";
+    };
+        
+    let PreparePhotoModal = function(url){
+      
+                let idOfPhotoToShow = url.searchParams.get('photo');
+                    $.ajax({
+                       url: '@Url.Action("GetPhotoById", "File")',
+                       type: 'GET',
+                       data: {
+                       id: parseInt(idOfPhotoToShow.toString()),
+                       }
+                    }).done(function(photo) {
+                       document.getElementById("modal-photoplace")
+                       .innerHTML = '<img src="' + photo.path + '" style="max-height: 700px;">';
+                       document.getElementById("modal-photo-actions")
+                       .innerHTML = '<a data-id="' + photo.id + '" id="modal-photo-change-avatar" style="cursor: pointer; color: #dddddd">Make this an avatar photo</a>';
+                       let ddl = ' ';
+                       ddl+= '   <div style="display: flex; margin: 15px;">';
+                       ddl+= '<a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + photo.owner.id + '">'; 
+                       ddl+= '            <img src="' + photo.owner.avatarPath + '" width="50px" height="50px" style="border-radius: 50%">\n';
+                       ddl+= '          </a>  ';
+                       ddl+= '            <div style="padding-left: 15px;">\n';
+                       ddl+= '                <div style="color: #20257c; font-size: 20px;">\n';
+                       ddl+= '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + photo.owner.id + '">' + photo.owner.nickname + '</a>\n';
+                       ddl+= '                </div>\n';
+                       ddl+= '                <div style="color: #b9b9b9">\n';
+                       ddl+=  ConvertTimeToPostFormat(photo.time);
+                       ddl+= '                </div>\n';
+                       ddl+= '            </div>\n'; 
+                       ddl+= '           </div>   ';
+                       document.getElementById("modal-photo-owner-data").innerHTML = ddl;
+                       
+                       ddl= ' ';
+                       ddl+=           '        <div id="modal-photo-reactions-'+ photo.id +'" style="margin: 5%;">\n';
+                       ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPhotoLikedByUser(photo.id)) + '" data-id="' + photo.id  + '" id="modal-photo-like"></i> <a id="modal-photo-like-count">'+ photo.rating +'</a>\n';
+                       ddl+=           '            <i style="margin: 3%;" class="fas fa-reply reaction-button" data-id="' + photo.id  + '" id="share"></i> ';
+                       ddl+=           '        </div>\n';
+                       document.getElementById("modal-photo-reactions").innerHTML = ddl;
+                       if(IsPhotoLikedByUser(photo.id)){
+                            $('#modal-photo-like').css('color', 'red');
+                            $('#modal-photo-like').removeClass("like-post");
+                            $('#modal-photo-like').addClass("unlike-post");
+                       }
+                       ddl=' ';
+                       $.ajax({
+                         url:'@Url.Action("GetCommentsByPhotoId", "Photo")',
+                         type: 'GET',
+                         data: {
+                             id: photo.id,
+                         }
+                       }).done(function(comments) {
+                            $.each(comments, function(index, comment){
+                                 ddl += CommentMakeHTML(comment);
+                            });
+                            document.getElementById("modal-photo-comments").innerHTML = ddl; 
+                            ddl = " ";
+                            ddl+= '<div style="display:flex; flex-direction: row; width:100%; align-items: flex-start;">';
+                            ddl+= '<textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="modal-photo-comment-text" name="text"></textarea>';
+                            ddl+= '<button class="btn btn-primary" data-id="' + photo.id + '" id="modal-photo-send-comment-button" style="margin-bottom: 0;">';
+                            ddl+=    'Submit';
+                            ddl+= '</button>';
+                            ddl+= '</div>';
+                            document.getElementById("modal-photo-write-comment").innerHTML = ddl;
+                       });
+                       
+                    });  
+    };
+        
+    let IsPhotoLikedByUser = function(postId){ 
+         let result = false;
+         $.ajax({
+            url:'@Url.Action("IsLikedByUser", "Photo")',
+            type: 'GET',
+            async: false,
+                data:{
+                    id: postId
+            }
+         }).done(function(answer) {
+             result = answer;
+         });
+                
+        return result;
+     };
+    
+    let CommentMakeHTML = function(data) {
+         let ddl = ' '; 
+         ddl+='<div id="comment'+ data.id +'"style="width: 100%; border-radius: 2px; margin: 0.5%;">\n';
+         ddl+=           '        <div id="comment-header-'+ data.id +'" class="comment-header" style="display: flex; border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">\n';
+         ddl+=           '            <img src="' + data.owner.avatarPath + '" width="40px" height="40px" style="border-radius: 50% ">\n';
+         ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
+         ddl+=           '                <div style="color: #20257c; font-size: 15px;">\n';
+         ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
+         ddl+=           '                </div>\n';
+         ddl+=           '        <div id="comment-text-'+ data.id +'" class="comment-text">\n';
+         ddl+=            data.text;
+         ddl+=           '        </div>\n';
+         ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
+         ddl+=            ConvertTimeToCommentFormat(data.time) + ' | Answer';
+         ddl+=           '           </div>';
+         ddl+=           '        </div>\n';
+         ddl+=           '     </div>\n';
+         ddl+=           '  </div>';        
+         return ddl;
+     };
+           
+    let ConvertTimeToCommentFormat = function(time){
+                 let t = ' ';
+                 for(let i = 11; i < 16; i++){
+                 t += time[i];
+                 }
+                 return t;
+        };
     
     let ReturnNotificationHTMLCard = function(data) {
              let ddl = ' '; 
@@ -186,14 +425,40 @@
              return ddl;
          };
     
-     let ConvertTimeToNotificationFormat = function(time){
+    let ConvertTimeToNotificationFormat = function(time){
                      let t = ' ';
                      for(let i = 11; i < 16; i++){
                      t += time[i];
                      }
                      return t;
             };
- 
+     
+    let ConvertTimeToPostFormat = function(time){
+             let t = ' ';
+             for(let i = 11; i < 16; i++){
+             t += time[i];
+             }
+             t+=' ';
+             t+=time[8];
+             t+=time[9];
+             t+='.';
+             t+=time[5];
+             t+=time[6];
+             t+='.';
+             t+=time[0];
+             t+=time[1];
+             t+=time[2];
+             t+=time[3];
+             return t;
+    };
+    
+    let ReturnCSSLikeUnlike = function(bool){
+         if(bool === true){
+             return "unlike";
+         }
+         return "like";
+     };
+   
 </script>
 @{
     if (@Model.Nickname != User.Identity.Name)
