@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using network2.Models;
 using WebApp.ViewModels;
 
@@ -62,6 +63,23 @@ namespace WebApp.Services
                 Time = nm.Time
             };
             return n;
+        }
+
+        public static Photo BuildPhoto(PhotoModel pm)
+        {
+            Photo p = new Photo()
+            {
+                CommentQuantity = pm.CommentQuantity,
+                Comments = pm.Comments,
+                Id=pm.Id,
+                LikeUsers = pm.LikeUsers,
+                Owner = new User(),
+                OwnerId = pm.OwnerId,
+                Path = pm.Path,
+                Rating = pm.Rating,
+                Time = pm.Time
+            };
+            return p;
         }
     }
 }
