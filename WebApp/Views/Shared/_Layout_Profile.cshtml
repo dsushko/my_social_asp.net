@@ -267,6 +267,37 @@
              $(this).addClass("like");
         });
     
+    $(document).on('click', '.like-post-modal', function() {
+                 $.ajax({
+                   url:'@Url.Action("LikeButtonResponse", "Post")',
+                   type:'POST',
+                   data: {   
+                       id: $(this).data("id")
+                   }
+                 });
+                 let v = document.getElementById("modal-post-like-count");
+                 v.innerHTML = String(parseInt(v.innerHTML) + 1);
+                 $(this).css('color', 'red');
+                 $(this).removeClass("like-post-modal");
+                 $(this).addClass("unlike-post-modal");
+                 
+         });
+     
+    $(document).on('click', '.unlike-post-modal', function() {
+                 $.ajax({
+                   url:'@Url.Action("LikeButtonResponse", "Post")',
+                   type:'POST',
+                   data: {
+                       id: $(this).data("id")
+                   }
+                 });
+                 let v = document.getElementById("modal-post-like-count");
+                 v.innerHTML = String(parseInt(v.innerHTML) - 1);
+                 $(this).css('color', 'gray');
+                 $(this).removeClass("unlike-post-modal");
+                 $(this).addClass("like-post-modal");
+            });
+    
     $(document).on('click', '#modal-photo-send-comment-button', function(){
             $.ajax({
                 type: 'GET',
@@ -401,15 +432,20 @@
             
             ddl= ' ';
             ddl+=           '        <div id="post-reactions-'+ post.id +'" style="margin-bottom: 2%;">\n';
-            ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(post.id), "post") +'" data-id="' + post.id  + '" id="modal-like-button"></i> <a id="like-post'+ post.id +'">'+ post.rating +'</a>\n';
+            ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(post.id), "post-modal") +'" data-id="' + post.id  + '" id="modal-post-like-button"></i> <a id="modal-post-like-count">'+ post.rating +'</a>\n';
             ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + post.id  + '" id="comment"></i><a id="modal-post-comments-quantity"> ' + post.commentQuantity +'</a>\n';
             ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + post.id  + '" id="share"></i> ' + post.sharesQuantity + '\n';
             ddl+=           '        </div>\n';     
             document.getElementById("modal-post-reactions").innerHTML = ddl;
             
+            if(IsPostLikedByUser(post.id)){
+                   $('#modal-post-like-button').css('color', 'red');
+                   $('#modal-post-like-button').removeClass("like-post-modal");
+                   $('#modal-post-like-button').addClass("unlike-post-modal");
+            }            
+            
             ddl= ' ';
-            ddl+=       '<div style="background: #f5f5f5; \n'+
-                              'padding:1%">\n'+
+            ddl+=       '<div style="background: #f5f5f5; padding:1%">\n'+
                         ' <div id="modal-post-comments-placeholder" style="flex-direction: column;">' +
                         '</div>' +
                         ' <div id="modal-post-comments-placeholder-end" style="flex-direction: column;">' +
@@ -553,6 +589,11 @@
             if(bool === true)
                 return "unlike-post";
             return "like-post";
+         }
+         if(type === "post-modal"){
+             if(bool === true)
+                 return "unlike-post-modal";
+             return "like-post-modal";
          }
      };  
      
