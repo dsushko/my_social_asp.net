@@ -114,9 +114,18 @@
 <div id="modals">
 
     <div class="modal" id="post-big" tabindex="-1" role="dialog" aria-labelledby="post-big-label" aria-hidden="true">
-      <div class="modal-dialog-centered" role="document">
-          <div class="modal-content">
+      <div class="modal-dialog-centered" role="document" style="justify-content: center">
+          <div class="modal-content" style="max-width: 50%; ">
               <div id="modal-post-owner-data">
+                  
+              </div>
+              <div id="modal-post-text">
+                  
+              </div>
+              <div id="modal-post-reactions">
+                  
+              </div>
+              <div id="modal-post-comments">
                   
               </div>
           </div>
@@ -171,7 +180,8 @@
             let isSomePostId = url.searchParams.has('wall');
             let isSomePhotoId = url.searchParams.has('photo');
             if(isSomePostId === true){
-                let idOfPostToShow = url.searchParams.get('wall');
+                PreparePostModal(url);
+
                 $("#post-big").modal('show');
             }
             if(isSomePhotoId === true){
@@ -359,12 +369,89 @@
     };
     
     let PreparePostModal = function(url){
-        let idOfPhotoToShow = url.searchParams.get('wall');
+        let idOfPostToShow = url.searchParams.get('wall');
         $.ajax({
-            url: '@Url.Action("GetPostById", "Post")'
+            url: '@Url.Action("GetPostById", "Post")',
+            type: 'GET',
+            data: {
+                postId: parseInt(idOfPostToShow.toString()),
+            }
+        }).done(function(post) {
+            let ddl = ' ';
+            ddl+= '   <div style="display: flex; margin: 15px;">';
+            ddl+= '<a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + post.ownerId + '">'; 
+            ddl+= '            <img src="' + post.owner.avatarPath + '" width="50px" height="50px" style="border-radius: 50%">\n';
+            ddl+= '          </a>  ';
+            ddl+= '            <div style="padding-left: 15px;">\n';
+            ddl+= '                <div style="color: #20257c; font-size: 20px;">\n';
+            ddl+= '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + post.owner.id + '">' + post.owner.nickname + '</a>\n';
+            ddl+= '                </div>\n';
+            ddl+= '                <div style="color: #b9b9b9">\n';
+            ddl+=  ConvertTimeToPostFormat(post.date);
+            ddl+= '                </div>\n';
+            ddl+= '            </div>\n'; 
+            ddl+= '           </div>   ';
+            document.getElementById("modal-post-owner-data").innerHTML = ddl;
+            
+            ddl= ' ';
+            ddl+=           '        <div class="post-text">\n';
+            ddl+=                   post.text;
+            ddl+=           '        </div>';
+            document.getElementById("modal-post-text").innerHTML = ddl;
+            
+            ddl= ' ';
+            ddl+=           '        <div id="post-reactions-'+ post.id +'" style="margin-bottom: 2%;">\n';
+            ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(post.id), "post") +'" data-id="' + post.id  + '" id="modal-like-button"></i> <a id="like-post'+ post.id +'">'+ post.rating +'</a>\n';
+            ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + post.id  + '" id="comment"></i><a id="modal-post-comments-quantity"> ' + post.commentQuantity +'</a>\n';
+            ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + post.id  + '" id="share"></i> ' + post.sharesQuantity + '\n';
+            ddl+=           '        </div>\n';     
+            document.getElementById("modal-post-reactions").innerHTML = ddl;
+            
+            ddl= ' ';
+            ddl+=       '<div style="background: #f5f5f5; \n'+
+                              'padding:1%">\n'+
+                        ' <div id="modal-post-comments-placeholder" style="flex-direction: column;">' +
+                        '</div>' +
+                        ' <div id="modal-post-comments-placeholder-end" style="flex-direction: column;">' +
+                                                '</div>' +
+                        '   <div style="display:flex; flex-direction: row; width:100%; align-items: flex-start">' +
+                        '       <textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="modal-post-comment-text" name="text"></textarea>\n'+
+                        '       <button class="btn btn-primary" data-id="' + idOfPostToShow + '" style="margin-bottom: 0;" id="modal-post-comment">Submit</button>\n'+
+                        '   </div>   ' +
+                        '  </div>';    
+            document.getElementById("modal-post-comments").innerHTML = ddl;
+            ddl= ' ';
+            $.ajax({
+                url:'@Url.Action("GetCommentsByPostId", "Post")',
+                type: 'GET',
+                data: {
+                   postId: idOfPostToShow,
+                }
+            }).done(function(comments) {
+                $.each(comments, function(index, comment){
+                   ddl = CommentMakeHTML(comment) + ddl;
+                }); 
+                document.getElementById("modal-post-comments-placeholder").innerHTML = ddl;
+            });            
         })
     };
         
+    let IsPostLikedByUser = function(postId){ 
+     let result = false;
+     $.ajax({
+        url:'@Url.Action("IsLikedByUser", "Post")',
+        type: 'GET',
+        async: false,
+            data:{
+                postId: postId
+        }
+     }).done(function(answer) {
+         result = answer;
+     });
+            
+    return result;
+ };    
+    
     let IsPhotoLikedByUser = function(postId){ 
          let result = false;
          $.ajax({
@@ -467,8 +554,96 @@
                 return "unlike-post";
             return "like-post";
          }
-     };
-   
+     };  
+     
+    let PostMakeHTML = function(data) {
+        let ddl = ' '; 
+        ddl+='<div id="post-'+ data.id +'" style="width: 100%; border-radius: 2px; margin-top: 2%; background: white">\n';
+        ddl+=           '        <div id="post-header-'+ data.id +'" class="post-header">\n';
+        ddl+=           '          <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">'; 
+        ddl+=           '            <img src="' + data.owner.avatarPath + '" width="50px" height="50px" style="border-radius: 50%">\n';
+        ddl+=           '          </a>  ';
+        ddl+=           '            <div style="padding-left: 15px;">\n';
+        ddl+=           '                <div style="color: #20257c; font-size: 20px;">\n';
+        ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
+        ddl+=           '                </div>\n';
+        ddl+=           '                <div style="color: #b9b9b9">\n';
+        ddl+=           '<a id="show-post-big" data-id= "' + data.id + '" style="color: grey;">' +    ConvertTimeToPostFormat(data.date) + '<\a>';
+        ddl+=           '                </div>\n';
+        ddl+=           '            </div>\n';
+        ddl+=           '            <div id="post-options-'+ data.id +'" class="dropdown" style="margin-left: auto; color: #b6b6b6">\n';
+        ddl+=           '                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>\n';
+        ddl+=           '                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">\n' + 
+                        '<input class="dropdown-item" data-toggle="modal" data-target="#modalDeletePost" type="submit" value="Delete"/>';
+        ddl+=           '                </div>\n';
+        ddl+=           '            </div>\n';
+        ddl+=           '        </div>\n';
+        ddl+=           '        <div id="post-text-'+ data.id +'" class="post-text">\n';
+        ddl+=            data.text;
+        ddl+=           '        </div>' +
+                        ' <div class="modal" id="modalDeletePost" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">\n'+
+                          '  <div class="modal-dialog modal-dialog-centered" role="document">\n'+
+                          '    <div class="modal-content">\n'+
+                          '      <div class="modal-header">\n'+
+                          '        <h5 class="modal-title" id="exampleModalCenteredLabel">Delete post</h5>\n'+
+                          '        <button type="button" class="close" data-dismiss="modal" aria-label="Close">\n'+
+                          '          <span aria-hidden="true">&times;</span>\n'+
+                          '        </button>\n'+
+                          '      </div>\n'+
+                          '      <div class="modal-body">\n'+
+                          '        Are you sure to delete this post? This operation can\'t be undone.\n'+
+                          '      </div>\n'+
+                          '      <div class="modal-footer">\n'+
+                          '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>\n'+
+                          '        <button type="button" id="delete-post" data-dismiss="modal" data-id="'+ data.id +'" class="btn btn-primary">Delete</button>\n'+
+                          '      </div>\n'+                        
+                          '    </div>\n'+
+                          '  </div>\n'+
+                          '</div> \n';
+        ddl+=           '        <div id="post-photos-'+ data.id +'" class="post-photos">\n';
+        ddl+=           '        </div>\n';
+        ddl+=           '        <div id="post-reactions-'+ data.id +'" style="margin-bottom: 2%;">\n';
+        ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(data.id), "post") +'" data-id="' + data.id  + '" id="l'+ data.id +'"></i> <a id="like-post'+ data.id +'">'+ data.rating +'</a>\n';
+        ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + data.id  + '" id="comment"></i><a id="comments-of-' + data.id + '"> ' + data.commentQuantity +'</a>\n';
+        ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + data.id  + '" id="share"></i> ' + data.sharesQuantity + '\n';
+        ddl+=           '        </div>\n';
+        ddl+=           '<div style="background: #f5f5f5; \n'+
+                              'padding:1%">\n'+
+                        ' <div id="comments-' + data.id +'" style="flex-direction: column;">' +
+                        '</div>' +
+                        ' <div id="comments-end-' + data.id +'" style="flex-direction: column;">' +
+                                                '</div>' +
+                        '   <div style="display:flex; flex-direction: row; width:100%; align-items: flex-start">' +
+                        '       <textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="comment-'+ data.id +'" name="text"></textarea>\n'+
+                        '       <button class="btn btn-primary" data-id="' + data.id + '" style="margin-bottom: 0;" id="post-comment">Submit</button>\n'+
+                        '   </div>   ' +
+                        '  </div>';
+        ddl+=           '    </div>';       
+        
+        return ddl;
+    };
+    
+    $(document).on('click', '#modal-post-comment', function() {
+         let postId = 0;
+         let button = $(this);
+         postId = button.data("id");
+                        $.ajax({
+                          url:'@Url.Action("SaveAndReturnComment", "Post")',
+                          type:'POST',
+                          data: {
+                              text: $('#modal-post-comment-text').val(),
+                              postId: button.data("id")
+                          }
+                        })
+                        .done(function (data){
+                            let ddl = ' ';
+                            ddl+=CommentMakeHTML(data);
+                            $(ddl).insertBefore('#modal-post-comments-placeholder-end'); 
+                            let v = document.getElementById("modal-comments-post-quantity");
+                            v.innerHTML = " " + String(parseInt(v.innerHTML) + 1);
+                        });
+                   });
+    
 </script>
 @{
     if (@Model.Nickname != User.Identity.Name)
