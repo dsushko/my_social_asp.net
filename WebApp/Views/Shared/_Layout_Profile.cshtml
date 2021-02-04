@@ -106,7 +106,12 @@
         <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
                                                                     border-radius: 5px;
                                                                     display: flex;">
-            
+            <div id="recent-photos-block" style="margin: 10px">
+                <div style="text-align: center">Recent photos:</div>
+                <div id="recent-photos" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -136,44 +141,68 @@
     </div>
 
     <div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
-      <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
-              <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
-                  <div class="modal-body" style="padding: 0;">
-                      <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+        <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
+            <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+                <div class="modal-body" style="padding: 0;">
+                    <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
                       
-                      </div>
-                      <div id="modal-photo-actions">
+                    </div>
+                    <div id="modal-photo-actions">
                           
-                      </div>
-                  </div>
-                  <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
-                      <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
-                          <div id="modal-photo-owner-data">
+                    </div>
+                </div>
+                <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
+                    <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
+                        <div id="modal-photo-owner-data">
                               
-                          </div>
-                          <div id="modal-photo-reactions">
+                        </div>
+                        <div id="modal-photo-reactions">
                               
-                          </div>
-                      </div>
-                      <div id="modal-photo-comments">
+                        </div>
+                    </div>
+                    <div id="modal-photo-comments">
                           
-                      </div>
-                      <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
+                    </div>
+                    <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
                           
-                      </div>
-                  </div>
-              </div>
-               <div>
-                    <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-      </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
     </div>
+    
 </div>
 </body>
 </html>
 <script>
+    
+    $(document).ready( function() {
+        $.ajax({
+            url:'@Url.Action("GetNLastPhotosByUserId", "User")',
+            type:'GET',
+            data: {
+                id: @Model.Id,
+                N: 9,
+            }
+        }).done( function(photoList) {
+            let ddl= ' ';
+            for(let i = 0; i < 9; i++){
+                if(photoList[i] != null){
+                    ddl += "<div style='margin: 3px;'>" +
+                                '<a style="cursor: pointer;" data-id="' + photoList[i].id + '" id="show-photo-big">' +
+                                    '<img src="' + photoList[i].path + '" style="object-fit: cover; width: 90px; height: 90px; ">' +
+                                "</a>" +
+                            "</div>\n";
+                    } else break;
+            }
+            document.getElementById("recent-photos").innerHTML = ddl;
+        })
+    });
         
     $(document).ready( function() {
             let url = new URL(window.location.href);      
@@ -181,7 +210,6 @@
             let isSomePhotoId = url.searchParams.has('photo');
             if(isSomePostId === true){
                 PreparePostModal(url);
-
                 $("#post-big").modal('show');
             }
             if(isSomePhotoId === true){
@@ -218,6 +246,7 @@
             let url = new URL(window.location.href);
             url.searchParams.append('wall', $(this).data("id"));
             history.pushState(null, null, url.toString());
+            PreparePostModal(url);
             $("#post-big").modal('show');
     });
     

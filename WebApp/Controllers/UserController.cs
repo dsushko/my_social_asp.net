@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using network2.Models;
+using TagLib.Riff;
 using WebApp.Services;
 using WebApp.ViewModels;
 
@@ -249,6 +250,21 @@ namespace WebApp.Controllers
                 result.Find(n => n.Id == nm.Id).TargetUser
                     = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
             }
+            return result;
+        }
+        [HttpGet]
+        public List<Photo> GetNLastPhotosByUserId(int id, int n)
+        {
+            List<Photo> result = new List<Photo>();
+
+            int listCount = _db.UserModels.FirstOrDefault(um => um.Id == id).Photos.Count;
+            int quantityOfPhotosWillBeReturned = listCount > n ? n : listCount;
+            for (int i = 0; i < quantityOfPhotosWillBeReturned; i++)
+            {
+                int photoId = (_db.UserModels.FirstOrDefault(um => um.Id == id).Photos)[i];
+                result.Add(Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == photoId)));
+            }
+
             return result;
         }
     }
