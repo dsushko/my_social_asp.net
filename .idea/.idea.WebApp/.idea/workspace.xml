@@ -135,10 +135,10 @@
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Photo.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Services/PhotoService.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
       </list>
     </option>
   </component>
@@ -274,6 +274,8 @@
       <workItem from="1611944567084" duration="2152000" />
       <workItem from="1612084333499" duration="6931000" />
       <workItem from="1612092140355" duration="2334000" />
+      <workItem from="1612181359251" duration="1240000" />
+      <workItem from="1612365378726" duration="2242000" />
     </task>
     <servers />
   </component>
@@ -296,22 +298,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="139" key="GridCell.Tab.0.bottom" timestamp="1612094475452">
+    <state width="1493" height="113" key="GridCell.Tab.0.bottom" timestamp="1612448540263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="139" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612094475452" />
-    <state width="1493" height="139" key="GridCell.Tab.0.center" timestamp="1612094475452">
+    <state width="1493" height="113" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612448540263" />
+    <state width="1493" height="113" key="GridCell.Tab.0.center" timestamp="1612448540263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="139" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612094475452" />
-    <state width="1493" height="139" key="GridCell.Tab.0.left" timestamp="1612094475452">
+    <state width="1493" height="113" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612448540263" />
+    <state width="1493" height="113" key="GridCell.Tab.0.left" timestamp="1612448540263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="139" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612094475452" />
-    <state width="1493" height="139" key="GridCell.Tab.0.right" timestamp="1612094475452">
+    <state width="1493" height="113" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612448540263" />
+    <state width="1493" height="113" key="GridCell.Tab.0.right" timestamp="1612448540263">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="139" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612094475452" />
+    <state width="1493" height="113" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612448540263" />
     <state width="1493" height="139" key="GridCell.Tab.1.bottom" timestamp="1612094475452">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -376,10 +378,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="139" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1612094475453" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1612085232652">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1612447614999">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612085232652" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612447614999" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611357884648">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -400,19 +402,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>93</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="83">
-            <startOffsets>
-              <option value="3738" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3739" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs</url>

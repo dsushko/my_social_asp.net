@@ -26,7 +26,7 @@
 
 <body>
 
-<div>
+<div id="main-site-block">
     <div id="header" style="height: 45px; background: #4e555b; display: flex; position: sticky; top: 0; z-index: 5; align-items: center;  justify-content: flex-end;">
         <form style="margin-right: 25%">
             <a href="@Url.RouteUrl(new { controller = "User", action = "IndexByName", name = @User.Identity.Name })" class="btn-primary">HOME</a>        
@@ -57,7 +57,7 @@
         </div>
     </div>
     
-    <div id="tabs" class="shadow">
+    <div id="head" class="shadow">
         <div style="display:flex; justify-content:center; width: 100%; height: 400px; background: url(@Url.Content("~/profile_header1.jpg"));">
             <div style="align-self: flex-end; display: flex; flex-direction: row; width: 220px; height: 220px;">
                 <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%;">
@@ -71,7 +71,7 @@
         </div>
        
         
-        <div class="container">
+        <div id="nav-links" class="container">
             <div class="row d-flex justify-content-center align-items-center" style="height: 100px;">
                 <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Index" asp-controller="User" asp-route-id="@Model.Id">Profile</a></div>
                 <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music</a></div>
@@ -90,7 +90,7 @@
             </div>
         </div>
     </div>
-    <div style="background: #e7e9e6; display: flex; justify-content: space-around; position: relative; width: 100%;">
+    <div id="columns" style="background: #e7e9e6; display: flex; justify-content: space-around; position: relative; width: 100%;">
         <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
                                                                     border-radius: 5px;
                                                                     display: flex;">
@@ -111,61 +111,57 @@
     </div>
 </div>
 
-<div class="modal" id="post-big" tabindex="-1" role="dialog" aria-labelledby="post-big-label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="post-big-label">Modal title</h5>
-        <button id="post-big-close" type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="modals">
 
-<div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
-  <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
-          <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
-              <div class="modal-body" style="padding: 0;">
-                  <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+    <div class="modal" id="post-big" tabindex="-1" role="dialog" aria-labelledby="post-big-label" aria-hidden="true">
+      <div class="modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div id="modal-post-owner-data">
                   
-                  </div>
-                  <div id="modal-photo-actions">
-                      
-                  </div>
-              </div>
-              <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
-                  <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
-                      <div id="modal-photo-owner-data">
-                          
-                      </div>
-                      <div id="modal-photo-reactions">
-                          
-                      </div>
-                  </div>
-                  <div id="modal-photo-comments">
-                      
-                  </div>
-                  <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
-                      
-                  </div>
               </div>
           </div>
-           <div>
-                <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-           </div>
-  </div>
-</div>
+          <button id="post-big-close" type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+    </div>
 
+    <div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
+      <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
+              <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+                  <div class="modal-body" style="padding: 0;">
+                      <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+                      
+                      </div>
+                      <div id="modal-photo-actions">
+                          
+                      </div>
+                  </div>
+                  <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
+                      <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
+                          <div id="modal-photo-owner-data">
+                              
+                          </div>
+                          <div id="modal-photo-reactions">
+                              
+                          </div>
+                      </div>
+                      <div id="modal-photo-comments">
+                          
+                      </div>
+                      <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
+                          
+                      </div>
+                  </div>
+              </div>
+               <div>
+                    <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+               </div>
+      </div>
+    </div>
+</div>
 </body>
 </html>
 <script>
@@ -230,7 +226,7 @@
                 $("#photo-big").modal('show');
         });
       
-    $(document).on('click', '.like', function() {
+    $(document).on('click', '.like-photo', function() {
              $.ajax({
                url:'@Url.Action("LikeButtonResponse", "Photo")',
                type:'POST',
@@ -241,12 +237,12 @@
              let v = document.getElementById("modal-photo-like-count");
              v.innerHTML = String(parseInt(v.innerHTML) + 1);
              $(this).css('color', 'red');
-             $(this).removeClass("like");
-             $(this).addClass("unlike");
+             $(this).removeClass("like-photo");
+             $(this).addClass("unlike-photo");
              
      });
  
-    $(document).on('click', '.unlike', function() {
+    $(document).on('click', '.unlike-photo', function() {
              $.ajax({
                url:'@Url.Action("LikeButtonResponse", "Photo")',
                type:'POST',
@@ -328,14 +324,14 @@
                        
                        ddl= ' ';
                        ddl+=           '        <div id="modal-photo-reactions-'+ photo.id +'" style="margin: 5%;">\n';
-                       ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPhotoLikedByUser(photo.id)) + '" data-id="' + photo.id  + '" id="modal-photo-like"></i> <a id="modal-photo-like-count">'+ photo.rating +'</a>\n';
+                       ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPhotoLikedByUser(photo.id), "photo") + '" data-id="' + photo.id  + '" id="modal-photo-like"></i> <a id="modal-photo-like-count">'+ photo.rating +'</a>\n';
                        ddl+=           '            <i style="margin: 3%;" class="fas fa-reply reaction-button" data-id="' + photo.id  + '" id="share"></i> ';
                        ddl+=           '        </div>\n';
                        document.getElementById("modal-photo-reactions").innerHTML = ddl;
                        if(IsPhotoLikedByUser(photo.id)){
                             $('#modal-photo-like').css('color', 'red');
-                            $('#modal-photo-like').removeClass("like-post");
-                            $('#modal-photo-like').addClass("unlike-post");
+                            $('#modal-photo-like').removeClass("like-photo");
+                            $('#modal-photo-like').addClass("unlike-photo");
                        }
                        ddl=' ';
                        $.ajax({
@@ -360,6 +356,13 @@
                        });
                        
                     });  
+    };
+    
+    let PreparePostModal = function(url){
+        let idOfPhotoToShow = url.searchParams.get('wall');
+        $.ajax({
+            url: '@Url.Action("GetPostById", "Post")'
+        })
     };
         
     let IsPhotoLikedByUser = function(postId){ 
@@ -452,11 +455,18 @@
              return t;
     };
     
-    let ReturnCSSLikeUnlike = function(bool){
-         if(bool === true){
-             return "unlike";
+    let ReturnCSSLikeUnlike = function(bool, type){
+        if(type === "photo"){
+            if(bool === true){
+                 return "unlike-photo";
+            }
+            return "like-photo";
+         } 
+         if(type === "post"){
+            if(bool === true)
+                return "unlike-post";
+            return "like-post";
          }
-         return "like";
      };
    
 </script>

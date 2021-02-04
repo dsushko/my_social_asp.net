@@ -134,5 +134,10 @@ namespace WebApp.Controllers
             UserModel user = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
             return _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers.Contains(user.Id);
         }
+
+        public Post GetPostById(int postId)
+        {
+            
+        }
     }
 }

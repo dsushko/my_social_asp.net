@@ -44,7 +44,7 @@ flex-direction: row;
                 <div class="form-group">
                     <textarea placeholder="Add new post" class="form-control" style="resize: none; overflow: auto; margin-top: 10px;" rows="3" id="comment" name="text"></textarea>
                 </div>
-                <button class="btn btn-primary mb-3" id="postdata">Submit</button>
+                <button class="btn btn-primary mb-3" id="send-post">Submit</button>
             </div>
         </div>
     }
@@ -155,7 +155,7 @@ flex-direction: row;
              $(this).addClass("like-post");
         });
     
-    $(document).on('click', '#postdata', function() {
+    $(document).on('click', '#send-post', function() {
                 $.ajax({
                   url:'@Url.Action("SaveAndReturnPost", "Post")',
                   type:'POST',
@@ -193,8 +193,8 @@ flex-direction: row;
                });
         
     $(document).on('click', '#delete-post', function() {
-   DeletePost($(this).data("id"));
- });
+        DeletePost($(this).data("id"));
+     });
 
     let DeletePost = function(id) {
         $.ajax({
@@ -271,7 +271,7 @@ flex-direction: row;
         ddl+=           '        <div id="post-photos-'+ data.id +'" class="post-photos">\n';
         ddl+=           '        </div>\n';
         ddl+=           '        <div id="post-reactions-'+ data.id +'" style="margin-bottom: 2%;">\n';
-        ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(data.id)) +'" data-id="' + data.id  + '" id="l'+ data.id +'"></i> <a id="like-post'+ data.id +'">'+ data.rating +'</a>\n';
+        ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(data.id), "post") +'" data-id="' + data.id  + '" id="l'+ data.id +'"></i> <a id="like-post'+ data.id +'">'+ data.rating +'</a>\n';
         ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + data.id  + '" id="comment"></i><a id="comments-of-' + data.id + '"> ' + data.commentQuantity +'</a>\n';
         ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + data.id  + '" id="share"></i> ' + data.sharesQuantity + '\n';
         ddl+=           '        </div>\n';
