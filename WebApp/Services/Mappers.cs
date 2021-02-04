@@ -30,7 +30,8 @@ namespace WebApp.Services
                 Rating = pm.Rating,
                 Text = pm.Text,
                 SharesQuantity = pm.SharesQuantity,
-                CommentQuantity = pm.CommentQuantity
+                CommentQuantity = pm.CommentQuantity,
+                Owner = new User(),
             };
             return p;
         }

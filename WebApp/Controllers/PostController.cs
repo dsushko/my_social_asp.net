@@ -136,8 +136,10 @@ namespace WebApp.Controllers
         }
 
         public Post GetPostById(int postId)
-        {
-            
+        {    
+            Post result = Mappers.BuildPost(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
+            result.Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == result.OwnerId));
+            return result;
         }
     }
 }
