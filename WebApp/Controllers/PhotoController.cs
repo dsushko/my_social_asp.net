@@ -70,12 +70,9 @@ namespace WebApp.Controllers
             _appContext.CommentModels.Add(commentModel);
             _appContext.SaveChanges();
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).Comments
-                .Add(_appContext.CommentModels
-                    .FirstOrDefault(cm => cm.Text == text 
-                                          && cm.OwnerId ==_appContext.UserModels.FirstOrDefault( um => um.Nickname == User.Identity.Name).Id &&
-                                          cm.PostId == photoId && cm.Time == now).Id);
+                .Add(commentModel.Id);
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).CommentQuantity 
-                = _appContext.PostModels.FirstOrDefault(pm => pm.Id == photoId).Comments.Count;
+                = _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).Comments.Count;
 
             _appContext.SaveChanges();
             Comment comment = new Comment()

@@ -62,18 +62,16 @@ namespace WebApp.Controllers
                 {
                     await uploadedFile.CopyToAsync(fileStream);
                 }
-
-                int hash = GetHashCode();
                 PhotoModel model = new PhotoModel {
                         OwnerId = _userService.GetUserByName(User.Identity.Name).Id,
                         Path = path,
                         Comments = new List<int>(),
                         LikeUsers = new List<int>(),
-                        Hash = hash
+                        Time = DateTime.Now
                 };
                 _db.PhotoModels.Add(model);
                 _db.SaveChanges();
-                _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Photos.Add(_db.PhotoModels.FirstOrDefault(pm => pm.Hash == hash).Id);
+                _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Photos.Add(model.Id);
                 _db.SaveChanges();
             }
             return RedirectToAction("Photos", "User", new { Id = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id } );

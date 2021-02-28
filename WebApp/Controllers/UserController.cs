@@ -36,7 +36,7 @@ namespace WebApp.Controllers
         public IActionResult IndexByName(string name)
         {
             var user = _db.UserModels.FirstOrDefault(um => um.Nickname == name);
-            return RedirectToAction("Index","User", new { id= user.Id});
+            return RedirectToAction("Index","User", new { id = user.Id});
             
         }
         public async Task<IActionResult> Music(int id)
@@ -229,7 +229,7 @@ namespace WebApp.Controllers
         [HttpGet]
         public List<PhotoModel> GetPhotosByUserId(int id)
         {
-            return _db.PhotoModels.Where(u => u.OwnerId == id).ToList();
+            return _db.PhotoModels.Where(u => u.OwnerId == id).OrderByDescending(pm => pm.Id).ToList();
         }
         [HttpGet]
         public List<Notification> GetNotificationsByReceiverNickname(string name)
@@ -265,7 +265,8 @@ namespace WebApp.Controllers
                 result.Add(Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == photoId)));
             }
 
-            return result;
+            
+            return result.OrderByDescending(p => p.Id).ToList();
         }
     }
 }

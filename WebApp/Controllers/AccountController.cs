@@ -57,7 +57,9 @@ namespace WebApp.Controllers
                         Subscribers = new List<int>(),
                         OutputRequests = new List<int>(),
                         InputRequests = new List<int>(),
-                        Songs = new List<int>()
+                        Songs = new List<int>(),
+                        Photos = new List<int>(),
+                        Notifications = new List<int>()
                     };
                     // добавляем пользователя в бд
                     _db.UserModels.Add(reguser);
