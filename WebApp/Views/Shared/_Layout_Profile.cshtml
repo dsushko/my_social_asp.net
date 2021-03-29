@@ -21,6 +21,9 @@
 #show-post-big:hover {
   cursor: pointer;
 }
+#show-photo-big:hover {
+  cursor: pointer;
+}
 
 </style>
 
@@ -319,6 +322,8 @@
              
      });
  
+     
+    
     $(document).on('click', '.unlike-photo', function() {
              $.ajax({
                url:'@Url.Action("LikeButtonResponse", "Photo")',
@@ -364,6 +369,7 @@
                  $(this).removeClass("unlike-post-modal");
                  $(this).addClass("like-post-modal");
             });
+    
     
     $(document).on('click', '#modal-photo-send-comment-button', function(){
             $.ajax({
@@ -631,19 +637,31 @@
     let ReturnNotificationHTMLCard = function(data) {
              let ddl = ' '; 
              ddl+='<div id="notification-'+ data.id +'"style="display: flex; width: 100%; border-radius: 2px; margin: 0.5%;">\n';
-             ddl+=           '            <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '" style="margin-left: 5px;">' +
-                             '<img src="' + data.picturePath + '" width="40px" height="40px" style=" border-radius: 50% ">' +
-                             '</a>\n';
-             ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
-             ddl+=           '        <div id="notification-text-'+ data.id +'" class="comment-text">\n';
-             ddl+=           '   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
-             ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
-             ddl+=            ConvertTimeToNotificationFormat(data.time);
-             ddl+=           '           </div>';
-             ddl+=           '        </div>\n';
-             ddl+=           '     </div>\n';
-             ddl+=           '  </div>';        
-             return ddl;
+                              ddl+=           '            <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '" style="margin-left: 5px;">' +
+                                              '<img src="' + data.picturePath + '" width="40px" height="40px" style=" border-radius: 50% ">' +
+                                              '</a>\n';
+                              ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
+                              ddl+=           '        <div id="notification-text-'+ data.id +'" class="comment-text">\n';
+                              
+             if(data.type == "friend request is sent"){
+                 
+                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
+             } else 
+                 if(data.type == "friend request is accepted"){
+                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
+                 } else
+                     if(data.type == "liked by user"){
+                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text + '<a style="color: #000055;" id="show-' + data.targetType + '-big" data-id="' + data.targetId + '">' + data.targetType + '</a>';              
+                     }
+                     
+                                   ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
+                                      ddl+=            ConvertTimeToNotificationFormat(data.time);
+                                      ddl+=           '           </div>';
+                                      ddl+=           '        </div>\n';
+                                      ddl+=           '     </div>\n';
+                                      ddl+=           '  </div>'; 
+                                                       return ddl;
+
          };
     
     let ConvertTimeToNotificationFormat = function(time){

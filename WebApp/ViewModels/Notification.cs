@@ -5,6 +5,7 @@ namespace WebApp.ViewModels
     public class Notification
     {
         public int Id { get; set; }
+        public String Type { get; set; }
         public string PicturePath { get; set; }
         public int ReceivingPersonId { get; set; }
         public DateTime Time { get; set; }
@@ -15,5 +16,6 @@ namespace WebApp.ViewModels
         public User TargetUser { get; set; }
         //public Froup TargetGroup {get; set;}
         public string TargetType { get; set; }
+        public int TargetId { get; set; }
     }
 }

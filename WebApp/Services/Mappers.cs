@@ -64,9 +64,11 @@ namespace WebApp.Services
                 SenderType = nm.SenderType, 
                 SenderUser = new User(),
                 TargetType = nm.TargetType,
+                TargetId = nm.TargetId,
                 TargetUser = new User(),
                 Text = nm.Text,
-                Time = nm.Time
+                Time = nm.Time,
+                Type = nm.Type
             };
             return n;
         }

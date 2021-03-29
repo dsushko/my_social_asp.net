@@ -57,7 +57,42 @@ flex-direction: row;
 </div>
 
 
-<script type="text/javascript">
+<script>
+
+
+
+    
+    $(document).on('click', '.like-post', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Post")',
+               type:'POST',
+               data: {   
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("like-post" + String($(this).data("id")));
+             v.innerHTML = String(parseInt(v.innerHTML) + 1);
+             $(this).css('color', 'red');
+             $(this).removeClass("like-post");
+             $(this).addClass("unlike-post");
+             
+     });
+ 
+    $(document).on('click', '.unlike-post', function() {
+             $.ajax({
+               url:'@Url.Action("LikeButtonResponse", "Post")',
+               type:'POST',
+               data: {
+                   id: $(this).data("id")
+               }
+             });
+             let v = document.getElementById("like-post" + String($(this).data("id")));
+             v.innerHTML = String(parseInt(v.innerHTML) - 1);
+             $(this).css('color', 'gray');
+             $(this).removeClass("unlike-post");
+             $(this).addClass("like-post");
+        });
+    
 
     $(document).ready(function() {
    $.ajax({
@@ -91,38 +126,7 @@ flex-direction: row;
                            });                           
      })
  });
- 
-    $(document).on('click', '.like-post', function() {
-             $.ajax({
-               url:'@Url.Action("LikeButtonResponse", "Post")',
-               type:'POST',
-               data: {   
-                   postId: $(this).data("id")
-               }
-             });
-             let v = document.getElementById("like-post" + String($(this).data("id")));
-             v.innerHTML = String(parseInt(v.innerHTML) + 1);
-             $(this).css('color', 'red');
-             $(this).removeClass("like-post");
-             $(this).addClass("unlike-post");
-             
-     });
- 
-    $(document).on('click', '.unlike-post', function() {
-             $.ajax({
-               url:'@Url.Action("LikeButtonResponse", "Post")',
-               type:'POST',
-               data: {
-                   postId: $(this).data("id")
-               }
-             });
-             let v = document.getElementById("like-post" + String($(this).data("id")));
-             v.innerHTML = String(parseInt(v.innerHTML) - 1);
-             $(this).css('color', 'gray');
-             $(this).removeClass("unlike-post");
-             $(this).addClass("like-post");
-        });
-    
+
     $(document).on('click', '#send-post', function() {
                 $.ajax({
                   url:'@Url.Action("SaveAndReturnPost", "Post")',

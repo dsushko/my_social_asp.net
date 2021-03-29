@@ -422,7 +422,6 @@ C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\WebApp.RazorCoreGenerate.ca
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile.cshtml.g.cs
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_Profile.cshtml.g.cs
 C:\webapplic2\WebApp2\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_Start.cshtml.g.cs

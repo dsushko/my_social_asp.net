@@ -110,20 +110,27 @@ namespace WebApp.Controllers
             return _postService.BuildCommentWithUser(_appContext.CommentModels.Where(cm => thisPhoto.Comments.Contains(cm.Id)).OrderByDescending(cm => cm.Time).ToList());
         }
         [HttpPost]
-        public void LikeButtonResponse(int postId)
+        public void LikeButtonResponse(int id)
         {
-            UserModel user = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers.Contains(user.Id))
+            UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
+            PostModel post = _appContext.PostModels.FirstOrDefault(pm => pm.Id == id);
+            UserModel receiver = _appContext.UserModels.FirstOrDefault(um => um.Id == post.OwnerId);
+            if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers.Contains(me.Id))
             {
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers
-                    .Add(user.Id);
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Rating++;
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
+                    .Add(me.Id);
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).Rating++;
+                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == id) == null)
+                    if(receiver != me)
+                _appContext.NotificationModels.Add(
+                    NotificationTemplates.PublicationIsLikedByUser(me, receiver, "post", id));
+
             }
             else
             {
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers
-                    .Remove(user.Id);
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Rating--;
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
+                    .Remove(me.Id);
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).Rating--;
             }
 
             _appContext.SaveChanges();

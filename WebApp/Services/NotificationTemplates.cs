@@ -16,7 +16,44 @@ namespace WebApp.Services
                 SenderType = "user",
                 TargetId = reciever.Id,
                 TargetType = "user",
-                Time = DateTime.Now
+                Time = DateTime.Now,
+                Type = "friend request is sent"
+            };
+        }
+        
+        public static NotificationModel FriendRequestIsAccepted(UserModel sender, UserModel reciever)
+        {
+            return new NotificationModel()
+            {
+                Text = " accepted your friend request",
+                PicturePath = sender.AvatarPath,
+                ReceivingPersonId = reciever.Id,
+                SenderId = sender.Id,
+                SenderType = "user",
+                TargetId = reciever.Id,
+                TargetType = "user",
+                Time = DateTime.Now,
+                Type = "friend request is accepted"
+            };
+        }
+        public static NotificationModel PublicationIsLikedByUser(
+            UserModel sender, 
+            UserModel reciever, 
+            String TargetPublicationName, 
+            int TargetPublicationId
+            )
+        {
+            return new NotificationModel()
+            {
+                Text = " liked your ",
+                PicturePath = sender.AvatarPath,
+                ReceivingPersonId = reciever.Id,
+                SenderId = sender.Id,
+                SenderType = "user",
+                TargetId = TargetPublicationId,
+                TargetType = TargetPublicationName,
+                Time = DateTime.Now,
+                Type = "liked by user"
             };
         }
     }
