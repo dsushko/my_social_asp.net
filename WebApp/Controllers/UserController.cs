@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using network2.Models;
+using TagLib.Riff;
 using WebApp.Services;
 using WebApp.ViewModels;
 
@@ -35,7 +36,7 @@ namespace WebApp.Controllers
         public IActionResult IndexByName(string name)
         {
             var user = _db.UserModels.FirstOrDefault(um => um.Nickname == name);
-            return RedirectToAction("Index","User", new { id= user.Id});
+            return RedirectToAction("Index","User", new { id = user.Id});
             
         }
         public async Task<IActionResult> Music(int id)
@@ -228,7 +229,7 @@ namespace WebApp.Controllers
         [HttpGet]
         public List<PhotoModel> GetPhotosByUserId(int id)
         {
-            return _db.PhotoModels.Where(u => u.OwnerId == id).ToList();
+            return _db.PhotoModels.Where(u => u.OwnerId == id).OrderByDescending(pm => pm.Id).ToList();
         }
         [HttpGet]
         public List<Notification> GetNotificationsByReceiverNickname(string name)
@@ -250,6 +251,22 @@ namespace WebApp.Controllers
                     = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
             }
             return result;
+        }
+        [HttpGet]
+        public List<Photo> GetNLastPhotosByUserId(int id, int n)
+        {
+            List<Photo> result = new List<Photo>();
+
+            int listCount = _db.UserModels.FirstOrDefault(um => um.Id == id).Photos.Count;
+            int quantityOfPhotosWillBeReturned = listCount > n ? n : listCount;
+            for (int i = 0; i < quantityOfPhotosWillBeReturned; i++)
+            {
+                int photoId = (_db.UserModels.FirstOrDefault(um => um.Id == id).Photos)[i];
+                result.Add(Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == photoId)));
+            }
+
+            
+            return result.OrderByDescending(p => p.Id).ToList();
         }
     }
 }

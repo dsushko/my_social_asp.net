@@ -51,37 +51,7 @@ flex-direction: row;
 }
 
 <div style="display: flex; flex-direction: column">
-    @*
-  <div id="post-" class="shadow-lg" style="width: 100%; border-radius: 2px; margin-top: 2%;">
-        <div id="post-header-" class="post-header">
-            <img src="@Url.Content(@Model.AvatarPath)" width="50px" height="50px" style="border-radius: 50%">
-            <div style="padding-left: 15px;">
-                <div style="color: #20257c; font-size: 20px;">
-                    <a>@Model.Nickname</a>
-                </div>
-                <div style="color: #b9b9b9">
-                    67:89 в дагестане
-                </div>
-            </div>
-            <div id="post-options-" class="dropdown" style="margin-left: auto; color: #b6b6b6">
-                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-                </div>
-            </div>
-        </div>
-        <div id="post-text-" class="post-text">
-            ЛЯ КАКОЙ))))
-        </div>
-        <div id="post-photos-" class="post-photos">
-            <img src="@Url.Content("~/lya.jpg")" width="400px" height="250px">
-        </div>
-        <div id="post-reactions-" style="margin-bottom: 2%;">
-            <i class="fas fa-heart reaction-button" id="like"></i> 0
-            <i class="fas fa-comment reaction-button" id="comment"></i> 0
-            <i class="fas fa-reply reaction-button" id="share"></i> 0
-        </div>
-    </div>*@ 
+    
     <div id="posts"></div>
     
 </div>
@@ -117,10 +87,8 @@ flex-direction: row;
                                              ddl = CommentMakeHTML(comment);
                                              $(ddl).insertAfter('#comments-' + element.id); 
                                          }); 
-                                      });
-                                  
-                           });
-                           
+                                      });   
+                           });                           
      })
  });
  

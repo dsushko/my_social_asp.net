@@ -18,6 +18,7 @@ namespace network2.Models
         public List<int> OutputRequests { get; set; }
         public List<int> Friends { get; set; }
         public List<int> Songs { get; set; }
+        public List<int> Photos { get; set; }
         public List<int> Notifications { get; set; }
     }
 }

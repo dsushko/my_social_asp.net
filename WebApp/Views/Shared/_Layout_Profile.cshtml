@@ -46,7 +46,7 @@
         </div>
         <div class="dropdown" style="margin-right: 10%; ">
             <a style="" class="dropdown-toggle text-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="@Url.Content(@Model.AvatarPath)" width="30px" height="30px" style="border-radius: 50%">
+                <img src="@Url.Content(@Model.AvatarPath)" width="30px" height="30px" style="border-radius: 50%; object-fit: cover; border: 0px solid black;">
                 @User.Identity.Name
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -60,7 +60,7 @@
     <div id="head" class="shadow">
         <div style="display:flex; justify-content:center; width: 100%; height: 400px; background: url(@Url.Content("~/profile_header1.jpg"));">
             <div style="align-self: flex-end; display: flex; flex-direction: row; width: 220px; height: 220px;">
-                <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%;">
+                <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%; object-fit: cover; border: 0px solid black;">
                 @{
                     if (@Model.Nickname != User.Identity.Name)
                     {
@@ -73,8 +73,8 @@
         
         <div id="nav-links" class="container">
             <div class="row d-flex justify-content-center align-items-center" style="height: 100px;">
-                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Index" asp-controller="User" asp-route-id="@Model.Id">Profile</a></div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="profile-link" asp-action="Index" asp-controller="User" asp-route-id="@Model.Id">Profile</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="music-link" asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music (@Model.Songs.Count)</a></div>
                 <div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 1%;">
                     <div>
                         <h1>
@@ -85,16 +85,55 @@
                         @Model.Name @Model.Surname
                     </div>
                 </div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Photos" asp-controller="User" asp-route-id="@Model.Id">Photos</a></div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a asp-action="Friends" asp-controller="User" asp-route-id="@Model.Id">Friends</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="photos-link" asp-action="Photos" asp-controller="User" asp-route-id="@Model.Id">Photos (@Model.Photos.Count)</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="friends-link" asp-action="Friends" asp-controller="User" asp-route-id="@Model.Id">Friends @{
+                                                                                                                                                                  if (@Model.InputRequests.Count != 0)
+                                                                                                                                                                  {
+                                                                                                                                                                      <span>(@Model.Friends.Count @Model.InputRequests.Count)</span>
+                                                                                                                                                                  }
+                                                                                                                                                                  else
+                                                                                                                                                                  {
+                                                                                                                                                                      <span>(@Model.Friends.Count)</span> 
+                                                                                                                                                                  }
+                                                                                                                                                              }</a></div>
             </div>
         </div>
     </div>
-    <div id="columns" style="background: #e7e9e6; display: flex; justify-content: space-around; position: relative; width: 100%;">
-        <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
-                                                                    border-radius: 5px;
-                                                                    display: flex;">
-            
+    <div id="columns" style="background: #e7e9e6; min-height: 300px; display: flex; justify-content: space-around; position: relative; width: 100%;">
+        <div style="margin: 1%; width: 22%;">
+            <div style="background: #fff; border-radius: 5px; display: flex;">
+                <div id="profile-intro" style="margin: 10px;  width: 100%; ">
+                    <div style="text-align: center">
+                        <h5>
+                            Profile Intro
+                        </h5>
+                    </div>
+                    <div style="margin: 5px;">
+                        <div><b>About me</b></div>
+                        <div style="margin: 2px;">
+                            
+                        </div>
+                    </div>
+                    <div style="margin: 5px;">
+                        <div><b>Favourite music bands</b></div>
+                        <div style="margin: 2px;">  
+                            
+                        </div>                  
+                    </div>
+                    <div style="margin: 5px;">
+                        <div><b>Favourite literature</b></div> 
+                        <div style="margin: 2px;">  
+                            
+                        </div>                                            
+                    </div>
+                    <div style="margin: 5px;">
+                        <div><b>Interests</b></div>
+                        <div style="margin: 2px;">      
+                            
+                        </div>                                            
+                    </div>                    
+                </div>
+            </div>
         </div>
         <div id="content" style="margin: 1%; width: 50%;">
             @RenderBody()
@@ -103,10 +142,14 @@
                 </div>
             </div>
         </div>
-        <div style="margin: 1%; width: 22%; height: 500px; background: #fff;
-                                                                    border-radius: 5px;
-                                                                    display: flex;">
-            
+        <div style="width: 22%; margin: 1%; ">
+            <div style="background: #fff; border-radius: 5px; display: flex;">
+                <div id="recent-photos-block" style="margin: 10px; width: 100%;">
+                    <div style="text-align: center;"><h5>Last photos</h5></div>
+                    <div id="recent-photos" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+                    </div>
+                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -129,51 +172,75 @@
                   
               </div>
           </div>
-          <button id="post-big-close" type="button" class="close" aria-label="Close">
+          <button id="post-big-close" onclick="ClearPostModal()" type="button" class="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
           </button>
       </div>
     </div>
 
     <div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
-      <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
-              <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
-                  <div class="modal-body" style="padding: 0;">
-                      <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+        <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
+            <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+                <div class="modal-body" style="padding: 0;">
+                    <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
                       
-                      </div>
-                      <div id="modal-photo-actions">
+                    </div>
+                    <div id="modal-photo-actions">
                           
-                      </div>
-                  </div>
-                  <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
-                      <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
-                          <div id="modal-photo-owner-data">
+                    </div>
+                </div>
+                <div id="modal-photo-info" style="position: relative; width: 300px; background: white; height: inherit">
+                    <div id="modal-photo-data" style="height: 125px;  border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">
+                        <div id="modal-photo-owner-data">
                               
-                          </div>
-                          <div id="modal-photo-reactions">
+                        </div>
+                        <div id="modal-photo-reactions">
                               
-                          </div>
-                      </div>
-                      <div id="modal-photo-comments">
+                        </div>
+                    </div>
+                    <div id="modal-photo-comments">
                           
-                      </div>
-                      <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
+                    </div>
+                    <div id="modal-photo-write-comment" style="position: absolute;  bottom: 0; margin: 3%; justify-content: center;">
                           
-                      </div>
-                  </div>
-              </div>
-               <div>
-                    <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-               </div>
-      </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="photo-big-close" onclick="ClearPhotoModal()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
     </div>
+    
 </div>
 </body>
 </html>
 <script>
+    
+    $(document).ready( function() {
+        $.ajax({
+            url:'@Url.Action("GetNLastPhotosByUserId", "User")',
+            type:'GET',
+            data: {
+                id: @Model.Id,
+                N: 9,
+            }
+        }).done( function(photoList) {
+            let ddl= ' ';
+            for(let i = 0; i < 9; i++){
+                if(photoList[i] != null){
+                    ddl += "<div style='margin: 3px;'>" +
+                                '<a style="cursor: pointer;" data-id="' + photoList[i].id + '" id="show-photo-big">' +
+                                    '<img src="' + photoList[i].path + '" style="object-fit: cover; width: 90px; height: 90px; ">' +
+                                "</a>" +
+                            "</div>\n";
+                    } else break;
+            }
+            document.getElementById("recent-photos").innerHTML = ddl;
+        })
+    });
         
     $(document).ready( function() {
             let url = new URL(window.location.href);      
@@ -181,7 +248,6 @@
             let isSomePhotoId = url.searchParams.has('photo');
             if(isSomePostId === true){
                 PreparePostModal(url);
-
                 $("#post-big").modal('show');
             }
             if(isSomePhotoId === true){
@@ -218,6 +284,7 @@
             let url = new URL(window.location.href);
             url.searchParams.append('wall', $(this).data("id"));
             history.pushState(null, null, url.toString());
+            PreparePostModal(url);
             $("#post-big").modal('show');
     });
     
@@ -263,8 +330,8 @@
              let v = document.getElementById("modal-photo-like-count");
              v.innerHTML = String(parseInt(v.innerHTML) - 1);
              $(this).css('color', 'gray');
-             $(this).removeClass("unlike");
-             $(this).addClass("like");
+             $(this).removeClass("unlike-photo");
+             $(this).addClass("like-photo");
         });
     
     $(document).on('click', '.like-post-modal', function() {
@@ -325,12 +392,40 @@
                 })
             });
     
+    $(document).on('click', '#modal-post-comment', function() {
+             let postId = 0;
+             let button = $(this);
+             postId = button.data("id");
+                            $.ajax({
+                              url:'@Url.Action("SaveAndReturnComment", "Post")',
+                              type:'POST',
+                              data: {
+                                  text: $('#modal-post-comment-text').val(),
+                                  postId: button.data("id")
+                              }
+                            })
+                            .done(function (data){
+                                let ddl = ' ';
+                                ddl+=CommentMakeHTML(data);
+                                $(ddl).insertBefore('#modal-post-comments-placeholder-end'); 
+                                let v = document.getElementById("modal-comments-post-quantity");
+                                v.innerHTML = " " + String(parseInt(v.innerHTML) + 1);
+                            });
+                       });  
+    
     let ClearPhotoModal = function(){
         document.getElementById("modal-photo-comments").innerHTML = "";
         document.getElementById("modal-photo-reactions").innerHTML = "";
         document.getElementById("modal-photoplace").innerHTML = "";
         document.getElementById("modal-photo-owner-data").innerHTML = "";
         document.getElementById("modal-photo-write-comment").innerHTML = "";
+    };
+    
+    let ClearPostModal = function(){
+        document.getElementById("modal-post-owner-data").innerHTML = "";
+        document.getElementById("modal-post-text").innerHTML = "";
+        document.getElementById("modal-post-reactions").innerHTML = "";
+        document.getElementById("modal-post-comments").innerHTML = "";
     };
         
     let PreparePhotoModal = function(url){
@@ -645,7 +740,7 @@
         ddl+=           '        </div>\n';
         ddl+=           '        <div id="post-reactions-'+ data.id +'" style="margin-bottom: 2%;">\n';
         ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(data.id), "post") +'" data-id="' + data.id  + '" id="l'+ data.id +'"></i> <a id="like-post'+ data.id +'">'+ data.rating +'</a>\n';
-        ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + data.id  + '" id="comment"></i><a id="comments-of-' + data.id + '"> ' + data.commentQuantity +'</a>\n';
+        ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + data.id  + '" id="show-post-big"></i><a style="cursor: pointer" id="comments-of-' + data.id + '"> ' + data.commentQuantity +'</a>\n';
         ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + data.id  + '" id="share"></i> ' + data.sharesQuantity + '\n';
         ddl+=           '        </div>\n';
         ddl+=           '<div style="background: #f5f5f5; \n'+
@@ -664,27 +759,7 @@
         return ddl;
     };
     
-    $(document).on('click', '#modal-post-comment', function() {
-         let postId = 0;
-         let button = $(this);
-         postId = button.data("id");
-                        $.ajax({
-                          url:'@Url.Action("SaveAndReturnComment", "Post")',
-                          type:'POST',
-                          data: {
-                              text: $('#modal-post-comment-text').val(),
-                              postId: button.data("id")
-                          }
-                        })
-                        .done(function (data){
-                            let ddl = ' ';
-                            ddl+=CommentMakeHTML(data);
-                            $(ddl).insertBefore('#modal-post-comments-placeholder-end'); 
-                            let v = document.getElementById("modal-comments-post-quantity");
-                            v.innerHTML = " " + String(parseInt(v.innerHTML) + 1);
-                        });
-                   });
-    
+
 </script>
 @{
     if (@Model.Nickname != User.Identity.Name)

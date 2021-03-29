@@ -15,7 +15,12 @@ namespace WebApp.Services
                 Surname = um.Surname,
                 AvatarPath = um.AvatarPath,
                 Bday = um.Bday,
-                Id = um.Id
+                Id = um.Id,
+                Friends = um.Friends,
+                InputRequests = um.InputRequests,
+                OutputRequests = um.OutputRequests,
+                Photos = um.Photos,
+                Songs = um.Songs
             };
             return u;
         }
