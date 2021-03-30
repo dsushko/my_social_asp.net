@@ -73,7 +73,6 @@
           <e p="Home" t="Include">
             <e p="Index.cshtml" t="Include" />
           </e>
-          <e p="Profile.cshtml" t="Include" />
           <e p="Shared" t="Include">
             <e p="_Layout_Profile.cshtml" t="Include" />
             <e p="_Layout_Start.cshtml" t="Include" />

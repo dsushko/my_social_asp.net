@@ -70,12 +70,20 @@ namespace WebApp.Controllers
             };
             _appContext.CommentModels.Add(commentModel);
             _appContext.SaveChanges();
+            {
+                UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
+                UserModel notificationReceiver =
+                    _appContext.UserModels.FirstOrDefault(um =>
+                        um.Id == _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).OwnerId);
+                if (_appContext.NotificationModels.FirstOrDefault(nm =>
+                    nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == postId && nm.Type == "comment left by user") == null)
+                    if (notificationReceiver != me)
+                        _appContext.NotificationModels.Add(
+                            NotificationTemplates.CommentLeftByUser(me, notificationReceiver, "post", postId));
+            }
+
             _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments
-                .Add(_appContext.CommentModels
-                    .FirstOrDefault(cm => cm.Text == text 
-                                          && cm.OwnerId ==_appContext.UserModels.FirstOrDefault( um => um.Nickname == User.Identity.Name).Id &&
-                                          cm.PostId == postId && cm.Time == now).Id);
-            
+                .Add(commentModel.Id);
             _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).CommentQuantity 
                 = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments.Count;
             _appContext.SaveChanges();
@@ -114,17 +122,16 @@ namespace WebApp.Controllers
         {
             UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
             PostModel post = _appContext.PostModels.FirstOrDefault(pm => pm.Id == id);
-            UserModel receiver = _appContext.UserModels.FirstOrDefault(um => um.Id == post.OwnerId);
+            UserModel notificationReceiver = _appContext.UserModels.FirstOrDefault(um => um.Id == post.OwnerId);
             if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers.Contains(me.Id))
             {
                 _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
                     .Add(me.Id);
                 _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).Rating++;
-                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == id) == null)
-                    if(receiver != me)
+                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == id && nm.Type == "liked by user") == null)
+                    if(notificationReceiver != me)
                 _appContext.NotificationModels.Add(
-                    NotificationTemplates.PublicationIsLikedByUser(me, receiver, "post", id));
-
+                    NotificationTemplates.PublicationIsLikedByUser(me, notificationReceiver, "post", id));
             }
             else
             {

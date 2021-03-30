@@ -47,7 +47,8 @@ namespace WebApp.Controllers
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
                     .Add(me.Id);
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).Rating++;
-                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "photo" && nm.TargetId == id) == null)
+                if(_appContext.NotificationModels.
+                    FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "photo" && nm.TargetId == id && nm.Type == "liked by user") == null)
                     if(receiver != me)
                     _appContext.NotificationModels.Add(
                     NotificationTemplates.PublicationIsLikedByUser(me, receiver, "photo", id));
@@ -75,6 +76,18 @@ namespace WebApp.Controllers
             };
             _appContext.CommentModels.Add(commentModel);
             _appContext.SaveChanges();
+            {
+                UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
+                UserModel notificationReceiver =
+                    _appContext.UserModels.FirstOrDefault(um =>
+                        um.Id == _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).OwnerId);
+                if (_appContext.NotificationModels.FirstOrDefault(nm =>
+                    nm.SenderId == me.Id && nm.TargetType == "photo" && nm.TargetId == photoId && nm.Type == "comment left by user") == null)
+                    if (notificationReceiver != me)
+                        _appContext.NotificationModels.Add(
+                            NotificationTemplates.CommentLeftByUser(me, notificationReceiver, "photo", photoId));
+            }
+
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).Comments
                 .Add(commentModel.Id);
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).CommentQuantity 

@@ -653,6 +653,10 @@
                      if(data.type == "liked by user"){
                  ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text + '<a style="color: #000055;" id="show-' + data.targetType + '-big" data-id="' + data.targetId + '">' + data.targetType + '</a>';              
                      }
+                     else if(data.type == "comment left by user"){
+                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text + '<a style="color: #000055;" id="show-' + data.targetType + '-big" data-id="' + data.targetId + '">' + data.targetType + '</a>';              
+                     }
+                     
                      
                                    ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
                                       ddl+=            ConvertTimeToNotificationFormat(data.time);
