@@ -21,10 +21,7 @@ namespace WebApp.Controllers
             _appContext = context;
             _postService = new PostService(_appContext);
         }
-        public List<Post> GetPostsByUserId(int id)
-        {
-            return _postService.GetPostsByUserId(id);
-        }
+
         [HttpPost]
         public Post SaveAndReturnPost(string text)
         {
@@ -36,7 +33,8 @@ namespace WebApp.Controllers
                 Rating = 0,
                 Comments = new List<int>(),
                 SharesPeople = new List<int>(),
-                LikeUsers = new List<int>()
+                LikeUsers = new List<int>(),
+                ForwardedPostId = 0
             };
             _appContext.PostModels.Add(postModel);
             _appContext.SaveChanges();
@@ -46,9 +44,27 @@ namespace WebApp.Controllers
                 Id = postModel.Id,
                 OwnerId = postModel.OwnerId,
                 Text = postModel.Text,
-                Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == postModel.OwnerId))
+                Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == postModel.OwnerId)),
+                ForwardedPost = null,
             };
             return post;
+        }
+        [HttpPost]
+        public void ForwardPostToWall(string text, int forwardedId)
+        {
+            PostModel postModel = new PostModel
+            {
+                Text = text, 
+                Date = DateTime.Now, 
+                OwnerId = _appContext.UserModels.FirstOrDefault( um => um.Nickname == User.Identity.Name).Id, 
+                Rating = 0,
+                Comments = new List<int>(),
+                SharesPeople = new List<int>(),
+                LikeUsers = new List<int>(),
+                ForwardedPostId = forwardedId
+            };
+            _appContext.PostModels.Add(postModel);
+            _appContext.SaveChanges();
         }
         [HttpPost]
         public void DeletePost(int Id)
@@ -102,7 +118,7 @@ namespace WebApp.Controllers
         {
             foreach (var id in _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments)
             {
-                if (_appContext.CommentModels.FirstOrDefault(cm => cm.Id == id) == null)
+                if (_appContext.CommentModels.FirstOrDefault(cm => cm.Id == id) == null || id == 0)
                 {
                     _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments.Remove(id);
                 }
@@ -110,12 +126,6 @@ namespace WebApp.Controllers
             _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).CommentQuantity 
                 = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Comments.Count;
 
-        }
-        [HttpGet]
-        public List<Comment> GetCommentsByPostId(int postId)
-        {
-            PostModel thisPhoto = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId);
-            return _postService.BuildCommentWithUser(_appContext.CommentModels.Where(cm => thisPhoto.Comments.Contains(cm.Id)).OrderByDescending(cm => cm.Time).ToList());
         }
         [HttpPost]
         public void LikeButtonResponse(int id)
@@ -148,12 +158,22 @@ namespace WebApp.Controllers
             UserModel user = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
             return _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers.Contains(user.Id);
         }
-
         public Post GetPostById(int postId)
         {    
-            Post result = Mappers.BuildPost(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
+            Post result = _postService.BuildPostWithUser(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
             result.Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == result.OwnerId));
             return result;
+        }
+        public List<Post> GetPostsByUserId(int id)
+        {
+            return _postService.GetPostsByUserId(id);
+        }
+        
+        [HttpGet]
+        public List<Comment> GetCommentsByPostId(int postId)
+        {
+            PostModel thisPhoto = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId);
+            return _postService.BuildCommentWithUser(_appContext.CommentModels.Where(cm => thisPhoto.Comments.Contains(cm.Id)).OrderByDescending(cm => cm.Time).ToList());
         }
     }
 }

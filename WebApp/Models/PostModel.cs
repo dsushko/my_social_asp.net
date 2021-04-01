@@ -9,6 +9,7 @@ namespace network2.Models
         public string Text { get; set; }
         public DateTime Date { get; set; }
         public int Rating { get; set; }
+        public int ForwardedPostId { get; set; }
         public List<int> LikeUsers { get; set; }
         public int OwnerId { get; set; }
         public int CommentQuantity { get; set; }

@@ -17,29 +17,35 @@ namespace WebApp.Services
 
         public List<Post> GetPostsByUserId(int id)
         {
-            return BuildPostWithUser(_db.PostModels.Where(pm => pm.OwnerId == id).OrderByDescending(pm => pm.Date).ToList());
+            return BuildPostListWithUser(_db.PostModels.Where(pm => pm.OwnerId == id).OrderByDescending(pm => pm.Date).ToList());
         }
 
-        public List<Post> BuildPostWithUser(List<PostModel> models)
+        public List<Post> BuildPostListWithUser(List<PostModel> models)
         {
             List<Post> posts = new List<Post>();
             foreach (var pm in models)
             {
-                Post p = new Post()
-                {
-                    Date = pm.Date,
-                    Id = pm.Id,
-                    OwnerId = pm.OwnerId,
-                    Rating = pm.Rating,
-                    Text = pm.Text,
-                    Owner = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == pm.OwnerId)),
-                    CommentQuantity = pm.CommentQuantity,
-                    SharesQuantity = pm.SharesQuantity
-                };
-                posts.Add(p);
+                posts.Add(BuildPostWithUser(pm));                
             }
-
             return posts;
+        }
+
+        public Post BuildPostWithUser(PostModel pm)
+        {
+            Post? forwarded = pm.ForwardedPostId == 0 ? null : BuildPostWithUser(_db.PostModels.FirstOrDefault(m => m.Id == pm.ForwardedPostId));
+            Post p = new Post()
+            {
+                Date = pm.Date,
+                Id = pm.Id,
+                OwnerId = pm.OwnerId,
+                Rating = pm.Rating,
+                Text = pm.Text,
+                Owner = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == pm.OwnerId)),
+                CommentQuantity = pm.CommentQuantity,
+                SharesQuantity = pm.SharesQuantity,
+                ForwardedPost = forwarded
+            };
+            return p;
         }
         public List<Comment> BuildCommentWithUser(List<CommentModel> models)
         {
