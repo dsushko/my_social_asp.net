@@ -67,9 +67,9 @@ namespace WebApp.Controllers
             _appContext.SaveChanges();
         }
         [HttpPost]
-        public void DeletePost(int id)
+        public void DeletePost(int Id)
         {
-            _appContext.PostModels.Remove(_appContext.PostModels.FirstOrDefault(pm => pm.Id == id));
+            _appContext.PostModels.Remove(_appContext.PostModels.FirstOrDefault(pm => pm.Id == Id));
             _appContext.SaveChanges();
         }
         [HttpPost]
@@ -160,7 +160,7 @@ namespace WebApp.Controllers
         }
         public Post GetPostById(int postId)
         {    
-            Post result = Mappers.BuildPost(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
+            Post result = _postService.BuildPostWithUser(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
             result.Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == result.OwnerId));
             return result;
         }
