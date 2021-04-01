@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fc5bc7a-c969-473f-a75c-797eed0af838" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout_Profile.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout_Profile.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.pdb" afterDir="false" />
     </list>
@@ -153,8 +148,8 @@
         <option value="$PROJECT_DIR$/WebApp/Models/PostModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Services/PostService.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
       </list>
     </option>
   </component>
@@ -302,6 +297,7 @@
       <workItem from="1614553065472" duration="92000" />
       <workItem from="1614553187943" duration="1109000" />
       <workItem from="1617110744961" duration="3495000" />
+      <workItem from="1617299844779" duration="244000" />
     </task>
     <servers />
   </component>
@@ -324,22 +320,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617299460258">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617300088123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617299460258" />
-    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617299460258">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
+    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617300088123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617299460258" />
-    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617299460258">
+    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
+    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617300088123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617299460258" />
-    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617299460258">
+    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617300088123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617299460258" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1617113363981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -408,10 +404,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612447614999" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611357884648">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1617299641808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611357884648" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617299641807" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -457,15 +453,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>132</line>
+          <line>134</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="114">
             <startOffsets>
-              <option value="5491" />
-              <option value="5550" />
+              <option value="5703" />
+              <option value="5762" />
             </startOffsets>
             <endOffsets>
-              <option value="5585" />
-              <option value="5583" />
+              <option value="5797" />
+              <option value="5795" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />

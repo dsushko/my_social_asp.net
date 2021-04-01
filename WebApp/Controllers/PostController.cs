@@ -63,6 +63,8 @@ namespace WebApp.Controllers
                 LikeUsers = new List<int>(),
                 ForwardedPostId = forwardedId
             };
+            _appContext.PostModels.FirstOrDefault(pm => pm.Id == forwardedId).SharesQuantity++;
+            _appContext.PostModels.FirstOrDefault(pm  => pm.Id == forwardedId).SharesPeople.Add(postModel.OwnerId);
             _appContext.PostModels.Add(postModel);
             _appContext.SaveChanges();
         }
