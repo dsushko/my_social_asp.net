@@ -69,9 +69,9 @@ namespace WebApp.Controllers
             _appContext.SaveChanges();
         }
         [HttpPost]
-        public void DeletePost(int Id)
+        public void DeletePost(int postId)
         {
-            _appContext.PostModels.Remove(_appContext.PostModels.FirstOrDefault(pm => pm.Id == Id));
+            _appContext.PostModels.Remove(_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId));
             _appContext.SaveChanges();
         }
         [HttpPost]
@@ -130,26 +130,26 @@ namespace WebApp.Controllers
 
         }
         [HttpPost]
-        public void LikeButtonResponse(int id)
+        public void LikeButtonResponse(int postId)
         {
             UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            PostModel post = _appContext.PostModels.FirstOrDefault(pm => pm.Id == id);
+            PostModel post = _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId);
             UserModel notificationReceiver = _appContext.UserModels.FirstOrDefault(um => um.Id == post.OwnerId);
-            if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers.Contains(me.Id))
+            if (!_appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers.Contains(me.Id))
             {
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers
                     .Add(me.Id);
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).Rating++;
-                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == id && nm.Type == "liked by user") == null)
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Rating++;
+                if(_appContext.NotificationModels.FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "post" && nm.TargetId == postId && nm.Type == "liked by user") == null)
                     if(notificationReceiver != me)
                 _appContext.NotificationModels.Add(
-                    NotificationTemplates.PublicationIsLikedByUser(me, notificationReceiver, "post", id));
+                    NotificationTemplates.PublicationIsLikedByUser(me, notificationReceiver, "post", postId));
             }
             else
             {
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).LikeUsers
                     .Remove(me.Id);
-                _appContext.PostModels.FirstOrDefault(pm => pm.Id == id).Rating--;
+                _appContext.PostModels.FirstOrDefault(pm => pm.Id == postId).Rating--;
             }
 
             _appContext.SaveChanges();
@@ -166,9 +166,9 @@ namespace WebApp.Controllers
             result.Owner = Mappers.BuildUser(_appContext.UserModels.FirstOrDefault(um => um.Id == result.OwnerId));
             return result;
         }
-        public List<Post> GetPostsByUserId(int id)
+        public List<Post> GetPostsByUserId(int postId)
         {
-            return _postService.GetPostsByUserId(id);
+            return _postService.GetPostsByUserId(postId);
         }
         
         [HttpGet]

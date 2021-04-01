@@ -1,5 +1,5 @@
 ﻿@using Microsoft.EntityFrameworkCore.Metadata.Builders
-@model WebApp.ViewModels.User 
+@model WebApp.ViewModels.UserWithLogged 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,11 +30,18 @@
 <body>
 
 <div id="main-site-block">
-    <div id="header" style="height: 45px; background: #4e555b; display: flex; position: sticky; top: 0; z-index: 5; align-items: center;  justify-content: flex-end;">
+    <div id="header" style="height: 45px;
+                              background: #4e555b;
+                              display: flex;
+                              position: sticky;
+                              top: 0;
+                              z-index: 5;
+                              align-items: center;
+                              justify-content: flex-end;">
         <form style="margin-right: 25%">
-            <a href="@Url.RouteUrl(new { controller = "User", action = "IndexByName", name = @User.Identity.Name })" class="btn-primary">HOME</a>        
+            <a asp-action="Index" asp-controller="User" asp-route-id="@Model.Logged.Id" class="btn-primary">HOME</a>        
         </form>
-        <div  style="margin-right: 25%">
+        <div style="margin-right: 25%">
             <div class="dropdown">
                 <button id="show-notifications" class="btn btn-secondary dropdown-toggle"
                         type="button" data-toggle="dropdown"
@@ -49,7 +56,9 @@
         </div>
         <div class="dropdown" style="margin-right: 10%; ">
             <a style="" class="dropdown-toggle text-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="@Url.Content(@Model.AvatarPath)" width="30px" height="30px" style="border-radius: 50%; object-fit: cover; border: 0px solid black;">
+                <img src="@Url.Content(@Model.Logged.AvatarPath)" width="30px" height="30px" style="border-radius: 50%;
+                                                                                                      object-fit: cover;
+                                                                                                      border: 0px solid black;">
                 @User.Identity.Name
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -63,9 +72,11 @@
     <div id="head" class="shadow">
         <div style="display:flex; justify-content:center; width: 100%; height: 400px; background: url(@Url.Content("~/profile_header1.jpg"));">
             <div style="align-self: flex-end; display: flex; flex-direction: row; width: 220px; height: 220px;">
-                <img class="shadow-lg" src="@Url.Content(@Model.AvatarPath)" width="220px" height="220px" style="border-radius: 50%; object-fit: cover; border: 0px solid black;">
+                <img class="shadow-lg" src="@Url.Content(@Model.User.AvatarPath)" width="220px" height="220px" style="border-radius: 50%;
+                                                                                                                        object-fit: cover;
+                                                                                                                        border: 0px solid black;">
                 @{
-                    if (@Model.Nickname != User.Identity.Name)
+                    if (@Model.User.Nickname != User.Identity.Name)
                     {
                         <button id="send-friend-request"></button>
                     }
@@ -76,29 +87,40 @@
         
         <div id="nav-links" class="container">
             <div class="row d-flex justify-content-center align-items-center" style="height: 100px;">
-                <div class="col-md-2 text-center mt-3 mb-3"><a id="profile-link" asp-action="Index" asp-controller="User" asp-route-id="@Model.Id">Profile</a></div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a id="music-link" asp-action="Music" asp-controller="User" asp-route-id="@Model.Id">Music (@Model.Songs.Count)</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="profile-link" asp-action="Index" asp-controller="User" asp-route-id="@Model.User.Id">Profile</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3"><a id="music-link" asp-action="Music" asp-controller="User" asp-route-id="@Model.User.Id">Music (@Model.User.Songs.Count)</a></div>
                 <div style="display: flex; flex-direction: column; justify-content: center; text-align: center; margin: 1%;">
                     <div>
                         <h1>
-                            @Model.Nickname
+                            @Model.User.Nickname
                         </h1>
                         </div>
                     <div>
-                        @Model.Name @Model.Surname
+                        @Model.User.Name @Model.User.Surname
                     </div>
                 </div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a id="photos-link" asp-action="Photos" asp-controller="User" asp-route-id="@Model.Id">Photos (@Model.Photos.Count)</a></div>
-                <div class="col-md-2 text-center mt-3 mb-3"><a id="friends-link" asp-action="Friends" asp-controller="User" asp-route-id="@Model.Id">Friends @{
-                                                                                                                                                                  if (@Model.InputRequests.Count != 0)
-                                                                                                                                                                  {
-                                                                                                                                                                      <span>(@Model.Friends.Count @Model.InputRequests.Count)</span>
-                                                                                                                                                                  }
-                                                                                                                                                                  else
-                                                                                                                                                                  {
-                                                                                                                                                                      <span>(@Model.Friends.Count)</span> 
-                                                                                                                                                                  }
-                                                                                                                                                              }</a></div>
+                <div class="col-md-2 text-center mt-3 mb-3">
+                    <a id="photos-link"
+                       asp-action="Photos"
+                       asp-controller="User"
+                       asp-route-id="@Model.User.Id">
+                        Photos (@Model.User.Photos.Count)
+                    </a>
+                </div>
+                <div class="col-md-2 text-center mt-3 mb-3">
+                    <a id="friends-link" asp-action="Friends" asp-controller="User" asp-route-id="@Model.User.Id">Friends
+                        @{
+                            if (@Model.User.InputRequests.Count != 0)
+                            {
+                                <span>(@Model.User.Friends.Count @Model.User.InputRequests.Count)</span>
+                            }
+                            else
+                            {
+                                <span>(@Model.User.Friends.Count)</span>
+                            }
+                        }
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -160,35 +182,35 @@
 <div id="modals">
 
     <div class="modal" id="post-big" tabindex="-1" role="dialog" aria-labelledby="post-big-label" aria-hidden="true">
-      <div class="modal-dialog-centered" role="document" style="justify-content: center">
-          <div class="modal-content" style="max-width: 50%; ">
-              <div id="modal-post-owner-data">
+        <div class="modal-dialog-centered" role="document" style="justify-content: center">
+            <div class="modal-content" style="max-width: 50%; ">
+                <div id="modal-post-owner-data">
                   
-              </div>
-              <div id="modal-post-text">
+                </div>
+                <div id="modal-post-text">
                   
-              </div>
-              <div id="modal-post-forwarded" style="background: #f7f7f7; margin-left: 30px; border-radius: 3px; margin-bottom: 25px">
+                </div>
+                <div id="modal-post-forwarded" style="background: #f7f7f7; margin-left: 30px; border-radius: 3px; margin-bottom: 25px">
                   
-              </div>
-              <div id="modal-post-reactions">
+                </div>
+                <div id="modal-post-reactions">
                   
-              </div>
-              <div id="modal-post-comments">
+                </div>
+                <div id="modal-post-comments">
                   
-              </div>
-          </div>
-          <button id="post-big-close" onclick="ClearPostModal()" type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
+                </div>
+            </div>
+            <button id="post-big-close" onclick="ClearPostModal()" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
 
     <div class="modal" id="photo-big" tabindex="-1" role="dialog" aria-labelledby="photo-big-label" aria-hidden="true">
         <div class="modal-dialog-centered" style=" justify-content: center; border-radius: 10px;" role="document">
-            <div class="modal-content" style="flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
+            <div class="modal-content" style="min-width: 1000px; min-height: 600px;flex-direction: row; width: auto; background: #4e555b;  border-radius: 10px;">
                 <div class="modal-body" style="padding: 0;">
-                    <div id="modal-photoplace" style="justify-items: center; justify-content: center;">
+                    <div id="modal-photoplace" style="display:flex;justify-content:center;align-items:center; width: 100%; height: 100%">
                       
                     </div>
                     <div id="modal-photo-actions">
@@ -221,6 +243,7 @@
     </div>
     
 </div>
+
 </body>
 </html>
 <script>
@@ -230,7 +253,7 @@
             url:'@Url.Action("GetNLastPhotosByUserId", "User")',
             type:'GET',
             data: {
-                id: @Model.Id,
+                id: @Model.User.Id,
                 N: 9,
             }
         }).done( function(photoList) {
@@ -264,11 +287,11 @@
     
     $(document).on('click', '#show-notifications', function() {
             $.ajax({
-                 url:'@Url.Action("GetNotificationsByReceiverNickname", "User")',
+                 url:'@Url.Action("GetNotificationsByReceiverId", "User")',
                  type:'GET',
                  async: false,
                  data: {
-                     name: '@User.Identity.Name'
+                     userId: '@Model.Logged.Id'
                  }
             }).done(function(notifications) {
                 $.each(notifications, function(index, element){
@@ -314,11 +337,11 @@
                url:'@Url.Action("LikeButtonResponse", "Photo")',
                type:'POST',
                data: {   
-                   id: $(this).data("id")
+                   photoId: $(this).data("id")
                }
              });
-             let v = document.getElementById("modal-photo-like-count");
-             v.innerHTML = String(parseInt(v.innerHTML) + 1);
+             let likeCount = document.getElementById("modal-photo-like-count");
+             likeCount.innerHTML = String(parseInt(likeCount.innerHTML) + 1);
              $(this).css('color', 'red');
              $(this).removeClass("like-photo");
              $(this).addClass("unlike-photo");
@@ -330,11 +353,11 @@
                url:'@Url.Action("LikeButtonResponse", "Photo")',
                type:'POST',
                data: {
-                   id: $(this).data("id")
+                   photoId: $(this).data("id")
                }
              });
-             let v = document.getElementById("modal-photo-like-count");
-             v.innerHTML = String(parseInt(v.innerHTML) - 1);
+             let likeCount = document.getElementById("modal-photo-like-count");
+             likeCount.innerHTML = String(parseInt(likeCount.innerHTML) - 1);
              $(this).css('color', 'gray');
              $(this).removeClass("unlike-photo");
              $(this).addClass("like-photo");
@@ -345,11 +368,11 @@
                    url:'@Url.Action("LikeButtonResponse", "Post")',
                    type:'POST',
                    data: {   
-                       id: $(this).data("id")
+                       postId: $(this).data("id")
                    }
                  });
-                 let v = document.getElementById("modal-post-like-count");
-                 v.innerHTML = String(parseInt(v.innerHTML) + 1);
+                 let likeCount = document.getElementById("modal-post-like-count");
+                 likeCount.innerHTML = String(parseInt(likeCount.innerHTML) + 1);
                  $(this).css('color', 'red');
                  $(this).removeClass("like-post-modal");
                  $(this).addClass("unlike-post-modal");
@@ -361,11 +384,11 @@
                    url:'@Url.Action("LikeButtonResponse", "Post")',
                    type:'POST',
                    data: {
-                       id: $(this).data("id")
+                       postId: $(this).data("id")
                    }
                  });
-                 let v = document.getElementById("modal-post-like-count");
-                 v.innerHTML = String(parseInt(v.innerHTML) - 1);
+                 let likeCount = document.getElementById("modal-post-like-count");
+                 likeCount.innerHTML = String(parseInt(likeCount.innerHTML) - 1);
                  $(this).css('color', 'gray');
                  $(this).removeClass("unlike-post-modal");
                  $(this).addClass("like-post-modal");
@@ -399,29 +422,33 @@
             });
     
     $(document).on('click', '#modal-post-comment', function() {
-             let postId = 0;
-             let button = $(this);
-             postId = button.data("id");
-                            $.ajax({
-                              url:'@Url.Action("SaveAndReturnComment", "Post")',
-                              type:'POST',
-                              data: {
-                                  text: $('#modal-post-comment-text').val(),
-                                  postId: button.data("id")
-                              }
-                            })
-                            .done(function (data){
-                                let ddl = ' ';
-                                ddl+=CommentMakeHTML(data);
-                                $(ddl).insertBefore('#modal-post-comments-placeholder-end'); 
-                                let v = document.getElementById("modal-comments-post-quantity");
-                                v.innerHTML = " " + String(parseInt(v.innerHTML) + 1);
-                            });
-                       });  
-    
-    $(document).on('click', 'share', function(){
-        
-    });
+         let button = $(this);
+         $.ajax({
+              url:'@Url.Action("SaveAndReturnComment", "Post")',
+              type:'POST',
+              data: {
+                  text: $('#modal-post-comment-text').val(),
+                  postId: button.data("id")
+              }
+         }).done(function (comment){
+              let ddl = ' ';
+              ddl+=CommentMakeHTML(comment);
+              $(ddl).insertBefore('#modal-post-comments-placeholder-end'); 
+              let v = document.getElementById("modal-comments-post-quantity");
+              v.innerHTML = " " + String(parseInt(v.innerHTML) + 1);
+          });
+    });  
+
+    $(document).on('click', '#share-post', function() {  
+              $.ajax({
+                   url: '@Url.Action("ForwardPostToWall", "Post")',
+                   type: 'POST',
+                   data: {
+                       text: $("#comment-" + $(this).data("id")).val(),
+                       forwardedId: $(this).data("id")
+                   }
+              })
+        });
     
     let ClearPhotoModal = function(){
         document.getElementById("modal-photo-comments").innerHTML = "";
@@ -485,7 +512,7 @@
                          url:'@Url.Action("GetCommentsByPhotoId", "Photo")',
                          type: 'GET',
                          data: {
-                             id: photo.id,
+                             photoId: photo.id,
                          }
                        }).done(function(comments) {
                             $.each(comments, function(index, comment){
@@ -597,14 +624,14 @@
     return result;
  };    
     
-    let IsPhotoLikedByUser = function(postId){ 
+    let IsPhotoLikedByUser = function(photoId){ 
          let result = false;
          $.ajax({
             url:'@Url.Action("IsLikedByUser", "Photo")',
             type: 'GET',
             async: false,
                 data:{
-                    id: postId
+                    photoId: photoId
             }
          }).done(function(answer) {
              result = answer;
@@ -613,24 +640,24 @@
         return result;
      };
     
-    let CommentMakeHTML = function(data) {
+    let CommentMakeHTML = function(comment) {
          let ddl = ' '; 
-         ddl+='<div id="comment'+ data.id +'"style="width: 100%; border-radius: 2px; margin: 0.5%;">\n';
-         ddl+=           '        <div id="comment-header-'+ data.id +'" class="comment-header" style="display: flex; border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">\n';
-         ddl+=           '            <img src="' + data.owner.avatarPath + '" width="40px" height="40px" style="border-radius: 50% ">\n';
-         ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
-         ddl+=           '                <div style="color: #20257c; font-size: 15px;">\n';
-         ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
-         ddl+=           '                </div>\n';
-         ddl+=           '        <div id="comment-text-'+ data.id +'" class="comment-text">\n';
-         ddl+=            data.text;
-         ddl+=           '        </div>\n';
-         ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
-         ddl+=            ConvertTimeToCommentFormat(data.time) + ' | Answer';
-         ddl+=           '           </div>';
-         ddl+=           '        </div>\n';
-         ddl+=           '     </div>\n';
-         ddl+=           '  </div>';        
+         ddl+='<div id="comment'+ comment.id +'"style="width: 100%; border-radius: 2px; margin: 0.5%;">\n';
+         ddl+='        <div id="comment-header-'+ comment.id +'" class="comment-header" style="display: flex; border-bottom: solid; border-bottom-width: 1px; border-bottom-color: #dddddd;">\n';
+         ddl+='           <img src="' + comment.owner.avatarPath + '" width="40px" height="40px" style="border-radius: 50% ">\n';
+         ddl+='            <div style="padding: 1px;  margin-left: 10px;">\n';
+         ddl+='                <div style="color: #20257c; font-size: 15px;">\n';
+         ddl+='                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + comment.owner.id + '">' + comment.owner.nickname + '</a>\n';
+         ddl+='                </div>\n';
+         ddl+='        <div id="comment-text-'+ comment.id +'" class="comment-text">\n';
+         ddl+=   comment.text;
+         ddl+='        </div>\n';
+         ddl+='         <div style="color: #b9b9b9; font-size: 15px">';
+         ddl+= ConvertTimeToCommentFormat(comment.time) + ' | Answer';
+         ddl+='           </div>';
+         ddl+='        </div>\n';
+         ddl+='     </div>\n';
+         ddl+='  </div>';        
          return ddl;
      };
            
@@ -642,47 +669,42 @@
                  return t;
         };
     
-    let ReturnNotificationHTMLCard = function(data) {
-             let ddl = ' '; 
-             ddl+='<div id="notification-'+ data.id +'"style="display: flex; width: 100%; border-radius: 2px; margin: 0.5%;">\n';
-                              ddl+=           '            <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '" style="margin-left: 5px;">' +
-                                              '<img src="' + data.picturePath + '" width="40px" height="40px" style=" border-radius: 50% ">' +
-                                              '</a>\n';
-                              ddl+=           '            <div style="padding: 1px;  margin-left: 10px;">\n';
-                              ddl+=           '        <div id="notification-text-'+ data.id +'" class="comment-text">\n';
-                              
-             if(data.type == "friend request is sent"){
-                 
-                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
-             } else 
-                 if(data.type == "friend request is accepted"){
-                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text;
-                 } else
-                     if(data.type == "liked by user"){
-                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text + '<a style="color: #000055;" id="show-' + data.targetType + '-big" data-id="' + data.targetId + '">' + data.targetType + '</a>';              
-                     }
-                     else if(data.type == "comment left by user"){
-                 ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.senderUser.id + '">' + data.senderUser.nickname + '</a>' + ' ' + data.text + '<a style="color: #000055;" id="show-' + data.targetType + '-big" data-id="' + data.targetId + '">' + data.targetType + '</a>';              
-                     }
-                     
-                     
-                                   ddl+=           '          <div style="color: #b9b9b9; font-size: 15px">';
-                                      ddl+=            ConvertTimeToNotificationFormat(data.time);
-                                      ddl+=           '           </div>';
-                                      ddl+=           '        </div>\n';
-                                      ddl+=           '     </div>\n';
-                                      ddl+=           '  </div>'; 
-                                                       return ddl;
-
-         };
+    let ReturnNotificationHTMLCard = function(notification) {
+        let ddl = ' '; 
+        ddl+='<div id="notification-'+ notification.id +'"style="display: flex; width: 100%; border-radius: 2px; margin: 0.5%;">\n';
+        ddl+='            <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + notification.senderUser.id + '" style="margin-left: 5px;">' +
+             '<img src="' + notification.picturePath + '" width="40px" height="40px" style=" border-radius: 50% ">' +
+             '</a>\n';
+        ddl+='<div style="padding: 1px;  margin-left: 10px;">\n';
+        ddl+='<div id="notification-text-'+ notification.id +'" class="comment-text">\n';               
+        if(notification.type == "friend request is sent"){    
+             ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + notification.senderUser.id + '">' + notification.senderUser.nickname + '</a>' + ' ' + notification.text;
+        } else 
+        if(notification.type == "friend request is accepted"){
+             ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + notification.senderUser.id + '">' + notification.senderUser.nickname + '</a>' + ' ' + notification.text;
+        } else
+        if(notification.type == "liked by user"){
+             ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + notification.senderUser.id + '">' + notification.senderUser.nickname + '</a>' + ' ' + notification.text + '<a style="color: #000055;" id="show-' + notification.targetType + '-big" data-id="' + notification.targetId + '">' + notification.targetType + '</a>';              
+        }
+        else if(notification.type == "comment left by user"){
+             ddl+='   <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + notification.senderUser.id + '">' + notification.senderUser.nickname + '</a>' + ' ' + notification.text + '<a style="color: #000055;" id="show-' + notification.targetType + '-big" data-id="' + notification.targetId + '">' + notification.targetType + '</a>';              
+        }                  
+        ddl+='          <div style="color: #b9b9b9; font-size: 15px">';
+        ddl+= ConvertTimeToNotificationFormat(notification.time);
+        ddl+='          </div>';
+        ddl+='        </div>\n';
+        ddl+='     </div>\n';
+        ddl+='  </div>'; 
+        return ddl;
+    };
     
     let ConvertTimeToNotificationFormat = function(time){
-                     let t = ' ';
-                     for(let i = 11; i < 16; i++){
-                     t += time[i];
-                     }
-                     return t;
-            };
+         let t = ' ';
+         for(let i = 11; i < 16; i++){
+            t += time[i];
+         }
+         return t;
+    };
      
     let ConvertTimeToPostFormat = function(time){
              let t = ' ';
@@ -722,10 +744,10 @@
          }
      };  
      
-    let PostMakeHTML = function(data) {
+    let PostMakeHTML = function(post) {
         let ddl = " "; 
-        ddl+='<div id="post-'+ data.id +'" style="width: 100%; border-radius: 2px; margin-top: 2%; background: white">\n';
-        ddl+= PostMakeHTMLBase(data, 0);
+        ddl+='<div id="post-'+ post.id +'" style="width: 100%; border-radius: 2px; margin-top: 2%; background: white">\n';
+        ddl+= PostMakeHTMLBase(post, 0);
         ddl+=             ' <div class="modal" id="modalDeletePost" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">\n'+
                           '  <div class="modal-dialog modal-dialog-centered" role="document">\n'+
                           '    <div class="modal-content">\n'+
@@ -740,20 +762,20 @@
                           '      </div>\n'+
                           '      <div class="modal-footer">\n'+
                           '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>\n'+
-                          '        <button type="button" id="delete-post" data-dismiss="modal" data-id="'+ data.id +'" class="btn btn-primary">Delete</button>\n'+
+                          '        <button type="button" id="delete-post" data-dismiss="modal" data-id="'+ post.id +'" class="btn btn-primary">Delete</button>\n'+
                           '      </div>\n'+                        
                           '    </div>\n'+
                           '  </div>\n'+
                           '</div> \n';
-        ddl+=           '        <div id="post-photos-'+ data.id +'" class="post-photos">\n';
+        ddl+=           '        <div id="post-photos-'+ post.id +'" class="post-photos">\n';
         ddl+=           '        </div>\n';
         
-        ddl+=           '        <div id="post-reactions-'+ data.id +'" style="margin-bottom: 2%;">\n';
-        ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(data.id), "post") +'" data-id="' + data.id  + '" id="l'+ data.id +'"></i> <a id="like-post'+ data.id +'">'+ data.rating +'</a>\n';
-        ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + data.id  + '" id="show-post-big"></i><a style="cursor: pointer" id="comments-of-' + data.id + '"> ' + data.commentQuantity +'</a>\n';
-        ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + data.id  + '" data-toggle="modal" data-target="#sharePostModal-' + data.id + '" id="share"></i> ' + data.sharesQuantity + '\n';
+        ddl+=           '        <div id="post-reactions-'+ post.id +'" style="margin-bottom: 2%;">\n';
+        ddl+=           '            <i class="fas fa-heart reaction-button '+ ReturnCSSLikeUnlike(IsPostLikedByUser(post.id), "post") +'" data-id="' + post.id  + '" id="l'+ post.id +'"></i> <a id="like-post'+ post.id +'">'+ post.rating +'</a>\n';
+        ddl+=           '            <i class="fas fa-comment reaction-button" data-id="' + post.id  + '" id="show-post-big"></i><a style="cursor: pointer" id="comments-of-' + post.id + '"> ' + post.commentQuantity +'</a>\n';
+        ddl+=           '            <i class="fas fa-reply reaction-button" data-id="' + post.id  + '" data-toggle="modal" data-target="#sharePostModal-' + post.id + '" id="share"></i> ' + post.sharesQuantity + '\n';
         ddl+=           '<!-- Modal -->\n'+
-                          ' <div class="modal" id="sharePostModal-' + data.id + '" tabindex="-1" role="dialog" aria-labelledby="sharePostModal-' + data.id + '" aria-hidden="true">\n'+
+                          ' <div class="modal" id="sharePostModal-' + post.id + '" tabindex="-1" role="dialog" aria-labelledby="sharePostModal-' + post.id + '" aria-hidden="true">\n'+
                           '  <div class="modal-dialog modal-dialog-centered" role="document">\n'+
                           '    <div class="modal-content">\n'+
                           '      <div class="modal-header">\n'+
@@ -763,11 +785,11 @@
                           '        </button>\n'+
                           '      </div>\n'+
                           '      <div class="modal-body">\n'+
-                          '         <textarea placeholder="Add a caption" class="form-control" style="resize: none; overflow: auto; margin-top: 10px;" rows="3" id="comment-' + data.id + '" name="text"></textarea>\n' +
+                          '         <textarea placeholder="Add a caption" class="form-control" style="resize: none; overflow: auto; margin-top: 10px;" rows="3" id="comment-' + post.id + '" name="text"></textarea>\n' +
                           '      </div>\n'+
                           '      <div class="modal-footer">\n'+
                           '        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>\n'+
-                          '        <button type="button" id="share-post" data-dismiss="modal" data-id="'+ data.id +'" class="btn btn-primary">Forward</button>\n'+
+                          '        <button type="button" id="share-post" data-dismiss="modal" data-id="'+ post.id +'" class="btn btn-primary">Forward</button>\n'+
                           '      </div>\n'+                        
                           '    </div>\n'+
                           '  </div>\n'+
@@ -775,35 +797,35 @@
         ddl+=           '        </div>\n';
         ddl+=           '<div style="background: #f5f5f5; \n'+
                               'padding:1%">\n'+
-                        ' <div id="comments-' + data.id +'" style="flex-direction: column;">' +
+                        ' <div id="comments-' + post.id +'" style="flex-direction: column;">' +
                         '</div>' +
-                        ' <div id="comments-end-' + data.id +'" style="flex-direction: column;">' +
+                        ' <div id="comments-end-' + post.id +'" style="flex-direction: column;">' +
                                                 '</div>' +
                         '   <div style="display:flex; flex-direction: row; width:100%; align-items: flex-start">' +
-                        '       <textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="comment-'+ data.id +'" name="text"></textarea>\n'+
-                        '       <button class="btn btn-primary" data-id="' + data.id + '" style="margin-bottom: 0;" id="post-comment">Submit</button>\n'+
+                        '       <textarea placeholder="Leave a comment...." class="form-control" style=" resize: none" rows="1" id="comment-'+ post.id +'" name="text"></textarea>\n'+
+                        '       <button class="btn btn-primary" data-id="' + post.id + '" style="margin-bottom: 0;" id="post-comment">Submit</button>\n'+
                         '   </div>   ' +
                         '  </div>';
         ddl+=           '    </div>';       
                return ddl;
     };
     
-    let PostMakeHTMLBase = function(data, depth) {
-        let ddl = " ";
-                ddl+=           '        <div id="post-header-'+ data.id +'" class="post-header">\n';
-                ddl+=           '          <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">'; 
-                ddl+=           '            <img src="' + data.owner.avatarPath + '" width="50px" height="50px" style="border-radius: 50%">\n';
+    let PostMakeHTMLBase = function(post, depth) {
+                let ddl = " ";
+                ddl+=           '        <div id="post-header-'+ post.id +'" class="post-header">\n';
+                ddl+=           '          <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + post.owner.id + '">'; 
+                ddl+=           '            <img src="' + post.owner.avatarPath + '" width="50px" height="50px" style="border-radius: 50%">\n';
                 ddl+=           '          </a>  ';
                 ddl+=           '            <div style="padding-left: 15px;">\n';
                 ddl+=           '                <div style="color: #20257c; font-size: 20px;">\n';
-                ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + data.owner.id + '">' + data.owner.nickname + '</a>\n';
+                ddl+=           '                    <a href="@Url.RouteUrl(new { controller = "User", action = "Index", id = 0})' + post.owner.id + '">' + post.owner.nickname + '</a>\n';
                 ddl+=           '                </div>\n';
                 ddl+=           '                <div style="color: #b9b9b9">\n';
-                ddl+=           '<a id="show-post-big" data-id= "' + data.id + '" style="color: grey;">' +    ConvertTimeToPostFormat(data.date) + '<\a>';
+                ddl+=           '<a id="show-post-big" data-id= "' + post.id + '" style="color: grey;">' +    ConvertTimeToPostFormat(post.date) + '<\a>';
                 ddl+=           '                </div>\n';
                 ddl+=           '            </div>\n';
                 if(depth === 0){
-                ddl+=           '            <div id="post-options-'+ data.id +'" class="dropdown" style="margin-left: auto; color: #b6b6b6">\n';
+                ddl+=           '            <div id="post-options-'+ post.id +'" class="dropdown" style="margin-left: auto; color: #b6b6b6">\n';
                 ddl+=           '                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>\n';
                 ddl+=           '                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">\n' + 
                                 '               <input class="dropdown-item" data-toggle="modal" data-target="#modalDeletePost" type="submit" value="Delete"/>';
@@ -811,36 +833,22 @@
                 ddl+=           '            </div>\n';
                 }
                 ddl+=           '        </div>\n';
-                ddl+=           '        <div id="post-text-'+ data.id +'" class="post-text">\n';
-                ddl+=            data.text;
+                ddl+=           '        <div id="post-text-'+ post.id +'" class="post-text">\n';
+                ddl+=            post.text;
                 ddl+=           '        </div>';
-
-                if(data.forwardedPost != null){
-                          ddl+=           '<div id="forwarded-post-section" style="margin-left: 30px;background: #f7f7f7; border-radius: 3px;">';
-                          ddl+=           '<div style="padding-top: 1px; padding-bottom: 3px;">';
-                          ddl+= PostMakeHTMLBase(data.forwardedPost, depth + 1);
-                          ddl+=           '</div>';
-                          ddl+= '</div>';
-                };
-                
-
+                if(post.forwardedPost != null){
+                    ddl+=           '<div id="forwarded-post-section" style="margin-left: 30px;background: #f7f7f7; border-radius: 3px;">';
+                    ddl+=           '<div style="padding-top: 1px; padding-bottom: 3px;">';
+                    ddl+= PostMakeHTMLBase(post.forwardedPost, depth + 1);
+                    ddl+=           '</div>';
+                    ddl+= '</div>';        
+        }
         return ddl;
     };
-    
-    $(document).on('click', '#share-post', function() {  
-          $.ajax({
-               url: '@Url.Action("ForwardPostToWall", "Post")',
-               type: 'POST',
-               data: {
-                   text: $("#comment-" + $(this).data("id")).val(),
-                   forwardedId: $(this).data("id")
-               }
-          })
-    })
-    
+       
 </script>
 @{
-    if (@Model.Nickname != User.Identity.Name)
+    if (@Model.User.Nickname != User.Identity.Name)
     {
 
 <script type="text/javascript">
@@ -851,7 +859,7 @@
                                      type:'POST',
                                      async: false,
                                      data: {
-                                         id: @Model.Id
+                                         userId: @Model.User.Id
                                      }
                                    }
                   );
@@ -866,7 +874,7 @@
                 type: 'GET',
                 async: false,
                 data: {
-                   id: @Model.Id,
+                   userId: @Model.User.Id,
                 }
               }).done(function(result) {
                   res = result;

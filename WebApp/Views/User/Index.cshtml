@@ -37,7 +37,7 @@ flex-direction: row;
 </style>
 
 @{
-    if (Model.Nickname == User.Identity.Name)
+    if (Model.User.Nickname == User.Identity.Name)
     {
         <div style="width: 100%; height: auto; background: #fff; border-radius: 5px; display: flex">
             <div class="container flex-column align-items-center justify-content-center">
@@ -64,11 +64,11 @@ flex-direction: row;
                url:'@Url.Action("LikeButtonResponse", "Post")',
                type:'POST',
                data: {   
-                   id: $(this).data("id")
+                   postId: $(this).data("id")
                }
              });
-             let v = document.getElementById("like-post" + String($(this).data("id")));
-             v.innerHTML = String(parseInt(v.innerHTML) + 1);
+             let likeCount = document.getElementById("like-post" + String($(this).data("id")));
+             likeCount.innerHTML = String(parseInt(likeCount.innerHTML) + 1);
              $(this).css('color', 'red');
              $(this).removeClass("like-post");
              $(this).addClass("unlike-post");
@@ -80,11 +80,11 @@ flex-direction: row;
                url:'@Url.Action("LikeButtonResponse", "Post")',
                type:'POST',
                data: {
-                   id: $(this).data("id")
+                   postId: $(this).data("id")
                }
              });
-             let v = document.getElementById("like-post" + String($(this).data("id")));
-             v.innerHTML = String(parseInt(v.innerHTML) - 1);
+             let likeCount = document.getElementById("like-post" + String($(this).data("id")));
+             likeCount.innerHTML = String(parseInt(likeCount.innerHTML) - 1);
              $(this).css('color', 'gray');
              $(this).removeClass("unlike-post");
              $(this).addClass("like-post");
@@ -95,11 +95,11 @@ flex-direction: row;
            url:'@Url.Action("GetPostsByUserId", "Post")',
            type: 'GET',
            data: {
-               id: @Model.Id,
+               postId: @Model.User.Id,
            }
-       }).done(function(data) {
+       }).done(function(posts) {
            let ddl = ' ';
-                           $.each(data, function(index, element){
+                           $.each(posts, function(index, element){
                                ddl = PostMakeHTML(element);
                                $(ddl).insertBefore('#posts'); 
                                if(IsPostLikedByUser(element.id)){
@@ -131,9 +131,9 @@ flex-direction: row;
                       text: $('#comment').val()
                   }
                 })
-                .done(function (data){
+                .done(function (post){
                     let ddl = ' ';
-                    ddl+=PostMakeHTML(data);
+                    ddl+=PostMakeHTML(post);
                     $(ddl).insertBefore('#posts');
                     });
            });
@@ -150,9 +150,9 @@ flex-direction: row;
                           postId: button.data("id")
                       }
                     })
-                    .done(function (data){
+                    .done(function (comment){
                         let ddl = ' ';
-                        ddl+=CommentMakeHTML(data);
+                        ddl+=CommentMakeHTML(comment);
                         $(ddl).insertBefore('#comments-end-' +  postId); 
                         console.log('#comments-of-' +  postId);
                         let v = document.getElementById("comments-of-" + postId);
@@ -169,7 +169,7 @@ flex-direction: row;
         url:'@Url.Action("DeletePost", "Post")',
         type: 'POST',
         data: {
-            id: id
+            postId: id
         }
         }).done(function() {
            document.getElementById("post-" + id).innerHTML = "";

@@ -2,13 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fc5bc7a-c969-473f-a75c-797eed0af838" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WebApp/ViewModels/UserWithLogged.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout_Profile.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout_Profile.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Friends.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Friends.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Index.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Music.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Music.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Photos.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Photos.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/obj/Debug/netcoreapp3.1/WebApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +80,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/F/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/PostModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/PhotoModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/UserWithLogged.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/RegisterModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/UserModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/Models/NotificationModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -99,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebApp/Models/Post.cs" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/News.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/Home/Profile.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Startup.cs" />
@@ -127,9 +146,6 @@
         <option value="$PROJECT_DIR$/WebApp/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/ApplicationContext.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/UserController1.cs" />
-        <option value="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Photo.cs" />
         <option value="$PROJECT_DIR$/WebApp/Services/PhotoService.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/UserModel.cs" />
@@ -137,19 +153,23 @@
         <option value="$PROJECT_DIR$/WebApp/ViewModels/User.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/FileController.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/AccountController.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Models/NotificationModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Notification.cs" />
         <option value="$PROJECT_DIR$/WebApp/Services/Mappers.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/PostModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Services/PostService.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/ViewModels/UserWithLogged.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Friends.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Music.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/wwwroot/css/site.css" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Photos.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
       </list>
     </option>
   </component>
@@ -320,22 +340,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617300088123">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617312334195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
-    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617300088123">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617312334195" />
+    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617312334194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
-    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617300088123">
+    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617312334194" />
+    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617312334194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
-    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617300088123">
+    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617312334194" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617312334194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617300088123" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617312334194" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1617113363981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -404,27 +424,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612447614999" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1617299641808">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1617308535180">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617299641807" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617308535180" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs</url>
-          <line>109</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" initialLine="93">
-            <startOffsets>
-              <option value="4932" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4933" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/FileController.cs</url>
           <line>71</line>
@@ -439,29 +446,16 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/UserController.cs</url>
-          <line>235</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/UserController.cs" initialLine="235">
-            <startOffsets>
-              <option value="8896" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8897" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
           <line>134</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="114">
             <startOffsets>
-              <option value="5703" />
-              <option value="5762" />
+              <option value="5715" />
+              <option value="5774" />
             </startOffsets>
             <endOffsets>
-              <option value="5797" />
-              <option value="5795" />
+              <option value="5809" />
+              <option value="5807" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />

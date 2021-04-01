@@ -62,6 +62,7 @@
           <e p="Photo.cs" t="Include" />
           <e p="Post.cs" t="Include" />
           <e p="User.cs" t="Include" />
+          <e p="UserWithLogged.cs" t="Include" />
         </e>
         <e p="Views" t="Include">
           <e p="_ViewImports.cshtml" t="Include" />
@@ -121,6 +122,7 @@
               <e p="IMG_20201109_150845.jpg" t="Include" />
               <e p="IMG_3582.CR2" t="Include" />
               <e p="picture_94b281cb37eb9d159b5_64764_p0.png" t="Include" />
+              <e p="sezd.jpg" t="Include" />
               <e p="swift-language-reference-mind-map.jpg" t="Include" />
             </e>
             <e p="SongPics" t="Include">

@@ -30,134 +30,151 @@ namespace WebApp.Controllers
         {
                 var user = await _db.UserModels.FirstOrDefaultAsync(u => u.Id == id).ConfigureAwait(true);
                 var u = Mappers.BuildUser(user);
-                return View(u);
-            
-        }
-        public IActionResult IndexByName(string name)
-        {
-            var user = _db.UserModels.FirstOrDefault(um => um.Nickname == name);
-            return RedirectToAction("Index","User", new { id = user.Id});
-            
+                var currUser = await _db.UserModels.FirstOrDefaultAsync(um => um.Nickname == User.Identity.Name);
+                var cu = Mappers.BuildUser(currUser);
+                return View(new UserWithLogged()
+                {
+                    User = u,
+                    Logged = cu,
+                });
         }
         public async Task<IActionResult> Music(int id)
         {    
             var user = await _db.UserModels.FirstOrDefaultAsync(u => u.Id == id).ConfigureAwait(true);
             var u = Mappers.BuildUser(user);
-            return View(u);
+            var currUser = await _db.UserModels.FirstOrDefaultAsync(um => um.Nickname == User.Identity.Name);
+            var cu = Mappers.BuildUser(currUser);
+            return View(new UserWithLogged()
+            {
+                User = u,
+                Logged = cu,
+            });
         }
         public async Task<IActionResult> Friends(int id)
         {
             var user = await _db.UserModels.FirstOrDefaultAsync(u => u.Id == id).ConfigureAwait(true);
             var u = Mappers.BuildUser(user);
-            return View(u);
+            var currUser = await _db.UserModels.FirstOrDefaultAsync(um => um.Nickname == User.Identity.Name);
+            var cu = Mappers.BuildUser(currUser);
+            return View(new UserWithLogged()
+            {
+                User = u,
+                Logged = cu,
+            });
         }
         public async Task<IActionResult> Photos(int id)
         {
             var user = await _db.UserModels.FirstOrDefaultAsync(u => u.Id == id).ConfigureAwait(true);
             var u = Mappers.BuildUser(user);
-            return View(u);
+            var currUser = await _db.UserModels.FirstOrDefaultAsync(um => um.Nickname == User.Identity.Name);
+            var cu = Mappers.BuildUser(currUser);
+            return View(new UserWithLogged()
+            {
+                User = u,
+                Logged = cu,
+            });
         }
 
-        public User GetUserById(int id)
+        public User GetUserById(int userId)
         {
-            return _userService.GetUserById(id);
+            return _userService.GetUserById(userId);
         }
         
-        public UserModel GetUserModelById(int id)
+        public UserModel GetUserModelById(int userId)
         {
-            return _db.UserModels.FirstOrDefault(um => um.Id == id);
+            return _db.UserModels.FirstOrDefault(um => um.Id == userId);
         }
         
-        public void FriendRequestButtonResponse(int id)
+        public void FriendRequestButtonResponse(int userId)
         {
             UserModel me = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            if(me.OutputRequests.Contains(id))
+            if(me.OutputRequests.Contains(userId))
             {
-                WithdrawFriendRequest(id);
+                WithdrawFriendRequest(userId);
 
             }
-            else if (_db.UserModels.FirstOrDefault(um => um.Id == id).OutputRequests.Contains(me.Id))
+            else if (_db.UserModels.FirstOrDefault(um => um.Id == userId).OutputRequests.Contains(me.Id))
             {
-                AcceptFriendRequest(id);
+                AcceptFriendRequest(userId);
 
             }
-            else if (me.Friends.Contains(id))
+            else if (me.Friends.Contains(userId))
             {
-                RemoveFriend(id);
+                RemoveFriend(userId);
             } else
-            if(!me.OutputRequests.Contains(id))
+            if(!me.OutputRequests.Contains(userId))
             {
-                SendFriendRequest(id);
+                SendFriendRequest(userId);
             }
 
         }
-        public void SendFriendRequest(int id)
+        public void SendFriendRequest(int userId)
         {
             UserModel me = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).OutputRequests.Add(id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).InputRequests
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).OutputRequests.Add(userId);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).InputRequests
                 .Add(me.Id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).Subscribers
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).Subscribers
                 .Add(me.Id);
             _db.NotificationModels.Add(
-                NotificationTemplates.FriendRequestIsSent(me, _db.UserModels.FirstOrDefault(um => um.Id == id)));
+                NotificationTemplates.FriendRequestIsSent(me, _db.UserModels.FirstOrDefault(um => um.Id == userId)));
             _db.SaveChanges();
         }
-        public void WithdrawFriendRequest(int id)
+        public void WithdrawFriendRequest(int userId)
         {
             UserModel me = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).OutputRequests.Remove(id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).InputRequests
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).OutputRequests.Remove(userId);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).InputRequests
                 .Remove(me.Id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).Subscribers
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).Subscribers
                 .Remove(me.Id);
             _db.SaveChanges();
         }
-        public void AcceptFriendRequest(int id)
+        public void AcceptFriendRequest(int userId)
         {
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Remove(id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).OutputRequests.Remove(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Remove(userId);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).OutputRequests.Remove(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
             
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Friends.Add(id);
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Subscribers.Remove(id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).Friends.Add(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Friends.Add(userId);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Subscribers.Remove(userId);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).Friends.Add(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
             _db.SaveChanges();
 
         }
-        public void RemoveFriend(int id) //id того кого кикаем из друзей
+        public void RemoveFriend(int userId) //id того кого кикаем из друзей
         {
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Friends.Remove(id);
-            _db.UserModels.FirstOrDefault(um => um.Id == id).Friends.Remove(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Friends.Remove(userId);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).Friends.Remove(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
 
-            _db.UserModels.FirstOrDefault(um => um.Id == id).OutputRequests.Add(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Add(id);
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Subscribers.Add(id);
+            _db.UserModels.FirstOrDefault(um => um.Id == userId).OutputRequests.Add(_db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Id);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Add(userId);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).Subscribers.Add(userId);
             
             _db.SaveChanges();
         }
 
-        public void DenyFriendRequest(int id)
+        public void DenyFriendRequest(int userId)
         {
-            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Remove(id);
+            _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name).InputRequests.Remove(userId);
             _db.SaveChanges();
         }
         [HttpGet]
-        public string CheckFriendStatus(int id)
+        public string CheckFriendStatus(int userId)
         {
             UserModel me = _db.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            if (me.Friends.Contains(id))
+            if (me.Friends.Contains(userId))
             {
                 return "friends";
             }
-            if (me.OutputRequests.Contains(id))
+            if (me.OutputRequests.Contains(userId))
             {
                 return "output";
             }
-            if (me.InputRequests.Contains(id))
+            if (me.InputRequests.Contains(userId))
             {
                 return "input";
             }
-            if (me.Subscribers.Contains(id))
+            if (me.Subscribers.Contains(userId))
             {
                 return "subscriber";
             }
@@ -165,12 +182,12 @@ namespace WebApp.Controllers
 
         }
         [HttpGet]
-        public List<User> GetFriendsByUserId(int id)
+        public List<User> GetFriendsByUserId(int userId)
         {
-            if (id != 0)
+            if (userId != 0)
             {
                 List<User> res = new List<User>();
-                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == id).Friends)
+                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == userId).Friends)
                 {
                     res.Add(_userService.GetUserById(fId));
                 }
@@ -181,12 +198,12 @@ namespace WebApp.Controllers
             return new List<User>();
             
         }
-        public List<User> GetSubscribersByUserId(int id)
+        public List<User> GetSubscribersByUserId(int userId)
                  {
-                     if (id != 0)
+                     if (userId != 0)
                      {
                          List<User> res = new List<User>();
-                         foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == id).Subscribers)
+                         foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == userId).Subscribers)
                          {
                              res.Add(_userService.GetUserById(fId));
                          }
@@ -196,12 +213,12 @@ namespace WebApp.Controllers
          
                      return new List<User>();
                  }
-        public List<User> GetInputRequestsByUserId(int id)
+        public List<User> GetInputRequestsByUserId(int userId)
         {
-            if (id != 0)
+            if (userId != 0)
             {
                 List<User> res = new List<User>();
-                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == id).InputRequests)
+                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == userId).InputRequests)
                 {
                     res.Add(_userService.GetUserById(fId));
                 }
@@ -211,12 +228,12 @@ namespace WebApp.Controllers
          
             return new List<User>();
         }
-        public List<User> GetOutputRequestsByUserId(int id)
+        public List<User> GetOutputRequestsByUserId(int userId)
         {
-            if (id != 0)
+            if (userId != 0)
             {
                 List<User> res = new List<User>();
-                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == id).OutputRequests)
+                foreach (var fId in _db.UserModels.FirstOrDefault(um => um.Id == userId).OutputRequests)
                 {
                     res.Add(_userService.GetUserById(fId));
                 }
@@ -227,29 +244,29 @@ namespace WebApp.Controllers
             return new List<User>();
         }
         [HttpGet]
-        public List<PhotoModel> GetPhotosByUserId(int id)
+        public List<PhotoModel> GetPhotosByUserId(int userId)
         {
-            return _db.PhotoModels.Where(u => u.OwnerId == id).OrderByDescending(pm => pm.Id).ToList();
+            return _db.PhotoModels.Where(u => u.OwnerId == userId).OrderByDescending(pm => pm.Id).ToList();
         }
         [HttpGet]
-        public List<Notification> GetNotificationsByReceiverNickname(string name)
+        public List<Notification> GetNotificationsByReceiverId(int userId)
         {
-            int id = _db.UserModels.FirstOrDefault(um => um.Nickname == name).Id;
-            
             List<NotificationModel> appropModels = new List<NotificationModel>();
-            appropModels =  _db.NotificationModels.Where(nm => nm.ReceivingPersonId == id).ToList();
+            appropModels =  _db.NotificationModels.Where(nm => nm.ReceivingPersonId == userId).ToList();
             
             List<Notification> result = new List<Notification>();
-            result = _db.NotificationModels.Where(nm => nm.ReceivingPersonId == id).
+            result = _db.NotificationModels.Where(nm => nm.ReceivingPersonId == userId).
                 Select(Mappers.BuildNotification).ToList();
             
             foreach (var nm in appropModels)
             {
                 result.Find(n => n.Id == nm.Id).SenderUser
                     = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.SenderId));
-                if(nm.Type == "friend request is sent" || nm.Type == "friend request is accepted")
-                result.Find(n => n.Id == nm.Id).TargetUser
-                    = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
+                if (nm.Type == "friend request is sent" || nm.Type == "friend request is accepted")
+                {
+                    result.Find(n => n.Id == nm.Id).TargetUser
+                        = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
+                }
             }
             return result;
         }
@@ -265,8 +282,7 @@ namespace WebApp.Controllers
                 int photoId = (_db.UserModels.FirstOrDefault(um => um.Id == id).Photos)[i];
                 result.Add(Mappers.BuildPhoto(_db.PhotoModels.FirstOrDefault(pm => pm.Id == photoId)));
             }
-
-            
+         
             return result.OrderByDescending(p => p.Id).ToList();
         }
     }
