@@ -8,6 +8,7 @@ namespace WebApp.ViewModels
         public int Id { get; set; }
         public string Text { get; set; }
         public DateTime Date { get; set; }
+        public Post ForwardedPost { get; set; }
         public int Rating { get; set; }
         public int OwnerId { get; set; }
         public User Owner { get; set; }

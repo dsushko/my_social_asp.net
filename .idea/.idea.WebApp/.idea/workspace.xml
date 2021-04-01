@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fc5bc7a-c969-473f-a75c-797eed0af838" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Models/PostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Models/PostModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/Services/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Services/PostService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebApp/bin/Debug/netcoreapp3.1/WebApp.Views.dll" afterDir="false" />
@@ -97,6 +97,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D12A3B22-45B0-40DF-96D6-9FAABE3A0C70/13/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F3325C05-7891-45B4-AC78-327FC18BDC7C/11C/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E9BDBB73-53B2-465B-B3B7-E2006463A5DC/B/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/233E8C8F-0E85-4B63-AE7F-9B374A12D146/C/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApp/ViewModels/Comment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FACC05D4-AF62-4B25-A050-44976758218B/7/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
@@ -128,11 +129,8 @@
         <option value="$PROJECT_DIR$/WebApp/Views/User/OutResuests.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/Subscribers.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Views/User/InRequests.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Models/PostModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Comment.cs" />
         <option value="$PROJECT_DIR$/WebApp/Models/CommentModel.cs" />
-        <option value="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Services/PostService.cs" />
         <option value="$PROJECT_DIR$/WebApp/wwwroot/js/mediaelement/mediaelement-and-player.js" />
         <option value="$PROJECT_DIR$/WebApp/wwwroot/js/audioplayer/mediaelement-and-player.min.js" />
         <option value="$PROJECT_DIR$/WebApp/Models/SongModel.cs" />
@@ -155,10 +153,13 @@
         <option value="$PROJECT_DIR$/WebApp/ViewModels/Notification.cs" />
         <option value="$PROJECT_DIR$/WebApp/Services/Mappers.cs" />
         <option value="$PROJECT_DIR$/WebApp/Services/NotificationTemplates.cs" />
-        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
-        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/PhotoController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/ViewModels/Post.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Models/PostModel.cs" />
         <option value="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Views/User/Index.cshtml" />
+        <option value="$PROJECT_DIR$/WebApp/Services/PostService.cs" />
+        <option value="$PROJECT_DIR$/WebApp/Views/Shared/_Layout_Profile.cshtml" />
       </list>
     </option>
   </component>
@@ -328,22 +329,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617114259732">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom" timestamp="1617297767867">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617114259732" />
-    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617114259732">
+    <state width="1493" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617297767867" />
+    <state width="1493" height="107" key="GridCell.Tab.0.center" timestamp="1617297767866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617114259732" />
-    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617114259731">
+    <state width="1493" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617297767866" />
+    <state width="1493" height="107" key="GridCell.Tab.0.left" timestamp="1617297767866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617114259731" />
-    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617114259732">
+    <state width="1493" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617297767866" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right" timestamp="1617297767867">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617114259732" />
+    <state width="1493" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617297767867" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1617113363981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -461,44 +462,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>122</line>
+          <line>132</line>
           <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="114">
             <startOffsets>
-              <option value="5230" />
-              <option value="5289" />
+              <option value="5491" />
+              <option value="5550" />
             </startOffsets>
             <endOffsets>
-              <option value="5324" />
-              <option value="5322" />
+              <option value="5585" />
+              <option value="5583" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>115</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="112">
-            <startOffsets>
-              <option value="4863" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4864" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApp/Controllers/PostController.cs</url>
-          <line>61</line>
-          <properties documentPath="$PROJECT_DIR$/WebApp/Controllers/PostController.cs" initialLine="61">
-            <startOffsets>
-              <option value="2126" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2154" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
