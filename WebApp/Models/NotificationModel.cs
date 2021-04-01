@@ -5,6 +5,7 @@ namespace network2.Models
     public class NotificationModel
     {
         public int Id { get; set; }
+        public String Type { get; set; }
         public string PicturePath { get; set; }
         public int ReceivingPersonId { get; set; }
         public DateTime Time { get; set; }

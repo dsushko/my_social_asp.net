@@ -247,6 +247,7 @@ namespace WebApp.Controllers
             {
                 result.Find(n => n.Id == nm.Id).SenderUser
                     = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.SenderId));
+                if(nm.Type == "friend request is sent" || nm.Type == "friend request is accepted")
                 result.Find(n => n.Id == nm.Id).TargetUser
                     = Mappers.BuildUser(_db.UserModels.FirstOrDefault(um => um.Id == nm.TargetId));
             }

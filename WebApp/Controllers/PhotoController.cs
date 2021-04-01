@@ -40,19 +40,26 @@ namespace WebApp.Controllers
         [HttpPost]
         public void LikeButtonResponse(int id)
         {
-            UserModel user = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
-            if (!_appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).LikeUsers.Contains(user.Id))
+            UserModel me = _appContext.UserModels.FirstOrDefault(um =>  um.Nickname == User.Identity.Name);
+            UserModel receiver = _appContext.UserModels.FirstOrDefault(um => um.Id == _appContext.PhotoModels.FirstOrDefault( um => um.Id == id).OwnerId);
+            if (!_appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).LikeUsers.Contains(me.Id))
             {
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
-                    .Add(user.Id);
+                    .Add(me.Id);
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).Rating++;
+                if(_appContext.NotificationModels.
+                    FirstOrDefault(nm => nm.SenderId == me.Id && nm.TargetType == "photo" && nm.TargetId == id && nm.Type == "liked by user") == null)
+                    if(receiver != me)
+                    _appContext.NotificationModels.Add(
+                    NotificationTemplates.PublicationIsLikedByUser(me, receiver, "photo", id));
+
             }
             else
             {
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).LikeUsers
-                    .Remove(user.Id);
+                    .Remove(me.Id);
                 _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == id).Rating--;
-            }
+               }
 
             _appContext.SaveChanges();
         }
@@ -69,6 +76,18 @@ namespace WebApp.Controllers
             };
             _appContext.CommentModels.Add(commentModel);
             _appContext.SaveChanges();
+            {
+                UserModel me = _appContext.UserModels.FirstOrDefault(um => um.Nickname == User.Identity.Name);
+                UserModel notificationReceiver =
+                    _appContext.UserModels.FirstOrDefault(um =>
+                        um.Id == _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).OwnerId);
+                if (_appContext.NotificationModels.FirstOrDefault(nm =>
+                    nm.SenderId == me.Id && nm.TargetType == "photo" && nm.TargetId == photoId && nm.Type == "comment left by user") == null)
+                    if (notificationReceiver != me)
+                        _appContext.NotificationModels.Add(
+                            NotificationTemplates.CommentLeftByUser(me, notificationReceiver, "photo", photoId));
+            }
+
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).Comments
                 .Add(commentModel.Id);
             _appContext.PhotoModels.FirstOrDefault(pm => pm.Id == photoId).CommentQuantity 
