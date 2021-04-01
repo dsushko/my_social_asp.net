@@ -4,7 +4,7 @@
 
 
 @{
-    if (User.Identity.Name == Model.Nickname)
+    if (User.Identity.Name == Model.User.Nickname)
     {
         <div id="add-button">
             <button style="width: 40px; height: 40px; border-radius: 50%">+</button>
@@ -43,7 +43,7 @@ $(document).ready(function() {
                       type:'GET',
                       url:'@Url.Action("GetPhotosByUserId", "User")',
                       data:{
-                          id: @Model.Id
+                          userId: @Model.User.Id
                       }      
                     }).done(function(data) {
                     let ddl = ' ';

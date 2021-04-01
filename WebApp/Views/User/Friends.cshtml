@@ -18,7 +18,7 @@
                 <a class="nav-link active" id="friends">Friends</a>
             </li>
             @{
-                if (User.Identity.Name == Model.Nickname)
+                if (User.Identity.Name == Model.User.Nickname)
                 {
                     <li class="nav-item">
                         <a class="nav-link" id="input-requests">Input requests</a>
@@ -48,7 +48,7 @@
             type: 'GET',
             async: false,
             data: {
-                id: @Model.Id
+                userId: @Model.User.Id
             }
             }).done(function(model) {
                 document.getElementById("friends").innerText = "Friends (" + model.friends.length + ")";
@@ -89,7 +89,7 @@
                     url:'@Url.Action("GetFriendsByUserId", "User")',
                     type:'GET',
                     data: {
-                    id: @Model.Id
+                    userId: @Model.User.Id
                     }
                     })
                     .done(function (data){
@@ -117,7 +117,7 @@
                             url:'@Url.Action("GetInputRequestsByUserId", "User")',
                             type:'GET',
                             data: {
-                            id: @Model.Id
+                            userId: @Model.User.Id
                             }
                             })
                             .done(function (data){
@@ -142,7 +142,7 @@
                             url:'@Url.Action("GetOutputRequestsByUserId", "User")',
                             type:'GET',
                             data: {
-                            id: @Model.Id
+                            userId: @Model.User.Id
                             }
                             })
                             .done(function (data){
@@ -168,7 +168,7 @@
                               url:'@Url.Action("GetSubscribersByUserId", "User")',
                               type:'GET',
                               data: {
-                              id: @Model.Id
+                              userId: @Model.User.Id
                               }
                               })
                               .done(function (data){
@@ -186,7 +186,7 @@
                                  url:'@Url.Action("GetFriendsByUserId", "User")',
                                  type:'GET',
                                  data: {
-                                 id: @Model.Id
+                                 userId: @Model.User.Id
                                  }
                                  })
                                  .done(function (data){

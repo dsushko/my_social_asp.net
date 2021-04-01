@@ -39,8 +39,8 @@ namespace WebApp.Services
         public static NotificationModel PublicationIsLikedByUser(
             UserModel sender, 
             UserModel reciever, 
-            String TargetPublicationType, 
-            int TargetPublicationId
+            String targetPublicationType, 
+            int targetPublicationId
             )
         {
             return new NotificationModel()
@@ -50,8 +50,8 @@ namespace WebApp.Services
                 ReceivingPersonId = reciever.Id,
                 SenderId = sender.Id,
                 SenderType = "user",
-                TargetId = TargetPublicationId,
-                TargetType = TargetPublicationType,
+                TargetId = targetPublicationId,
+                TargetType = targetPublicationType,
                 Time = DateTime.Now,
                 Type = "liked by user"
             };
@@ -59,8 +59,8 @@ namespace WebApp.Services
         public static NotificationModel CommentLeftByUser(
             UserModel sender, 
             UserModel reciever, 
-            String TargetPublicationType, 
-            int TargetPublicationId
+            String targetPublicationType, 
+            int targetPublicationId
         )
         {
             return new NotificationModel()
@@ -70,8 +70,8 @@ namespace WebApp.Services
                 ReceivingPersonId = reciever.Id,
                 SenderId = sender.Id,
                 SenderType = "user",
-                TargetId = TargetPublicationId,
-                TargetType = TargetPublicationType,
+                TargetId = targetPublicationId,
+                TargetType = targetPublicationType,
                 Time = DateTime.Now,
                 Type = "comment left by user"
             };
